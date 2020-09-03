@@ -8,14 +8,14 @@ draft: false
 ---
 
 ## Some useful Tools
-| Number | Tool | Code |
+| Number | Tool | See Code On |
 |-----|-----|----|
-|1.| [Fetch Insta Details](https://vanpariyar.github.io/get-instagram-details/) | [Github](https://.github.com/vanpariyar/get-instagram-details/) |
-|2.| [Get Rendom Quotes](https://vanpariyar.github.io/get-new-quote/) | [Github](https://.github.com/vanpariyar/get-new-quote/) |
-|3.| [Contact Form To Google Sheets](https://vanpariyar.github.io/contact-form-to-sheets/) | [Github](https://.github.com/vanpariyar/contact-form-to-sheets/) |
-|4.| [Quiz From Google Sheets](https://vanpariyar.github.io/quiz-from-sheets/) | [Github](https://.github.com/vanpariyar/quiz-from-sheets/) |
-|5.| [Expense Manager Google AppScript](https://vanpariyar.github.io/expense-manager/) | [Github](https://.github.com/vanpariyar/expense-manager/) |
-|6.| [Small Usefull Tools With React](https://vanpariyar.github.io/useful-tools/) | [Github](https://.github.com/vanpariyar/useful-tools/) |
+|1.| [Fetch Insta Details](https://vanpariyar.github.io/get-instagram-details/) | [Github](https://github.com/vanpariyar/get-instagram-details/) |
+|2.| [Get Rendom Quotes](https://vanpariyar.github.io/get-new-quote/) | [Github](https://github.com/vanpariyar/get-new-quote/) |
+|3.| [Contact Form To Google Sheets](https://vanpariyar.github.io/contact-form-to-sheets/) | [Github](https://github.com/vanpariyar/contact-form-to-sheets/) |
+|4.| [Quiz From Google Sheets](https://vanpariyar.github.io/quiz-from-sheets/) | [Github](https://github.com/vanpariyar/quiz-from-sheets/) |
+|5.| [Expense Manager Google AppScript](https://vanpariyar.github.io/expense-manager/) | [Github](https://github.com/vanpariyar/expense-manager/) |
+|6.| [Small Usefull Tools With React](https://vanpariyar.github.io/useful-tools/) | [Github](https://github.com/vanpariyar/useful-tools/) |
 
 ----
 
