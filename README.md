@@ -1,7 +1,7 @@
 ## myblog
 
 ### Post Your Blog:
-To get publish your blog in this Blog. got to this directory -> https://github.com/vanpariyar/myblog/tree/writing/content/blog
+To get publish your blog in this Blog. got to this directory -> https://github.com/vanpariyar/tree/writing/content/blog
 
 you can put your readme.md file for your Blog.
 
