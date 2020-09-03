@@ -1,0 +1,146 @@
+######################## default configuration ####################
+baseURL = "https://vanpariyar.github.io/myblog/"
+title = "Welcome To Our Blog"
+theme = "twenty-twenty"
+languageName = "En"
+languageCode = "en-us"
+# post pagination
+paginate = "6"
+# post excerpt
+summaryLength = "10"
+# disqus short name
+#disqusShortname = "vanpariyar-github-io-myblog" # get your shortname form here : https://disqus.com
+# disable language
+disableLanguages = [] # desable language from here
+# google analytics
+googleAnalytics = "UA-165932508-1"
+
+enableEmoji = true
+
+publishDir = "docs"
+
+############################## Heading Values###############################
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+############################## Output ###############################
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+# unsafe html
+[markup.goldmark.renderer]
+unsafe = true
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+author = "author"
+
+############################## navigation ###############################
+
+# main menu
+[[menu.main]]
+name = "Home"
+URL = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+URL = "about"
+weight = 2
+
+[[menu.main]]
+name = "Blog"
+URL = "blog"
+weight = 3
+
+[[menu.main]]
+name = "Contact"
+URL = "contact"
+weight = 4
+
+[[menu.main]]
+name = "Tools"
+URL = "tools"
+weight = 5
+
+# only desktop menu
+[[menu.desktop]]
+name = "Contact"
+URL = "contact"
+weight = 1
+
+[[menu.desktop]]
+name = "About"
+URL = "about"
+weight = 2
+
+[[menu.desktop]]
+name = "Blog"
+URL = "blog"
+weight = 3
+
+[[menu.desktop]]
+name = "Edit on Guithub"
+URL = "https://github.com/vanpariyar/myblog/tree/writing/content/blog"
+weight = 4
+
+[[menu.desktop]]
+name = "Tools"
+URL = "tools"
+weight = 5
+
+
+#################### default parameters ################################
+[params]
+# Meta data
+description = "Open source technology blog for the web developers with snippets and tutorial"
+author = "vanpariyar"
+
+
+# banner
+[params.banner]
+heading = "The New World Opens its Doors"
+image = "images/blog-banner.png"
+
+# blog
+[params.blog]
+heading = "Home Of the innovation Let's Build Something amazing."
+
+# call to action
+[params.call_to_action]
+enable = true
+title = "Contact us for more information."
+content = "We like to connect people like you. Feel Free to Contact us we are happy help and networking."
+button_label = "Contact Us"
+button_url = "contact"
+
+# gallery
+[params.gallery]
+enable = true
+
+  [[params.gallery.gallery_item ]]
+  image = "images/gellary-image-one.png"
+  
+  [[params.gallery.gallery_item ]]
+  image = "images/gellary-image-two.png"
+
+
+# footer
+[params.footer]
+title = "About This Site"
+content = "This site is inspired by fireship.io. we will share our experence of various project. You can contribute the guest post with your author Link "
+address = "Find typo ? [TO Edit This Site](https://github.com/vanpariyar/myblog/tree/writing/content/blog)"
+hours = "Monday–Friday: 9:00AM–5:00PM <br> Saturday & Sunday: 11:00AM–3:00PM"
+copyright = "Copyright &copy; 2020 a hugo theme by [themefisher](https://themefisher.com) ported from [WordPress Twenty Twenty](https://github.com/WordPress/twentytwenty)"
+
+############################# social site ########################
+[params.social]
+#yelp = "#"
+facebook = "http://facebook.com/ronak.vanpariya.12"
+twitter = "https://twitter.com/vanpariyaronakj"
+instagram = "https://instagram.com/ronak_vanpariya"
+email = "mailto:vanpariyar@gmail.com"
