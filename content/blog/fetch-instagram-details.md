@@ -82,16 +82,4 @@ ________________________________________________________________________________
 #### if Are You still reading this, :thumbsup: thank you so very much for your time :hourglass:.
 -:hand: if you are getting any errors you can make issue on this repo with proper details .
 
-Thanks for the reading :+1:
-
-#### Have any doubts or suggetions :thinking_face: 
-Feel free to [connect]({{< ref "contact" >}}) social media platform given on this page :- [Contact page]({{< ref "contact" >}})
-
-
-### Donate:
-
-<a href="https://www.buymeacoffee.com/vanpariyar"  rel="noopener noreferrer" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
-
-OR
-
-[Join Buy me A Coffee](https://buymeacoff.ee/?via=vanpariyar) ( I will recieve small commition by signing, You don,t have to pay any money )
+{{% footer-donation %}}

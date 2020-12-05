@@ -73,18 +73,4 @@ checkout all hooks [hooks]({{% relref "hooks" %}})
 https://developer.wordpress.org/reference/functions/get_the_date/
 https://developer.wordpress.org/reference/functions/the_date/
 
-----
-### Thank You
-Thank you and canva ( For Beautiful designs ).
-
-Thanks for the reading :+1:
-
-#### Have any doubts or suggetions :thinking_face: 
-Feel free to [connect]({{< ref "contact" >}}) social media platform given on this page :- [Contact page]({{< ref "contact" >}})
-
-
-### Donate:
-
-<a href="https://www.buymeacoffee.com/vanpariyar" rel="noopener noreferrer" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
-
-OR [Join Buy me A Coffee](https://buymeacoff.ee/?via=vanpariyar) ( I will receive small commission by signing, You don't have to pay any money )
+{{% footer-donation %}}

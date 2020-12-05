@@ -2,7 +2,7 @@
 title: "How to Add Product Meta Data if Order Not Split by Woo Order Splitter Plugin"
 date: 2020-12-02T22:28:18+05:30
 
-image : "https://user-images.githubusercontent.com/26689210/100902103-93b47180-34ea-11eb-9240-49bf5984c1e5.png"
+image : "https://user-images.githubusercontent.com/26689210/101244941-7ae8cd80-372f-11eb-9ef3-e17078a4db6f.png"
 # author
 author : ["Ronak Vanpariya"]
 # categories
@@ -94,3 +94,5 @@ functionadd_custom_order_meta( $order_id ) {
 
 }
 ```
+
+{{% footer-donation %}}
