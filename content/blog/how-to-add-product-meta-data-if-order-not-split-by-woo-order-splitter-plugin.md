@@ -11,7 +11,7 @@ tags: ["hooks", "Wordpress", "filters"]
 # meta description
 description: "How to add product meta data if order not split by woo order splitter plugin."
 # save as draft
-draft: true
+draft: false
 ---
 
 How to add product meta data if order not split by woo order splitter plugin
