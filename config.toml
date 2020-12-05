@@ -19,6 +19,8 @@ enableEmoji = true
 
 publishDir = "docs"
 
+enableInlineShortcodes = true
+
 ############################## Heading Values###############################
 
 [sitemap]
@@ -85,7 +87,7 @@ weight = 3
 
 [[menu.desktop]]
 name = "Edit on Guithub"
-URL = "https://github.com/vanpariyar/tree/writing/content/blog"
+URL = "https://github.com/vanpariyar/vanpariyar.github.io/tree/writing/content"
 weight = 4
 
 [[menu.desktop]]
@@ -103,16 +105,16 @@ author = "vanpariyar"
 
 # banner
 [params.banner]
-heading = "The New World Opens its Doors"
-image = "images/blog-banner.png"
+heading = "Useful Articles for you"
+#image = "images/blog-banner.png"
 
 # blog
 [params.blog]
-heading = "Home Of the innovation Let's Build Something amazing."
+heading = "Home Of the innovation"
 
 # call to action
 [params.call_to_action]
-enable = true
+enable = false
 title = "Contact us for more information."
 content = "We like to connect people like you. Feel Free to Contact us we are happy help and networking."
 button_label = "Contact Us"
@@ -133,7 +135,7 @@ enable = true
 [params.footer]
 title = "About This Site"
 content = "This site is inspired by fireship.io. we will share our experence of various project. You can contribute the guest post with your author Link "
-address = "Find typo ? [TO Edit This Site](https://github.com/vanpariyar/tree/writing/content/blog)"
+address = "Find typo ? [TO Edit This Site](https://github.com/vanpariyar/vanpariyar.github.io/tree/writing/content)"
 hours = "Monday–Friday: 9:00AM–5:00PM <br> Saturday & Sunday: 11:00AM–3:00PM"
 copyright = "Copyright &copy; 2020 a hugo theme by [themefisher](https://themefisher.com) ported from [WordPress Twenty Twenty](https://github.com/WordPress/twentytwenty)"
 

@@ -7,7 +7,7 @@ description: "Feel free to contact us"
 draft: false
 ---
 
-Thanks For Contact You can Connect me at :- vanpariyar@wordpress.chat.org (Reply in 24 hours). 
+Thanks For Contact You can Connect me at :- vanpariyar@gmail.com (Reply in 24 hours). 
 
 OR  https://vanpariyar.github.io
 

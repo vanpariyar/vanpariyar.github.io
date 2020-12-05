@@ -52,16 +52,4 @@ Please Don't upload Whole wordpress setup.
 2) You can change plugin settings in Admin panel > Settings > Wp Post View Settings
 3) There are some options are by default selected for you but you can Change it. 
 
-Thanks for the reading :+1:
-
-#### Have any doubts or suggetions :thinking_face: 
-Feel free to [connect]({{< ref "contact" >}}) social media platform given on this page :- [Contact page]({{< ref "contact" >}})
-
-
-### Donate:
-
-<a href="https://www.buymeacoffee.com/vanpariyar" rel="noopener noreferrer" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
-
-OR
-
-[Join Buy me A Coffee](https://buymeacoff.ee/?via=vanpariyar) ( I will recieve small commition by signing, You don,t have to pay any money )
+{{% footer-donation %}}

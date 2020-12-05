@@ -43,14 +43,4 @@ your first request is Wakes up server and Second time you'll get output.
 list all your valuable suggestions directly on [GitHub](https://github.com/vanpariyar/google-assistant-creolestudios-blog/issues).
 
 
-Thanks for the reading :+1:
-
-#### Have any doubts or suggetions :thinking_face: 
-Feel free to [connect]({{< ref "contact" >}}) social media platform given on this page :- [Contact page]({{< ref "contact" >}})
-
-
-<a href="https://www.buymeacoffee.com/vanpariyar" rel="noopener noreferrer" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
-
-OR
-
-[Join Buy me A Coffee](https://buymeacoff.ee/?via=vanpariyar) ( I will recieve small commition by signing, You don,t have to pay any money )
+{{% footer-donation %}}
