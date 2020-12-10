@@ -8,6 +8,11 @@
     {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
     {{ hugo.Generator }}
     
+    <!-- google adsense -->
+    {{ block "meta" . }}
+    {{ partial "seo-header.html" . }}
+    {{ end }}
+
   
     {{ "<!-- Main Stylesheet -->" | safeHTML }}
     {{ $wpLibrary := resources.Get "css/wp-library.css" | minify }}
