@@ -35,17 +35,17 @@
           <div class="wp-block-group">
             <div class="wp-block-group__inner-container">
               <figure class="wp-block-image alignfull size-full"><img src="{{ .Params.Image |absURL }}"
-                  alt="{{.Title }}" class="wp-image-37" /></figure>
+                  alt="{{.Title }}" class="wp-image-37" loading="lazy" /></figure>
               <h3>{{ .Title }}</h3>
               <p>{{ .PublishDate.Format "January 2, 2006"}}</p>
               <div class="wp-block-button is-style-outline"><a class="wp-block-button__link"
-                  href="{{ .Permalink }}">Read More</a></div>
+                  href="{{ .Permalink }}">Read Article</a></div>
             </div>
           </div>
         </div>
         {{ end }}
         <div class="wp-block-buttons" style="margin: auto;">
-            <div class="wp-block-button"><a class="wp-block-button__link" href="{{ "blog/" | absURL }}">Learn More</a></div>
+            <div class="wp-block-button"><a class="wp-block-button__link" href="{{ "blog/" | absURL }}">Read More Blogs</a></div>
             </div>
       </div>
 <!--
@@ -92,7 +92,7 @@
         <ul class="blocks-gallery-grid">
           {{ range .gallery_item }}
           <li class="blocks-gallery-item">
-            <figure><img src="{{ .image | absURL }}"/></figure>
+            <figure><img src="{{ .image | absURL }}" alt="gallery Image" loading="lazy" /></figure>
           </li>
           {{ end }}
         </ul>
