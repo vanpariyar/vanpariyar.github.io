@@ -112,6 +112,10 @@ heading = "Useful Articles for you"
 [params.blog]
 heading = "Home Of the innovation"
 
+#Comments Enable ?
+[params.comments]
+enable = true
+
 # call to action
 [params.call_to_action]
 enable = false
