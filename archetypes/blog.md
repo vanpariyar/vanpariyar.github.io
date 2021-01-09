@@ -9,6 +9,7 @@ categories: ["Technology"]
 tags: ["tag1", "tag2"]
 # meta description
 description: "This is the simple description"
+keywords: ["blog seo tag 1", "Other tag"]
 # save as draft
 draft: true
 ---

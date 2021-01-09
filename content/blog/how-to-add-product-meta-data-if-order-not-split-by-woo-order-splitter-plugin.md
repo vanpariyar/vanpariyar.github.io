@@ -10,6 +10,7 @@ categories: ["Technology"]
 tags: ["hooks", "Wordpress", "filters"]
 # meta description
 description: "How to add product meta data if order not split by woo order splitter plugin."
+keywords: ["Woocommerce order Splitter"]
 # save as draft
 draft: false
 ---
