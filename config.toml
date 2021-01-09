@@ -101,7 +101,7 @@ weight = 5
 # Meta data
 description = "Open source technology blog for the web developers with snippets and tutorial"
 author = "vanpariyar"
-
+keywords = ["Opensource Technology Blog", "Wordpress Hooks and Filters", "How to Guide", "wordpress tips and tricks"]
 
 # banner
 [params.banner]
