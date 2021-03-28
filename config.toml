@@ -110,7 +110,7 @@ heading = "Useful Articles for you"
 
 # blog
 [params.blog]
-heading = "Home Of the innovation"
+heading = ""
 
 #Comments Enable ?
 [params.comments]
