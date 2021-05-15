@@ -7,7 +7,7 @@ description: "Feel free to contact us"
 draft: false
 ---
 
-Thanks For Contact You can Connect me at :- `vanpariyar[at(@)]gmail[dot(.)]com` ( Note : Replace [], Reply in 24 hours :pray:). 
+Thanks For Contact You can Connect me at :- `vanpariyar[@]gmail[.]com` ( Note : Replace [], Max. Reply in 24 hours :pray:). Social media is fast :wink:. 
 
 
 OR  https://vanpariyar.github.io

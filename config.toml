@@ -1,19 +1,21 @@
 ######################## default configuration ####################
 baseURL = "https://vanpariyar.in/"
-title = "Welcome To Our Blog"
+title = "Ronak J Vanpariya"
 theme = "twenty-twenty"
 languageName = "En"
 languageCode = "en-us"
 # post pagination
-paginate = "6"
+paginate = "4"
 # post excerpt
-summaryLength = "10"
+summaryLength = "20"
 # disqus short name
 #disqusShortname = "vanpariyar-github-io-myblog" # get your shortname form here : https://disqus.com
 # disable language
 disableLanguages = [] # desable language from here
 # google analytics
 googleAnalytics = "UA-165932508-1"
+# enableGitInfo
+enableGitInfo = true
 
 enableEmoji = true
 
@@ -45,53 +47,78 @@ author = "author"
 
 # main menu
 [[menu.main]]
-name = "Home"
+name = "Home 🏠"
 URL = "/"
 weight = 1
 
 [[menu.main]]
-name = "About"
+name = "About 👋"
 URL = "about"
 weight = 2
 
 [[menu.main]]
-name = "Blog"
+name = "Blog 📝"
 URL = "blog"
 weight = 3
 
 [[menu.main]]
-name = "Contact"
-URL = "contact"
+name = "Tags 🏷️"
+URL = "tags"
 weight = 4
 
 [[menu.main]]
-name = "Tools"
-URL = "tools"
+name = "Categories 📜"
+URL = "categories"
+weight = 4
+
+[[menu.main]]
+name = "Contact 📬"
+URL = "contact"
 weight = 5
+
+[[menu.main]]
+name = "Tools 🛠️"
+URL = "tools"
+weight = 6
+
+[[menu.main]]
+name = "Edit on Guithub 🖋"
+URL = "https://github.com/vanpariyar/vanpariyar.github.io/tree/writing/content"
+weight = 7
 
 # only desktop menu
 [[menu.desktop]]
-name = "Contact"
+name = "Contact 📬"
 URL = "contact"
 weight = 1
 
 [[menu.desktop]]
-name = "About"
+name = "About 👋"
 URL = "about"
 weight = 2
 
 [[menu.desktop]]
-name = "Blog"
+name = "Blog 📝"
 URL = "blog"
 weight = 3
 
 [[menu.desktop]]
-name = "Edit on Guithub"
-URL = "https://github.com/vanpariyar/vanpariyar.github.io/tree/writing/content"
+name = "Tags 🏷️"
+URL = "tags"
 weight = 4
 
 [[menu.desktop]]
-name = "Tools"
+name = "Categories 📜"
+URL = "categories"
+weight = 4
+
+[[menu.desktop]]
+name = "Edit on Guithub 🖋"
+URL = "https://github.com/vanpariyar/vanpariyar.github.io/tree/writing/content"
+weight = 5
+
+[[menu.desktop]]
+name = "Tools 🛠️"
 URL = "tools"
 weight = 5
 
@@ -100,13 +127,13 @@ weight = 5
 [params]
 # Meta data
 description = "Open source technology blog for the web developers with snippets and tutorial"
-author = "vanpariyar"
-keywords = ["Opensource Technology Blog", "Wordpress Hooks and Filters", "How to Guide", "wordpress tips and tricks"]
+author = "Ronak Vanpariya"
+keywords = ["Opensource Technology Blog", "Wordpress Hooks and Filters", "How to Guide", "wordpress tips and tricks", "Ronak Vanpariya", "vanpariyar"]
 
 # banner
 [params.banner]
-heading = "Useful Articles for you"
-#image = "images/blog-banner.png"
+heading = "Hi 👋 Welcome "
+image = "images/blog-banner.png"
 
 # blog
 [params.blog]
