@@ -15,7 +15,7 @@ draft: false
 ---
 
 ### Introduction
-:wave: Hello friend,
+:wave: Hello friend, :scroll: :slightly_smiling_face: :house:		
 
 I was looking for a very creative way to wish someone *" Happy Birthday "* :tada: . As you think we will make some creativity using javascript. also added this to the List of [Tools]({{< ref "tools" >}} "tools")
 

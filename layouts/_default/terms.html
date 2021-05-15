@@ -1,0 +1,41 @@
+
+{{ define "main" }}
+
+<article
+  class="post type-post status-publish format-standard has-post-thumbnail hentry category-art category-editing tag-block tag-editor tag-gutenberg tag-wordpress">
+  <header class="entry-header has-text-align-center">
+    <div class="entry-header-inner section-inner medium">
+      <h2 class="entry-title heading-size-1">{{ .Title }}</h2>
+      <div class="post-meta-wrapper post-meta-single post-meta-single-top">
+          <span>List of All {{ .Title }}</span>
+      </div><!-- .post-meta-wrapper -->
+    </div><!-- .entry-header-inner -->
+  </header><!-- .entry-header -->
+  {{if .Params.Image }}
+  <figure class="featured-media">
+    <div class="featured-media-inner section-inner medium">
+      <img width="1200" height="769" src="{{ .Params.image | absURL }}"
+        class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="{{.Title }}"
+        sizes="(max-width: 1200px) 100vw, 1200px">
+    </div><!-- .featured-media-inner -->
+  </figure><!-- .featured-media -->
+  {{end}}
+  <div class="post-inner thin ">
+    <div class="entry-content">
+        <div class="entry-content">
+            {{- $type := .Type }}
+            {{- range $key, $value := .Data.Terms.Alphabetical }}
+            {{- $name := .Name }}
+            {{- $count := .Count }}
+            {{- with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+            {{/*  <li>  */}}
+                <a style="padding: 10px; text-decoration:none " href="{{ .Permalink }}">{{ .Name }}<strong>({{ $count }})</strong> </a>
+            {{/*  </li>  */}}
+            {{- end }}
+            {{- end }}
+            </div>
+    </div><!-- .entry-content -->
+  </div><!-- .post-inner -->
+</article>
+
+{{ end }}

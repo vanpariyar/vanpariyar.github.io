@@ -15,8 +15,19 @@ draft: false
 | Details | Description |
 |----|---------|
 | Full Name | Vanpariya Ronakkumar Jagdishbhai |
+| Short Name | Ronak Vanpariya |
 | Degree | B.E.(Computer) :male-technologist:|
 
+
+## Skills :construction_worker:
+| Name | Description |
+|----|---------|
+| Frameworks & Libraries | React, JQuery, Hugo |
+| CMS | Wordpress with Woocommerce, Membership and Subscription |
+| Languages | PHP, JavaScript, CSS, HTML, C, C++, C#.net |
+| Tools | Git, Github, BitBucket, Slack |
+| APIs | Paypal, WordPress Rest API, Google APIS |
+| Google | Firebase, Action on Google( Chat Bot), Dialogflow , AppsScript |
 
 ## Studied At :male-student:
 
