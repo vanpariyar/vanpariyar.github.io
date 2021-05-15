@@ -16,6 +16,9 @@ draft: false
 
 ### wp-post-views
 
+{{< tweet 1393155253017538560 >}}
+
+
 use Docker To use this Plugin setup. (Not Compulasory)
 
 ```
