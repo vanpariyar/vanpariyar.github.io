@@ -1,7 +1,7 @@
 ---
 title: "How Create NPM Package With Scoped @organization"
 date: 2021-06-11T16:43:52+05:30
-image : "https://user-images.githubusercontent.com/26689210/121681857-efcf0280-cad8-11eb-9921-c19dd9c56485.jpg"
+image : "https://user-images.githubusercontent.com/26689210/122342638-803a9680-cf62-11eb-830d-6d18ff16d4f9.png"
 # author
 author : ["Ronak Vanpariya"] # For Example ["Ronak Vanpariya"]
 # categories
