@@ -1,3 +1,5 @@
+[![github pages](https://github.com/vanpariyar/vanpariyar.github.io/actions/workflows/main.yml/badge.svg)](https://github.com/vanpariyar/vanpariyar.github.io/actions/workflows/main.yml)
+
 ## myblog
 
 ### Post Your Blog:
