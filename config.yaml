@@ -43,6 +43,11 @@ permalinks:
     # blog: 
     page: /:slug/
 
+taxonomies:
+    author: author
+    tag: tags
+    category: categories
+
 params:
     mainSections:
         - blog
