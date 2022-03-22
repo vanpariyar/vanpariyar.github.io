@@ -16,9 +16,9 @@ draft: false
 Hello Friends, :wave:
 today we will learn about something interesting which is automation for wordoress svn repository.
 
-```javascript
-Automation is fun and make us more productive.
-```
+
+> *Automation is fun and make us more productive.*
+
 ## Introduction
 I recommand you to open side by side this github link <a href="https://github.com/vanpariyar/wp-post-views" target="_blank">Plugin Repo</a> to understand properly.
 
