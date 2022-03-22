@@ -53,7 +53,7 @@ params:
         - blog
     featuredImageField: image
     rssFullContent: true
-    favicon: static/images/favicon.png
+    favicon: ./images/favicon.png
 
     footer:
         since: 2020
