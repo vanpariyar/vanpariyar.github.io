@@ -53,7 +53,7 @@ params:
         - blog
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon: static/images/favicon.png
 
     footer:
         since: 2020
@@ -175,7 +175,7 @@ params:
     opengraph:
         twitter:
             # Your Twitter username
-            site:
+            site: VanpariyaRonakJ
 
             # Available values: summary, summary_large_image
             card: summary_large_image
@@ -208,7 +208,7 @@ menu:
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
+          url: https://github.com/vanpariyar
           params:
               icon: brand-github
 
