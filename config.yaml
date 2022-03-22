@@ -53,7 +53,7 @@ params:
         - blog
     featuredImageField: image
     rssFullContent: true
-    favicon: ./images/favicon.png
+    favicon: https://vanpariyar.in/images/favicon.png
 
     footer:
         since: 2020
