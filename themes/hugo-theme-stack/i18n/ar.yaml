@@ -23,15 +23,15 @@ article:
     tableOfContents:
         other: جدول المحتويات
 
-    relatedContents:
+    relatedContent:
         other: محتوى مشابهه
         
     lastUpdatedOn:
         other: التعديل الاخير
 
     readingTime:
-        one: "قرائة {{ .Count }} دقيقة"
-        other: "قرائة {{ .Count }} دقائق"
+        one: "تُقرأ خلال دقيقة"
+        other: "تُقرأ خلال {{ .Count }} دقائق"
 
 notFound:
     title:
