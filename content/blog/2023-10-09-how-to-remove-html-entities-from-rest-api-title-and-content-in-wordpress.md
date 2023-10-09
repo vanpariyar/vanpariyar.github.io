@@ -1,7 +1,7 @@
 ---
 title: "How to remove HTML entities from the REST API title and content in WordPress"
 slug: "how-to-remove-html-entities-from-the-rest-api-title-and-content-in-wordpress"
-date: 2023-10-09T23:14:11+05:30
+date: 2023-10-08T23:14:11+05:30
 # image : "https://ia800508.us.archive.org/25/items/blog-images_202309/White%20Blue%20Illustration%20Business%20Blog%20Banner.png"
 # author
 author : ["Ronak Vanpariya"]
