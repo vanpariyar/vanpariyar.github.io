@@ -29,7 +29,7 @@ class Customise_WordPress {
   function __construct($name) {
   // Remove the REST API HTML entities.
     $post_type = "post";
-    add_filter( 'rest_prepare_ . $post_type', array( $this, 'decode_rest_api_title' ), 20, 3 );
+    add_filter( 'rest_prepare_'. $post_type, array( $this, 'decode_rest_api_title' ), 20, 3 );
   }
   
   /**
