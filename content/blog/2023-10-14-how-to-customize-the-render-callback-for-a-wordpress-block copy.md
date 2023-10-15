@@ -17,10 +17,6 @@ draft: false
 
 Hello everyone, :wave:
 
-**Blog post:**
-
-**How to customize the render callback for a WordPress block**
-
 WordPress blocks are a powerful way to create custom content for your website. But what if you want to customize the way a block is rendered? That's where the `render_callback` argument comes in.
 
 The `render_callback` argument tells WordPress which function to use to render a block. By default, WordPress uses a function called `render_block()`, which simply renders the block's HTML markup. However, you can override this function to provide your own custom rendering logic.
@@ -61,5 +57,7 @@ This function would wrap the block content in a sidebar and return the resulting
 You can use the `register_block_type_args` filter to customize the render callback for any block that is registered with WordPress. This can be a useful way to create custom block layouts and effects.
 
 Thanks For Reading 🙏
+
+> This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.
 
 {{< footer-donation >}}
