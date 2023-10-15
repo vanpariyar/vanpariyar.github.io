@@ -17,12 +17,14 @@ draft: false
 
 Hello everyone, :wave:
 
+## What is Render Callback
 WordPress blocks are a powerful way to create custom content for your website. But what if you want to customize the way a block is rendered? That's where the `render_callback` argument comes in.
 
 The `render_callback` argument tells WordPress which function to use to render a block. By default, WordPress uses a function called `render_block()`, which simply renders the block's HTML markup. However, you can override this function to provide your own custom rendering logic.
 
 To do this, you can use the `register_block_type_args` filter. This filter allows you to modify the block type arguments for any block that is registered with WordPress.
 
+## Example for modification
 The following code snippet shows how to customize the render callback for a block called `demo/content-with-sidebar`:
 
 ```php
@@ -38,6 +40,7 @@ In this example, we are replacing the default render callback function with a fu
 
 To use this code snippet, simply add it to your theme's `functions.php` file or to a custom plugin. Once you have done this, WordPress will use the custom render callback function to render the `demo/content-with-sidebar` block.
 
+## callback Function
 Here is an example of a custom render callback function:
 
 ```php

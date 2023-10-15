@@ -17,22 +17,22 @@ draft: false
 
 Hello everyone, :wave:
 
-**PHP Setup Useful Commands**
+# PHP Setup Useful Commands
 
 This blog post will discuss a useful PHP setup command that can be used to add the current working directory to the PHPCS installed paths. This can be useful for projects that use custom PHP coding standards or rulesets.
 
-**What is PHPCS?**
+## What is PHPCS?
 
 PHPCS is a PHP Coding Standards Fixer. It is a tool that can be used to check PHP code for compliance with a variety of coding standards, such as PSR-1, PSR-2, and PEAR. PHPCS can also be used to fix some coding errors automatically.
 
-**What are PHPCS installed paths?**
+## What are PHPCS installed paths?
 
 PHPCS installed paths are the directories that PHPCS will search for coding standards and rulesets. By default, PHPCS will search the following directories:
 
 * The `src/Standards` directory of the PHPCS installation.
 * The `Standards` directory of the current working directory.
 
-**How to add the current working directory to the PHPCS installed paths**
+## How to add the current working directory to the PHPCS installed paths
 
 To add the current working directory to the PHPCS installed paths, you can use the following command:
 
@@ -44,7 +44,7 @@ This command will first get the current PHPCS installed paths using the `phpcs -
 
 Once you have run this command, the current working directory will be added to the PHPCS installed paths. This means that PHPCS will be able to find any custom PHP coding standards or rulesets that are located in the current working directory.
 
-**Example usage**
+## Example usage
 
 The following example shows how to use the command to add the current working directory to the PHPCS installed paths:
 
