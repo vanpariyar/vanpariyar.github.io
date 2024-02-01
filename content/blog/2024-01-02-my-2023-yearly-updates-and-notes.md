@@ -1,7 +1,7 @@
 ---
 title: "My 2023 Yearly Updates and Notes"
 slug: "my-2023-yearly-updates-and-notes"
-date: 2023-11-09T10:14:11+05:30
+date: 2024-02-01T01:14:11+05:30
 image : "https://archive.org/download/blog-images_202309/my-2023-yearly-updates-and-notes.png"
 # author
 author : ["Ronak Vanpariya"]
@@ -19,6 +19,8 @@ Hello everyone, :wave:
 > In this blog, I will mention my 2023 updates:
 ## Technology Updates
 ### WordPress
+WordPress Turned 20 :tada:
+
 > https://wptavern.com/wordpress-6-4-1-fixes-a-critical-curl-requests-bug
 - This Articles from WP Tavern focused on bug fix in WordPress
 
@@ -42,6 +44,13 @@ Hello everyone, :wave:
 - The page gives an intro to WordPress blocks. 
 
 Also One of the best things to happen is a complete design change in WordPress.org, [Home Page](https://wordpress.org), and profile pages. Team also aims to complete in the future.
+
+## Personal Updates
+### Speaking WordCamp:microphone:
+I get chance to speak at WordPress local meetup at Ahmedabad, In Krishaweb's Office.
+I Spoke about HestiaCP installation on Amazon Light Sail server.
+
+You can find details at 
 
 ## Conclusion
 I am planning to do a monthly catch-up like this, Please let me know if I should do that.

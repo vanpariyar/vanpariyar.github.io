@@ -3,21 +3,28 @@ languageCode: en-us
 theme: hugo-theme-stack
 paginate: 5
 title: Example Site
+copyright: Example Person
 
 languages:
     en:
         languageName: English
         title: Example Site
         weight: 1
+        params:
+            description: Example description
     zh-cn:
         languageName: 中文
         title: 演示站点
         weight: 2
+        params:
+            description: 演示说明
     ar:
         languageName: عربي
         languagedirection: rtl
         title: موقع تجريبي
         weight: 3
+        params:
+            description: وصف تجريبي
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack
@@ -42,7 +49,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon:  # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
         since: 2020
@@ -221,7 +228,7 @@ markup:
     goldmark:
         renderer:
             ## Set to true if you have HTML content inside Markdown
-            unsafe: false
+            unsafe: true
     tableOfContents:
         endLevel: 4
         ordered: true
