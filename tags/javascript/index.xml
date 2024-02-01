@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>javascript on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/javascript/</link><description>Recent content in javascript on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 28 Jul 2022 23:14:11 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>How to register dynamic Gutenberg block in WordPress ?</title><link>https://vanpariyar.in/blog/how-to-register-dynamic-gutenberg-block-in-wordpress/</link><pubDate>Thu, 28 Jul 2022 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-register-dynamic-gutenberg-block-in-wordpress/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/200741064-dbc5af12-37a7-492a-b2e3-3e77076ad9bb.png" alt="Featured image of post How to register dynamic Gutenberg block in WordPress ?" />&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>&amp;#x1f44b; Hello friend, &amp;#x1f4dc; &amp;#x1f642; &amp;#x1f3e0;&lt;/p>
+&lt;p>I was working on Gutenberg Side from a large amount of time. &amp;#x23f2;&amp;#xfe0f;. If you comfortable with the WordPress development blog you can ues the docs itself &amp;#x1f449; &lt;a class="link" href="https://developer.wordpress.org/block-editor/" title="Wordpress Block Editor Handbook"
+target="_blank" rel="noopener"
+>Official Handbook&lt;/a>.&lt;/p>
+&lt;p>In this tutorial you will learn how to make &lt;a class="link" href="https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/creating-dynamic-blocks/" target="_blank" rel="noopener"
+>dynamic block&lt;/a> using Gutenberg.&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;ul>
+&lt;li>Any local development system with node.js and NPM/Yarn installed.&lt;/li>
+&lt;li>Run command in plugin folder&amp;rsquo;s via terminal&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ npx @wordpress/create-block demo-test --variant dynamic
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&amp;#x1f604; That&amp;rsquo;s it all setup is done now.&lt;/p>
+&lt;ul>
+&lt;li>After running command you will see that plugin is created with name &lt;code>demo-test&lt;/code>.&lt;/li>
+&lt;li>Activate &lt;code>Demo Test&lt;/code> Plugin from the dashboard, you will see hello world block in the Post or Page Editor with &amp;#x1f604; emoji.&lt;/li>
+&lt;/ul>
+&lt;h2 id="the-change">The Change&lt;/h2>
+&lt;p>Please check and see whole file structure in the plugin. You will find all block related code done in the &lt;code>src&lt;/code> folder &amp;#x1f4c2;.&lt;/p>
+&lt;p>Now You will not need to change the dynamic call back from the main plugin file by adding filter.&lt;/p>
+&lt;p>You can start code in &lt;code>edit.js&lt;/code>.&lt;/p>
+&lt;p>in &lt;code>src&lt;/code> folder you will see &lt;code>template.php&lt;/code> which is preconfigured by command.&lt;/p>
+&lt;p>You can write your code in the tempate and see more here &amp;#x1f449; &lt;a class="link" href="https://www.npmjs.com/package/@wordpress/create-block/" title="WordPress Create Block NPM package"
+target="_blank" rel="noopener"
+>Official NPM Package&lt;/a>.&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How Create NPM Package With Scoped @organization</title><link>https://vanpariyar.in/blog/2021-06-11-how-create-npm-package-with-scoped-organization/</link><pubDate>Fri, 11 Jun 2021 16:43:52 +0530</pubDate><guid>https://vanpariyar.in/blog/2021-06-11-how-create-npm-package-with-scoped-organization/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/122342638-803a9680-cf62-11eb-830d-6d18ff16d4f9.png" alt="Featured image of post How Create NPM Package With Scoped @organization" />&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Today we will learn how to create a NPM package like this &lt;a class="link" href="https://www.npmjs.com/package/@vanpariyar/text-manipulation" target="_blank" rel="noopener"
+>https://www.npmjs.com/package/@vanpariyar/text-manipulation&lt;/a>&lt;/p>
+&lt;p>I was wondering how I can make my own package in the javascript and publish it to the NPM registry ? &amp;#x1f914;.&lt;/p>
+&lt;p>So I found the below step that you can easily register your NPM package with your scoped. &amp;#x1fa94; ( This is Lamp in India &amp;#x1f4a1; &amp;#x1f604;)
+Like if you see &lt;code>@angular/package-name&lt;/code>&lt;/p>
+&lt;h2 id="requirements-100">Requirements &amp;#x1f4af;&lt;/h2>
+&lt;ul>
+&lt;li>Node.js installed&lt;/li>
+&lt;li>git installed&lt;/li>
+&lt;li>NPM account for publishing package.&lt;/li>
+&lt;/ul>
+&lt;h2 id="starting">Starting&lt;/h2>
+&lt;p>Let&amp;rsquo;s start the development now.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">mkdir text-manipulation
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> text-manipulation
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Npm login
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>After &lt;code>npm login&lt;/code> enter your username, password, email&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">npm init --scope&lt;span class="o">=&lt;/span>@my-org
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">// OR
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> npm init --scope&lt;span class="o">=&lt;/span>@my-username
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Now you will have the prompt that you need to answer for your package. Like the Package version, Github Repo etc.&lt;/p>
+&lt;p>Now &lt;code>open index.js&lt;/code> in your preferred editor. Then write your code in the file. &amp;#x1f58a;&amp;#xfe0f;&lt;/p>
+&lt;p>Add &lt;code>.gitignore&lt;/code> to ignore &lt;code>node_modules&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># .gitignore&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">node_mudules
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Then if you have a public account you need to add this parameter with the &lt;code>npm publish&lt;/code> command.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">npm publish --access public
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>Nice, &amp;#x1f389; You have published your first NPM package.&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>Make your own Custom Birthday Wisher</title><link>https://vanpariyar.in/blog/2021-05-12-custom-birthday-wisher/</link><pubDate>Sun, 28 Mar 2021 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/2021-05-12-custom-birthday-wisher/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/118013192-7aec9980-b36f-11eb-99b9-60facc29d930.png" alt="Featured image of post Make your own Custom Birthday Wisher" />&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>&amp;#x1f44b; Hello friend, &amp;#x1f4dc; &amp;#x1f642; &amp;#x1f3e0;&lt;/p>
+&lt;p>I was looking for a very creative way to wish someone &lt;em>&amp;quot; Happy Birthday &amp;ldquo;&lt;/em> &amp;#x1f389; . As you think we will make some creativity using javascript. also added this to the List of &lt;a class="link" href="https://vanpariyar.in/tools/" title="tools"
+>Tools&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>All Code Given Here:- &lt;a class="link" href="https://github.com/vanpariyar/birthday-wishes/" title="birthday Wishes Tool"
+target="_blank" rel="noopener"
+>Github Link&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Live demo Here:- &lt;a class="link" href="https://vanpariyar.github.io/birthday-wishes/?name=ShreeHariJI" title="birthday Wishes Tool Live Demo"
+target="_blank" rel="noopener"
+>Live Demo&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="template">Template&lt;/h3>
+&lt;p>You can found this HTML template on anywhere, Websites like codepen. I have taken from codepen.&lt;/p>
+&lt;p>&lt;strong>&lt;em>ProTip:&lt;/em>&lt;/strong> select very simple first time for learning &amp;#x270b;&lt;/p>
+&lt;p>i have chosed once very simple template. i have mentioned in the code. &lt;a target="_blank" href="https://github.com/vanpariyar/birthday-wishes/blob/main/index.html">My Template Link&lt;/a>&lt;/p>
+&lt;h3 id="how-to-make-tool-dynamic">How to make tool dynamic&lt;/h3>
+&lt;p>If the birthday wishes tool is dynamic then we do not need to make changes every time, so we can send personalized emails from the link like this.&lt;/p>
+&lt;p>&lt;img src="https://i.imgur.com/U855XJT.png"
+loading="lazy"
+alt="demo of personal birthday wishes tool"
+>&lt;/p>
+&lt;p>if you see we have one attribute &lt;code>?name&lt;/code> in the URL. That is the key to make this dynamic &amp;#x1f60a;&lt;/p>
+&lt;p>&lt;code>https://vanpariyar.github.io/birthday-wishes/?name=ShreeHariJI&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>this is our HTML&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;text&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">h1&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Happy Birthday! &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">span&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>To you!!!&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">span&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">h1&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>I hope you have a wonderful birthday&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;muted&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>- Enjoy Birthday&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>we will replave with &lt;code>&amp;lt;span id=&amp;quot;name&amp;quot;&amp;gt;To you!!!&amp;lt;/span&amp;gt;&lt;/code> by javascript.&lt;/p>
+&lt;ul>
+&lt;li>Add JavaScript&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">parseQueryString&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">function&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">location&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">search&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">objURL&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">str&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">replace&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">new&lt;/span> &lt;span class="nb">RegExp&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s2">&amp;#34;([^?=&amp;amp;]+)(=([^&amp;amp;]*))?&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span> &lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">$0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">$1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">$2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">$3&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">objURL&lt;/span>&lt;span class="p">[&lt;/span> &lt;span class="nx">$1&lt;/span> &lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">$3&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">objURL&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">//Example how to use it:
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">params&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">parseQueryString&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getElementById&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;name&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">innerText&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="nx">params&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="nb">decodeURIComponent&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">params&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;To You&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="finishing-up">Finishing Up&lt;/h3>
+&lt;p>You can host this tool anywhere you want to host. I prefer Github pages. But you can host anywhere like netlify, varcel, Heroku etc&amp;hellip;&lt;/p>
+&lt;h3 id="how-to-use">How to use&lt;/h3>
+&lt;p>Add parameter to the end of the URL like&lt;/p>
+&lt;p>&lt;code>https://vanpariyar.github.io/birthday-wishes/?name=ShreeHariJI&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;p>Here &lt;code>?name=ShreeHariJI&lt;/code> is parameter&lt;/p>
+&lt;/blockquote>
+&lt;p>change with you name and copy to browser you will see your desired name&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Start With Gutenberg Editor Custom Block Development</title><link>https://vanpariyar.in/blog/how-to-start-with-gutenberg-editor-custom-block-development/</link><pubDate>Thu, 21 May 2020 20:08:49 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-start-with-gutenberg-editor-custom-block-development/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/82570312-07baa800-9b9f-11ea-97cd-f553a56709be.png" alt="Featured image of post How to Start With Gutenberg Editor Custom Block Development" />&lt;h2 id="how-to-start-with-gutenberg-editor-custom-block-development">How to start with Gutenberg Editor custom block development.&lt;/h2>
+&lt;p>Start learning Gutenberg very easily. See step by step Guide.&lt;/p>
+&lt;p>How to start with Gutenberg editor development. What should I learn?&lt;/p>
+&lt;h3 id="for-reference">For Reference:&lt;/h3>
+&lt;p>So, My simple first answer is you should start the development using the new block by going &lt;a class="link" href="https://developer.wordpress.org/block-editor/" target="_blank" rel="noopener"
+>WordPress Block developer handbook.&lt;/a>&lt;/p>
+&lt;p>Believe me or not this is the best resource in the world after you know some basics of Javascript syntax.&lt;/p>
+&lt;h3 id="type-of-js-to-develop-gutenberg-block">Type of JS to develop Gutenberg Block&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Simple Javascript.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ES next standards.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>My personal choice is &lt;a class="link" href="https://github.com/ahmadawais/create-guten-block" target="_blank" rel="noopener"
+>create guten block&lt;/a>. this is an opensource NPM package for development Gutenberg block.&lt;/p>
+&lt;p>This package has all setup of &lt;a class="link" href="https://webpack.js.org/" target="_blank" rel="noopener"
+>webpack&lt;/a> and &lt;a class="link" href="https://eslint.org/" target="_blank" rel="noopener"
+>eslint&lt;/a> and one of the best parts is the setup process goes easy.&lt;/p>
+&lt;p>Go with ES next standards.&lt;/p>
+&lt;h2 id="relationship-with-react-and-gutenberg-editor">Relationship with React and Gutenberg Editor&lt;/h2>
+&lt;p>Gutenberg is developed on the top of &lt;a class="link" href="https://reactjs.org/" target="_blank" rel="noopener"
+>React&lt;/a>.&lt;/p>
+&lt;h3 id="can-i-use-hooks-like-react">Can I use Hooks like react&lt;/h3>
+&lt;p>yes, you can use it. You can pull out from wp.element.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>useState()&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>useRef()&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>etc..&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>If you don&amp;rsquo;t know React hooks Go here: &lt;a class="link" href="https://reactjs.org/docs/hooks-intro.html" target="_blank" rel="noopener"
+>https://reactjs.org/docs/hooks-intro.html&lt;/a>&lt;/p>
+&lt;h2 id="my-experience">My Experience&lt;/h2>
+&lt;h3 id="development-for-simple-js">Development For simple JS&lt;/h3>
+&lt;p>This is my simple Demo you can check it out:- &lt;a class="link" href="https://github.com/vanpariyar/gutenberg-blocks-plugin" target="_blank" rel="noopener"
+>https://github.com/vanpariyar/gutenberg-blocks-plugin&lt;/a>&lt;/p>
+&lt;h3 id="development-for-es-next">Development For ES Next&lt;/h3>
+&lt;p>fortunately, I have developed one Gutenberg WordPress plugin.
+&lt;a class="link" href="https://github.com/vanpariyar/gutenberg-instagram-post-grid" target="_blank" rel="noopener"
+>&lt;strong>vanpariyar/gutenberg-instagram-post-grid&lt;/strong>
+*Easy Doker Setup snap install docker pip install docker-compose docker-compose up goto: http://localhost:8080/ Enter…*github.com&lt;/a>&lt;/p>
+&lt;p>Check out this on Wordpress Listing: &lt;a class="link" href="https://wordpress.org/plugins/social-gallery-block" target="_blank" rel="noopener"
+>https://wordpress.org/plugins/social-gallery-block&lt;/a>&lt;/p>
+&lt;h3 id="other-demos">Other Demos&lt;/h3>
+&lt;p>&lt;a class="link" href="https://github.com/vanpariyar/gutenberg-demo-esnext" target="_blank" rel="noopener"
+>&lt;strong>vanpariyar/gutenberg-demo-esnext&lt;/strong>
+&lt;em>To get random Quote on Clicks. and saves in database. - vanpariyar/gutenberg-demo-esnext&lt;/em>github.com&lt;/a>&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>
