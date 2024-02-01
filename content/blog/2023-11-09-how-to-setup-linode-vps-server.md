@@ -16,7 +16,7 @@ draft: false
 ---
 
 Hello everyone, :wave:
-### Linode Server Setup Commands
+# Linode Server Setup Commands
 > This blog post will cover the basic steps involved in setting up a Linode server using the following shell script:
 
 If you want to use the Linode server [here is a link](https://www.linode.com/lp/refer/?r=002e869d999313a764652d3f6a833ea7b1cdbb09), You will receive some credits in your account
