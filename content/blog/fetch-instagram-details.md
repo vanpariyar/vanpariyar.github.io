@@ -1,6 +1,6 @@
 ---
 title: "Fetch Instagram Details"
-date: 2020-05-10T20:16:20+05:30
+date: 2024-09-09T10:00:00+05:30
 draft: false
 image : "https://user-images.githubusercontent.com/26689210/81502620-9f490c80-92fc-11ea-8775-43e099db29a8.png"
 
@@ -8,82 +8,63 @@ image : "https://user-images.githubusercontent.com/26689210/81502620-9f490c80-92
 author : ["Ronak Vanpariya"]
 # categories
 categories: ["Technology"]
-tags: ["Instagram", "Wordpress"]
+tags: ["Instagram", "API", "Wordpress"]
 # meta description
-description: "How to fetch instagram details from API"
+description: "How to fetch Instagram details using the latest API requirements."
 
 ---
 
-> This guide is deprecated you now need to login or need Instagram token use Instagram API
+> This guide has been updated: Instagram now requires an access token to fetch user data. This guide covers how to authenticate and retrieve user details using the Instagram Graph API.
 
-## Get-instagram-details
+## Get-Instagram-Details (Updated)
 
+Instagram has deprecated its public API, and now you need an **Instagram Access Token** to fetch user data. To retrieve details like username, profile picture, bio, and follower count, you must authenticate your app and get the appropriate permissions using the Instagram Graph API.
 
-#### You can find the live demo from this url https://vanpariyar.github.io/get-instagram-details/
+### Steps to Get Instagram Details
 
-- In this demo, I have implemented the Instagram Public GraphQL API so no worry to get Instagram Token.
-- (Note):- This API works only For the Public Details.
-- I have used simple structure, So anyone can able to make use of their own site.
+1. **Set up your Instagram Developer account:**
+   - Go to the [Instagram for Developers](https://developers.facebook.com/docs/instagram-api) page.
+   - Create an app and get the **App ID** and **App Secret**.
 
-## This API i have used in this Demo
-`https://www.instagram.com/"+instaUsername+"?__a=1`
-- we can use simple get request to the above API shown below:-
-______________________________________________________________
+2. **Get User Access Token:**
+   - After setting up the app, use OAuth to authenticate users and retrieve the access token. You'll need the **user_profile** and **user_media** permissions to access user details.
+   - You can refer to [Facebook's OAuth documentation](https://developers.facebook.com/docs/facebook-login/) for details on the authentication flow.
 
-```javascript
-$('.instagram-get').on( 'click', function(event) {
-    if(instaUsername = $('#instagram-username').val()){
-        $.ajax({
-            url:"https://www.instagram.com/"+instaUsername+"?__a=1",
-            type:'get',
-            success:function(response){
-                console.log(response);
-                $(".profile-pic").attr('src',response.graphql.user.profile_pic_url_hd);
-                $(".name").html(response.graphql.user.full_name);
-                $(".biography").html(response.graphql.user.biography);
-                $(".username").html(response.graphql.user.username);
-                $(".number-of-posts").html(response.graphql.user.edge_owner_to_timeline_media.count);
-                $(".followers").html((response.graphql.user.edge_followed_by.count));
-                $(".following").html((response.graphql.user.edge_follow.count));
-                $('.insta-details').show('slow');
-            }
+3. **Make API requests:**
+   - Once authenticated, you can use the following endpoint to get the user's data:
+   
+   `https://graph.instagram.com/me?fields=id,username,media_count,account_type&access_token={access-token}`
 
-        });    
-        
-    }
-});    
-```
-_____________________________________________________________________________________________
--You can see the response from the Ajax in your browser's console.
-- I have used the Jquery Ajax request To get The data and For the view part, I have used Bootstrap.
-- You can use anything to get data like if you are using the `fetch` method then you can use the below code.
+   Here's an example of how you can use **fetch** to get the data:
 
 ```javascript
 $('.instagram-get').on( 'click', function(event) {
-    if(instaUsername = $('#instagram-username').val()){
-        fetch("https://www.instagram.com/"+instaUsername+"?__a=1").then(function(response) {
-                console.log(response);
-                $(".profile-pic").attr('src',response.graphql.user.profile_pic_url_hd);
-                $(".name").html(response.graphql.user.full_name);
-                $(".biography").html(response.graphql.user.biography);
-                $(".username").html(response.graphql.user.username);
-                $(".number-of-posts").html(response.graphql.user.edge_owner_to_timeline_media.count);
-                $(".followers").html((response.graphql.user.edge_followed_by.count));
-                $(".following").html((response.graphql.user.edge_follow.count));
-                $('.insta-details').show('slow');
-        });
-    }
-});    
+    let accessToken = 'YOUR_ACCESS_TOKEN';  // Replace with a valid access token
+    fetch(`https://graph.instagram.com/me?fields=id,username,media_count,account_type&access_token=${accessToken}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        $(".username").html(data.username);
+        $(".media-count").html(data.media_count);
+        $(".account-type").html(data.account_type);
+        $('.insta-details').show('slow');
+    })
+    .catch(error => console.log('Error fetching Instagram details:', error));
+});
 ```
-______________________________________________________________________________________________________
 
->#### You can find the live demo from this url https://vanpariyar.github.io/get-instagram-details/
+### Important Notes:
+- The new Instagram API only supports user data that you have permission to access (your account or authenticated users).
+- You can also fetch media-related data such as recent posts using the media endpoints:
+  
+  `https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token={access-token}`
 
+### Demo URL (Deprecated)
+The demo that previously used the public GraphQL API no longer works, as Instagram now requires OAuth authentication and access tokens. You can check the [Instagram API documentation](https://developers.facebook.com/docs/instagram-api/) for more details on building your app.
 
+![Fetch Instagram Details](https://user-images.githubusercontent.com/26689210/70326031-832ad600-1859-11ea-91a5-e00e16563baa.png)
 
-![Fetch The Deatails Of instagram](https://user-images.githubusercontent.com/26689210/70326031-832ad600-1859-11ea-91a5-e00e16563baa.png)
-
-#### if Are You still reading this, :thumbsup: thank you so very much for your time :hourglass:.
--:hand: if you are getting any errors you can make issue on this repo with proper details .
+#### If you are still reading this, :thumbsup: thank you so very much for your time :hourglass:.
+:hand: If you are getting any errors, you can create an issue on this repo with proper details.
 
 {{< footer-donation >}}
