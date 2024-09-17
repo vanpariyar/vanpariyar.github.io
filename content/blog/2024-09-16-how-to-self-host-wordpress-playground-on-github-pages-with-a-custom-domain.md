@@ -1,7 +1,7 @@
 ---
 title: "How to Self-Host WordPress Playground on GitHub Pages with a Custom Domain"
 slug: "how-to-self-host-wordpress-playground-on-github-pages-with-a-custom-domain"
-date: 2024-10-16T23:14:11+05:30
+date: 2024-09-16T23:14:11+05:30
 # image : "https://ia800508.us.archive.org/25/items/blog-images_202309/White%20Blue%20Illustration%20Business%20Blog%20Banner.png"
 # author
 author : ["Ronak Vanpariya"]
