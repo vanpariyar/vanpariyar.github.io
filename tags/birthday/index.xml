@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Birthday on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/birthday/</link><description>Recent content in Birthday on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 28 Mar 2021 23:14:11 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/birthday/index.xml" rel="self" type="application/rss+xml"/><item><title>Make your own Custom Birthday Wisher</title><link>https://vanpariyar.in/blog/2021-05-12-custom-birthday-wisher/</link><pubDate>Sun, 28 Mar 2021 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/2021-05-12-custom-birthday-wisher/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/118013192-7aec9980-b36f-11eb-99b9-60facc29d930.png" alt="Featured image of post Make your own Custom Birthday Wisher" />&lt;h3 id="introduction">Introduction
+&lt;/h3>&lt;p>&amp;#x1f44b; Hello friend, &amp;#x1f4dc; &amp;#x1f642; &amp;#x1f3e0;&lt;/p>
+&lt;p>I was looking for a very creative way to wish someone &lt;em>&amp;quot; Happy Birthday &amp;ldquo;&lt;/em> &amp;#x1f389; . As you think we will make some creativity using javascript. also added this to the List of &lt;a class="link" href="https://vanpariyar.in/tools/" title="tools"
+>Tools&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>All Code Given Here:- &lt;a class="link" href="https://github.com/vanpariyar/birthday-wishes/" title="birthday Wishes Tool"
+target="_blank" rel="noopener"
+>Github Link&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Live demo Here:- &lt;a class="link" href="https://vanpariyar.github.io/birthday-wishes/?name=ShreeHariJI" title="birthday Wishes Tool Live Demo"
+target="_blank" rel="noopener"
+>Live Demo&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="template">Template
+&lt;/h3>&lt;p>You can found this HTML template on anywhere, Websites like codepen. I have taken from codepen.&lt;/p>
+&lt;p>&lt;strong>&lt;em>ProTip:&lt;/em>&lt;/strong> select very simple first time for learning &amp;#x270b;&lt;/p>
+&lt;p>i have chosed once very simple template. i have mentioned in the code. &lt;a target="_blank" href="https://github.com/vanpariyar/birthday-wishes/blob/main/index.html">My Template Link&lt;/a>&lt;/p>
+&lt;h3 id="how-to-make-tool-dynamic">How to make tool dynamic
+&lt;/h3>&lt;p>If the birthday wishes tool is dynamic then we do not need to make changes every time, so we can send personalized emails from the link like this.&lt;/p>
+&lt;p>&lt;img src="https://i.imgur.com/U855XJT.png"
+loading="lazy"
+alt="demo of personal birthday wishes tool"
+>&lt;/p>
+&lt;p>if you see we have one attribute &lt;code>?name&lt;/code> in the URL. That is the key to make this dynamic &amp;#x1f60a;&lt;/p>
+&lt;p>&lt;code>https://vanpariyar.github.io/birthday-wishes/?name=ShreeHariJI&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>this is our HTML&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;text&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">h1&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Happy Birthday! &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">span&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>To you!!!&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">span&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">h1&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>I hope you have a wonderful birthday&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;muted&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>- Enjoy Birthday&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>we will replave with &lt;code>&amp;lt;span id=&amp;quot;name&amp;quot;&amp;gt;To you!!!&amp;lt;/span&amp;gt;&lt;/code> by javascript.&lt;/p>
+&lt;ul>
+&lt;li>Add JavaScript&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">parseQueryString&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">function&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">str&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">location&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">search&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">objURL&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">str&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">replace&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">new&lt;/span> &lt;span class="nb">RegExp&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s2">&amp;#34;([^?=&amp;amp;]+)(=([^&amp;amp;]*))?&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;g&amp;#34;&lt;/span> &lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">$0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">$1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">$2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">$3&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">objURL&lt;/span>&lt;span class="p">[&lt;/span> &lt;span class="nx">$1&lt;/span> &lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">$3&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">objURL&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">//Example how to use it:
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">params&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">parseQueryString&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getElementById&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;name&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">innerText&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="nx">params&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="nb">decodeURIComponent&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">params&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;To You&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="finishing-up">Finishing Up
+&lt;/h3>&lt;p>You can host this tool anywhere you want to host. I prefer Github pages. But you can host anywhere like netlify, varcel, Heroku etc&amp;hellip;&lt;/p>
+&lt;h3 id="how-to-use">How to use
+&lt;/h3>&lt;p>Add parameter to the end of the URL like&lt;/p>
+&lt;p>&lt;code>https://vanpariyar.github.io/birthday-wishes/?name=ShreeHariJI&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;p>Here &lt;code>?name=ShreeHariJI&lt;/code> is parameter&lt;/p>
+&lt;/blockquote>
+&lt;p>change with you name and copy to browser you will see your desired name&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

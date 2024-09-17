@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google Appsscript on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/google-appsscript/</link><description>Recent content in Google Appsscript on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 01 May 2023 23:14:11 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/google-appsscript/index.xml" rel="self" type="application/rss+xml"/><item><title>Remind your domain/Hosting expiry in slack and email with google apps script for Free</title><link>https://vanpariyar.in/blog/remind-your-domain-hosting-expiry-in-slack-and-email-with-google-apps-script-for-free/</link><pubDate>Mon, 01 May 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/remind-your-domain-hosting-expiry-in-slack-and-email-with-google-apps-script-for-free/</guid><description>&lt;img src="https://i.imgur.com/DxXI7Jy.png" alt="Featured image of post Remind your domain/Hosting expiry in slack and email with google apps script for Free" />&lt;blockquote>
+&lt;p>This tutorial describes how to leverage google apps script and Google sheets to remind you of your due subscription on Time for free of cost.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="introduction">Introduction
+&lt;/h2>&lt;p>Yes it is possible 🙂 with very small google apps script programs. You can use and customise this program to use in and combine with any services.&lt;/p>
+&lt;p>This article will guide you how we track our domain and server due dates. It will help to save costs while starting a small business with a small portfolio of clients.&lt;/p>
+&lt;h2 id="start-from-here">Start from here
+&lt;/h2>&lt;p>Note: Please follow if you haven&amp;rsquo;t followed this 📝 &lt;a class="link" href="https://vanpariyar.in/blog/how-to-automate-slack-message-with-google-appscript-free/" >Blog&lt;/a>&lt;/p>
+&lt;p>To get started copy 👉 &lt;a class="link" href="https://docs.google.com/spreadsheets/d/1Blowo5WQggMedNTdQbsB4cbgGVuB1mOSv2pheOlratw/copy" title="Sheet To Copy"
+target="_blank" rel="noopener"
+>This sheet&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://i.imgur.com/0Q2sgdT.png"
+loading="lazy"
+alt="This sheet"
+>&lt;/p>
+&lt;h3 id="appscript-part">Appscript Part
+&lt;/h3>&lt;p>By copying this sheet you will also get the code for the setup, I will explain later in the blog.&lt;/p>
+&lt;p>You will have a basic sheet setup. Fill the details for the website and renew the date accordingly.&lt;/p>
+&lt;h2 id="how-to-test-properly">How to Test Properly
+&lt;/h2>&lt;p>First Test the main function by running in the editor. It will show unverified because you have not verified this app on google cloud, No problem you will need to click on Advance. Then click the unsafe option. No Problem you can verify your script later.&lt;/p>
+&lt;p>This will not remind automatically, We need to set up a trigger for the function.&lt;/p>
+&lt;p>&lt;img src="https://i.imgur.com/f9ovGEa.png"
+loading="lazy"
+alt="This sheet"
+>
+&lt;img src="https://i.imgur.com/9gpV8Wv.png"
+loading="lazy"
+alt="This sheet"
+>&lt;/p>
+&lt;p>You can add and customise this code according to your needs and requirements.&lt;/p>
+&lt;p>Feel free to drop a comment if you need more tutorials like this.&lt;/p>
+&lt;h2 id="creativity-">Creativity 🪔
+&lt;/h2>&lt;ul>
+&lt;li>You can create anything for reminder or notification.&lt;/li>
+&lt;li>You can add multiple services like Email.&lt;/li>
+&lt;li>You can use Zapier type services as well.&lt;/li>
+&lt;li>You can send your server to pause the user.&lt;/li>
+&lt;li>HestiaCP and other Hosting panels provides API so we can use it on Google Sheets as well.&lt;/li>
+&lt;/ul>
+&lt;p>This list is very long and it is free to use. You do not need to pay for sass tool once you developed your desired solution.&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>Learn How to automate slack message with google appscript free</title><link>https://vanpariyar.in/blog/how-to-automate-slack-message-with-google-appscript-free/</link><pubDate>Wed, 22 Mar 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-automate-slack-message-with-google-appscript-free/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/227001708-fa12952f-c97e-4153-934c-641cbb5b5bac.png" alt="Featured image of post Learn How to automate slack message with google appscript free" />&lt;blockquote>
+&lt;p>This tutorial describes how to automate the slack messages with google apps script for free of cost.&lt;/p>
+&lt;/blockquote>
+&lt;p>This tutorial describes how to automate the slack messages with google apps script for free of cost. Yes you read it right, We do not need the server for the webhooks of slack.&lt;/p>
+&lt;h2 id="what-is-the-webhook-of-slack">What is the webhook of slack?
+&lt;/h2>&lt;p>Slack Webhook allows users to send data to slack easily from outside APIs or resources. This can be a very useful feature to make a better notification system. You do not need to go through the email for important notification.&lt;/p>
+&lt;h2 id="create-a-google-apps-script-project">Create a google apps script project
+&lt;/h2>&lt;p>&lt;code>googleappscript.gs&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">sendMessageToSlack&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">WEBHOOK_URL&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="err">“&lt;/span>&lt;span class="nx">YOUR&lt;/span> &lt;span class="nx">webhook&lt;/span> &lt;span class="nx">from&lt;/span> &lt;span class="nx">slack&lt;/span>&lt;span class="err">”&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">payload&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;channel&amp;#34;&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;#watercooler&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;username&amp;#34;&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;icon_url&amp;#34;&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="err">“”&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;text&amp;#34;&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="sb">`Hello Team :memo: This is the important Updates, *Sales Team* please have a look :face_with_monocle:`&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;attachments&amp;#34;&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">[{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// &amp;#34;text&amp;#34;: `:memo: ${quotes[quoteNumber].quote}`,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="s2">&amp;#34;text&amp;#34;&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="err">“&lt;/span>&lt;span class="nx">ADD&lt;/span> &lt;span class="nx">any&lt;/span> &lt;span class="nx">text&lt;/span>&lt;span class="err">”&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;footer&amp;#34;&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;lt;”YOUR_GOOGLE_SHEET_URL”|edit script&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;mrkdwn_in&amp;#34;&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;text&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">options&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;method&amp;#34;&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;post&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;contentType&amp;#34;&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;application/json&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;payload&amp;#34;&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="nx">JSON&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">stringify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">payload&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">results&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">UrlFetchApp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">fetch&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">WEBHOOK_URL&lt;/span> &lt;span class="p">,&lt;/span> &lt;span class="nx">options&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="set-triggers">Set triggers
+&lt;/h2>&lt;p>I prefer my notification code daily in the morning, You can adjust your time by changing drop down.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/26689210/227000843-85752bed-20ba-4125-85b8-0e193397f8e9.png"
+loading="lazy"
+alt="How to set triggers in Google AppScript"
+>&lt;/p>
+&lt;h2 id="test-integration">Test integration
+&lt;/h2>&lt;p>Test google apps script function by clicking the run button. Please select appropriate function to run.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/26689210/227000910-781c5e32-dc84-49ff-9939-d3145c356444.png"
+loading="lazy"
+alt="How to run function in Google AppScript"
+>&lt;/p>
+&lt;h2 id="creativity">Creativity
+&lt;/h2>&lt;p>You can be creative with your code as much as you can. Few ideas for slack notification.
+Create downtime monitor
+Track domains and subscription monitor
+Track credit card due dates
+Track some specific rules by own&lt;/p>
+&lt;p>This list is very long and it is free to use. You do not need to pay for sass tool once you developed your desired solution.&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

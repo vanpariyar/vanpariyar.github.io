@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Server on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/server/</link><description>Recent content in Server on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 21 Sep 2023 23:14:11 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/server/index.xml" rel="self" type="application/rss+xml"/><item><title>How to install HestiaCP and install WordPress in VPS</title><link>https://vanpariyar.in/blog/how-to-install-hestiacp-and-install-wordpress-in-vps/</link><pubDate>Thu, 21 Sep 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-install-hestiacp-and-install-wordpress-in-vps/</guid><description>&lt;img src="https://ia800508.us.archive.org/25/items/blog-images_202309/White%20Blue%20Illustration%20Business%20Blog%20Banner.png" alt="Featured image of post How to install HestiaCP and install WordPress in VPS" />&lt;p>Hello everyone, &amp;#x1f44b;&lt;/p>
+&lt;p>Before we dive into the installation process, let&amp;rsquo;s briefly talk about why you might want to consider using HestiaCP for your WordPress hosting.&lt;/p>
+&lt;h2 id="why-choose-hestiacp">Why Choose HestiaCP?
+&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Open Source:&lt;/strong> HestiaCP is a free, open-source control panel that puts you in control of your server. You can customize it to meet your specific needs, and there are no licensing costs.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>User-Friendly:&lt;/strong> HestiaCP offers an intuitive and user-friendly interface, making server management accessible even for those without advanced technical knowledge.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Resource Efficiency:&lt;/strong> It&amp;rsquo;s designed to be lightweight and efficient, which is particularly valuable if you&amp;rsquo;re running a VPS or a smaller server.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Security:&lt;/strong> HestiaCP includes various security features to help protect your server and WordPress sites.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Now, let&amp;rsquo;s get into the nitty-gritty of installing HestiaCP on your VPS:&lt;/p>
+&lt;h2 id="installing-hestiacp-on-your-vps">Installing HestiaCP on Your VPS
+&lt;/h2>&lt;h3 id="prerequisites">Prerequisites:
+&lt;/h3>&lt;ul>
+&lt;li>A VPS with a fresh installation of a supported Linux distribution (e.g., Ubuntu, Debian).&lt;/li>
+&lt;li>SSH access to your VPS.&lt;/li>
+&lt;li>Basic command-line knowledge.&lt;/li>
+&lt;/ul>
+&lt;h3 id="the-installation-process">The Installation Process:
+&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>SSH into Your VPS:&lt;/strong> Connect to your VPS using SSH. You&amp;rsquo;ll need the server&amp;rsquo;s IP address and your SSH key.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Update Your System:&lt;/strong> Ensure your system is up-to-date by running:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo apt update
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt upgrade
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Download and Run the Installation Script:&lt;/strong> HestiaCP provides a convenient script for installation. You can download and execute it with:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">wget https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">bash hst-install.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>You can get more options on the hestiaCP documents.&lt;/p>
+&lt;ol start="4">
+&lt;li>
+&lt;p>&lt;strong>Follow the Prompts:&lt;/strong> The script will guide you through the installation process, asking for information such as your email address, hostname, and more. Be sure to provide accurate details.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Wait for Installation to Complete:&lt;/strong> The installation process might take a few minutes. Once it&amp;rsquo;s finished, you&amp;rsquo;ll receive information about accessing your HestiaCP control panel.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Access HestiaCP:&lt;/strong> Open a web browser and go to &lt;code>https://your-server-ip:8083&lt;/code> to access the HestiaCP control panel. Log in using the credentials you set during the installation.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Configure Your Server and Hosting:&lt;/strong> From the control panel, you can create websites, set up databases, configure DNS records, and more. It&amp;rsquo;s a powerful tool to manage your WordPress hosting environment.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>That&amp;rsquo;s it! You now have HestiaCP installed on your VPS, ready to host your WordPress websites efficiently and securely. Remember, HestiaCP offers a wide range of features and options, so take your time to explore and configure it to suit your specific needs.&lt;/p>
+&lt;p>I hope this overview has been helpful in getting you started with HestiaCP on your VPS. If you have any questions or need further assistance, feel free to ask, and I&amp;rsquo;ll do my best to help. Happy WordPress hosting!&lt;/p>
+&lt;p>Thank you for having me today, and I&amp;rsquo;m looking forward to any questions or discussions you might have on this topic.&lt;/p>
+&lt;p>Thanks For Reading 🙏&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

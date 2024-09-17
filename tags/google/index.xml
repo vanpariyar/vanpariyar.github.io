@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/google/</link><description>Recent content in Google on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 08 May 2020 15:40:24 +0600</lastBuildDate><atom:link href="https://vanpariyar.in/tags/google/index.xml" rel="self" type="application/rss+xml"/><item><title>Google assistant with Wordpress blog</title><link>https://vanpariyar.in/blog/google-assistant-with-wordpress-actions-on-google/</link><pubDate>Fri, 08 May 2020 15:40:24 +0600</pubDate><guid>https://vanpariyar.in/blog/google-assistant-with-wordpress-actions-on-google/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/81397515-1b005900-9145-11ea-9612-6848c459dbcf.png" alt="Featured image of post Google assistant with Wordpress blog" />&lt;h2 id="google-assistant-chat-app-that">Google assistant chat app that
+&lt;/h2>&lt;h3 id="fetch-the-new-recent-blog-from-creole-studios-website">fetch the new recent blog from creole Studios website.
+&lt;/h3>&lt;ul>
+&lt;li>Made With Express and node Js Backend.&lt;/li>
+&lt;li>Used &lt;a class="link" href="https://developer.wordpress.org/rest-api/reference/posts/#definition" target="_blank" rel="noopener"
+>WP Rest API&lt;/a> To get response from the Website.&lt;/li>
+&lt;li>Chat UI Powerd By &lt;a class="link" href="https://developers.google.com/assistant/conversational/responses" target="_blank" rel="noopener"
+>Google Assistant SDK Response API&lt;/a>.&lt;/li>
+&lt;li>Platform Of hosting &lt;a class="link" href="https://glitch.com/" target="_blank" rel="noopener"
+>Glitch&lt;/a>&lt;/li>
+&lt;li>See &lt;a class="link" href="https://glitch.com/edit/#!/creole-studios-blog" target="_blank" rel="noopener"
+>Demo On Glitch&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>Thanks. Built With &amp;#x2764;&amp;#xfe0f; For amazing People.&lt;/p>
+&lt;p>Please open the Google assistant in your &amp;#x1f4f1; mobile phone.
+and &lt;strong>Say Talk to Creole Studios Blog&lt;/strong>
+Then You can say one line Given below.&lt;/p>
+&lt;ul>
+&lt;li>Get recent blog.&lt;/li>
+&lt;li>Get new blog.&lt;/li>
+&lt;li>Get Blog.&lt;/li>
+&lt;/ul>
+&lt;p>It will fetch the recent Blog from the Our website. &amp;#x1f44d;&lt;/p>
+&lt;p>If you get the error, Please do second time.&lt;/p>
+&lt;p>Becuase Glitch is Free platform that sleeps after 5 minute of inactivity.&lt;/p>
+&lt;p>your first request is Wakes up server and Second time you&amp;rsquo;ll get output.&lt;/p>
+&lt;p>list all your valuable suggestions directly on &lt;a class="link" href="https://github.com/vanpariyar/google-assistant-creolestudios-blog/issues" target="_blank" rel="noopener"
+>GitHub&lt;/a>.&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

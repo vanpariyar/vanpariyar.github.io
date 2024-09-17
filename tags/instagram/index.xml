@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Instagram on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/instagram/</link><description>Recent content in Instagram on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 09 Sep 2024 10:00:00 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/instagram/index.xml" rel="self" type="application/rss+xml"/><item><title>Fetch Instagram Details</title><link>https://vanpariyar.in/blog/fetch-instagram-details/</link><pubDate>Mon, 09 Sep 2024 10:00:00 +0530</pubDate><guid>https://vanpariyar.in/blog/fetch-instagram-details/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/81502620-9f490c80-92fc-11ea-8775-43e099db29a8.png" alt="Featured image of post Fetch Instagram Details" />&lt;blockquote>
+&lt;p>This guide has been updated: Instagram now requires an access token to fetch user data. This guide covers how to authenticate and retrieve user details using the Instagram Graph API.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="get-instagram-details-updated">Get-Instagram-Details (Updated)
+&lt;/h2>&lt;p>Instagram has deprecated its public API, and now you need an &lt;strong>Instagram Access Token&lt;/strong> to fetch user data. To retrieve details like username, profile picture, bio, and follower count, you must authenticate your app and get the appropriate permissions using the Instagram Graph API.&lt;/p>
+&lt;h3 id="steps-to-get-instagram-details">Steps to Get Instagram Details
+&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Set up your Instagram Developer account:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Go to the &lt;a class="link" href="https://developers.facebook.com/docs/instagram-api" target="_blank" rel="noopener"
+>Instagram for Developers&lt;/a> page.&lt;/li>
+&lt;li>Create an app and get the &lt;strong>App ID&lt;/strong> and &lt;strong>App Secret&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Get User Access Token:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>After setting up the app, use OAuth to authenticate users and retrieve the access token. You&amp;rsquo;ll need the &lt;strong>user_profile&lt;/strong> and &lt;strong>user_media&lt;/strong> permissions to access user details.&lt;/li>
+&lt;li>You can refer to &lt;a class="link" href="https://developers.facebook.com/docs/facebook-login/" target="_blank" rel="noopener"
+>Facebook&amp;rsquo;s OAuth documentation&lt;/a> for details on the authentication flow.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Make API requests:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Once authenticated, you can use the following endpoint to get the user&amp;rsquo;s data:&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>https://graph.instagram.com/me?fields=id,username,media_count,account_type&amp;amp;access_token={access-token}&lt;/code>&lt;/p>
+&lt;p>Here&amp;rsquo;s an example of how you can use &lt;strong>fetch&lt;/strong> to get the data:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;.instagram-get&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">on&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s1">&amp;#39;click&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kd">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">event&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">accessToken&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;YOUR_ACCESS_TOKEN&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// Replace with a valid access token
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">fetch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sb">`https://graph.instagram.com/me?fields=id,username,media_count,account_type&amp;amp;access_token=&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">accessToken&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">response&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">response&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">json&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;.username&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">html&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">username&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;.media-count&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">html&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">media_count&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;.account-type&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">html&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">account_type&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;.insta-details&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">show&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;slow&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">error&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Error fetching Instagram details:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">error&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="important-notes">Important Notes:
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>The new Instagram API only supports user data that you have permission to access (your account or authenticated users).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You can also fetch media-related data such as recent posts using the media endpoints:&lt;/p>
+&lt;p>&lt;code>https://graph.instagram.com/me/media?fields=id,caption,media_url&amp;amp;access_token={access-token}&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="demo-url-deprecated">Demo URL (Deprecated)
+&lt;/h3>&lt;p>The demo that previously used the public GraphQL API no longer works, as Instagram now requires OAuth authentication and access tokens. You can check the &lt;a class="link" href="https://developers.facebook.com/docs/instagram-api/" target="_blank" rel="noopener"
+>Instagram API documentation&lt;/a> for more details on building your app.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/26689210/70326031-832ad600-1859-11ea-91a5-e00e16563baa.png"
+loading="lazy"
+alt="Fetch Instagram Details"
+>&lt;/p>
+&lt;h4 id="if-you-are-still-reading-this-thumbsup-thank-you-so-very-much-for-your-time-hourglass">If you are still reading this, &amp;#x1f44d; thank you so very much for your time &amp;#x231b;.
+&lt;/h4>&lt;p>&amp;#x270b; If you are getting any errors, you can create an issue on this repo with proper details.&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to use SOcial Gallary Block In wordpress</title><link>https://vanpariyar.in/blog/instagram-post-grid-in-wordpress-gutenberg/</link><pubDate>Sat, 14 Mar 2020 15:40:24 +0600</pubDate><guid>https://vanpariyar.in/blog/instagram-post-grid-in-wordpress-gutenberg/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/81413061-6e34d480-9162-11ea-9916-482aa3c747d6.png" alt="Featured image of post How to use SOcial Gallary Block In wordpress" />&lt;p>Easy Doker Setup&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">snap install docker
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pip install docker-compose
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">docker-compose up
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>goto : http://localhost:8080/&lt;/p>
+&lt;h3 id="live-plugin---httpswordpressorgpluginssocial-gallery-block">Live Plugin -&amp;gt; &lt;a class="link" href="https://wordpress.org/plugins/social-gallery-block/" target="_blank" rel="noopener"
+>https://wordpress.org/plugins/social-gallery-block/&lt;/a>
+&lt;/h3>&lt;h3 id="see-the-demo">See the Demo
+&lt;/h3>&lt;p>Enter any Public UserName To this Plugin and You Will see the recent 16 posts.&lt;/p>
+&lt;p>Welcome You to develop This Plugin More efficient.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/26689210/76748799-66c7ff00-67a1-11ea-83a3-d24205d2fa56.png"
+loading="lazy"
+alt="Screenshot from 2020-03-16 15-33-19fasd"
+>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/26689210/78034043-d4b91c80-7384-11ea-9889-a1639ec29de2.png"
+loading="lazy"
+alt="Screenshot from 2020-03-31 19-07-03"
+>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/26689210/78034061-d7b40d00-7384-11ea-89ff-d1fa97c4db5b.png"
+loading="lazy"
+alt="Screenshot from 2020-03-31 19-07-06"
+>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/26689210/78034067-da166700-7384-11ea-9f9a-e36c271fd321.png"
+loading="lazy"
+alt="Screenshot from 2020-03-31 19-07-13"
+>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/26689210/78034079-dbe02a80-7384-11ea-82d9-b10c416aef52.png"
+loading="lazy"
+alt="Screenshot from 2020-03-31 19-07-17"
+>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/26689210/78034091-dda9ee00-7384-11ea-85b9-f68dfddf3aac.png"
+loading="lazy"
+alt="Screenshot from 2020-03-31 19-07-35"
+>&lt;/p>
+&lt;hr>
+&lt;p>Thanks for the reading &amp;#x1f44d;&lt;/p>
+&lt;h4 id="have-any-doubts-or-suggetions-thinking_face">Have any doubts or suggetions :thinking_face:
+&lt;/h4>&lt;p>Feel free to &lt;a class="link" href="https://vanpariyar.in/contact/" >connect&lt;/a> social media platform given on this page :- &lt;a class="link" href="https://vanpariyar.in/contact/" >Contact page&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;p>This project was bootstrapped with &lt;a class="link" href="https://github.com/ahmadawais/create-guten-block" target="_blank" rel="noopener"
+>Create Guten Block&lt;/a>.&lt;/p>
+&lt;p>Below you will find some information on how to run scripts.&lt;/p>
+&lt;blockquote>
+&lt;p>You can find the most recent version of this guide &lt;a class="link" href="https://github.com/ahmadawais/create-guten-block" target="_blank" rel="noopener"
+>here&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="--npm-start">👉 &lt;code>npm start&lt;/code>
+&lt;/h2>&lt;ul>
+&lt;li>Use to compile and run the block in development mode.&lt;/li>
+&lt;li>Watches for any changes and reports back any errors in your code.&lt;/li>
+&lt;/ul>
+&lt;h2 id="--npm-run-build">👉 &lt;code>npm run build&lt;/code>
+&lt;/h2>&lt;ul>
+&lt;li>Use to build production code for your block inside &lt;code>dist&lt;/code> folder.&lt;/li>
+&lt;li>Runs once and reports back the gzip file sizes of the produced code.&lt;/li>
+&lt;/ul>
+&lt;h2 id="--npm-run-eject">👉 &lt;code>npm run eject&lt;/code>
+&lt;/h2>&lt;ul>
+&lt;li>Use to eject your plugin out of &lt;code>create-guten-block&lt;/code>.&lt;/li>
+&lt;li>Provides all the configurations so you can customize the project as you want.&lt;/li>
+&lt;li>It&amp;rsquo;s a one-way street, &lt;code>eject&lt;/code> and you have to maintain everything yourself.&lt;/li>
+&lt;li>You don&amp;rsquo;t normally have to &lt;code>eject&lt;/code> a project because by ejecting you lose the connection with &lt;code>create-guten-block&lt;/code> and from there onwards you have to update and maintain all the dependencies on your own.&lt;/li>
+&lt;/ul>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

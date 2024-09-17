@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NPM on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/npm/</link><description>Recent content in NPM on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 11 Jun 2021 16:43:52 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/npm/index.xml" rel="self" type="application/rss+xml"/><item><title>How Create NPM Package With Scoped @organization</title><link>https://vanpariyar.in/blog/2021-06-11-how-create-npm-package-with-scoped-organization/</link><pubDate>Fri, 11 Jun 2021 16:43:52 +0530</pubDate><guid>https://vanpariyar.in/blog/2021-06-11-how-create-npm-package-with-scoped-organization/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/122342638-803a9680-cf62-11eb-830d-6d18ff16d4f9.png" alt="Featured image of post How Create NPM Package With Scoped @organization" />&lt;h2 id="introduction">Introduction
+&lt;/h2>&lt;p>Today we will learn how to create a NPM package like this &lt;a class="link" href="https://www.npmjs.com/package/@vanpariyar/text-manipulation" target="_blank" rel="noopener"
+>https://www.npmjs.com/package/@vanpariyar/text-manipulation&lt;/a>&lt;/p>
+&lt;p>I was wondering how I can make my own package in the javascript and publish it to the NPM registry ? &amp;#x1f914;.&lt;/p>
+&lt;p>So I found the below step that you can easily register your NPM package with your scoped. &amp;#x1fa94; ( This is Lamp in India &amp;#x1f4a1; &amp;#x1f604;)
+Like if you see &lt;code>@angular/package-name&lt;/code>&lt;/p>
+&lt;h2 id="requirements-100">Requirements &amp;#x1f4af;
+&lt;/h2>&lt;ul>
+&lt;li>Node.js installed&lt;/li>
+&lt;li>git installed&lt;/li>
+&lt;li>NPM account for publishing package.&lt;/li>
+&lt;/ul>
+&lt;h2 id="starting">Starting
+&lt;/h2>&lt;p>Let&amp;rsquo;s start the development now.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">mkdir text-manipulation
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> text-manipulation
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Npm login
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>After &lt;code>npm login&lt;/code> enter your username, password, email&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">npm init --scope&lt;span class="o">=&lt;/span>@my-org
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">// OR
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> npm init --scope&lt;span class="o">=&lt;/span>@my-username
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Now you will have the prompt that you need to answer for your package. Like the Package version, Github Repo etc.&lt;/p>
+&lt;p>Now &lt;code>open index.js&lt;/code> in your preferred editor. Then write your code in the file. &amp;#x1f58a;&amp;#xfe0f;&lt;/p>
+&lt;p>Add &lt;code>.gitignore&lt;/code> to ignore &lt;code>node_modules&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># .gitignore&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">node_mudules
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Then if you have a public account you need to add this parameter with the &lt;code>npm publish&lt;/code> command.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">npm publish --access public
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="conclusion">Conclusion
+&lt;/h2>&lt;p>Nice, &amp;#x1f389; You have published your first NPM package.&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

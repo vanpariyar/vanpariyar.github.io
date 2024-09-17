@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Php on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/php/</link><description>Recent content in Php on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 14 Oct 2023 23:14:11 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/php/index.xml" rel="self" type="application/rss+xml"/><item><title>PHPCS Setup Useful Commands</title><link>https://vanpariyar.in/blog/phpcs-setup-useful-commands/</link><pubDate>Sat, 14 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/phpcs-setup-useful-commands/</guid><description>&lt;p>Hello everyone, &amp;#x1f44b;&lt;/p>
+&lt;h1 id="php-setup-useful-commands">PHP Setup Useful Commands
+&lt;/h1>&lt;p>This blog post will discuss a useful PHP setup command that can be used to add the current working directory to the PHPCS installed paths. This can be useful for projects that use custom PHP coding standards or rulesets.&lt;/p>
+&lt;h2 id="what-is-phpcs">What is PHPCS?
+&lt;/h2>&lt;p>PHPCS is a PHP Coding Standards Fixer. It is a tool that can be used to check PHP code for compliance with a variety of coding standards, such as PSR-1, PSR-2, and PEAR. PHPCS can also be used to fix some coding errors automatically.&lt;/p>
+&lt;h2 id="what-are-phpcs-installed-paths">What are PHPCS installed paths?
+&lt;/h2>&lt;p>PHPCS installed paths are the directories that PHPCS will search for coding standards and rulesets. By default, PHPCS will search the following directories:&lt;/p>
+&lt;ul>
+&lt;li>The &lt;code>src/Standards&lt;/code> directory of the PHPCS installation.&lt;/li>
+&lt;li>The &lt;code>Standards&lt;/code> directory of the current working directory.&lt;/li>
+&lt;/ul>
+&lt;h2 id="how-to-add-the-current-working-directory-to-the-phpcs-installed-paths">How to add the current working directory to the PHPCS installed paths
+&lt;/h2>&lt;p>To add the current working directory to the PHPCS installed paths, you can use the following command:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">phpcs_ipath&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>phpcs --config-show installed_paths&lt;span class="k">)&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nv">oldpath&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">phpcs_ipath&lt;/span>&lt;span class="p">##*:&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="p">;&lt;/span> phpcs --config-set installed_paths &lt;span class="si">${&lt;/span>&lt;span class="nv">oldpath&lt;/span>&lt;span class="si">}&lt;/span>,&lt;span class="k">$(&lt;/span>&lt;span class="nb">pwd&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This command will first get the current PHPCS installed paths using the &lt;code>phpcs --config-show installed_paths&lt;/code> command. It will then remove the leading colon from the installed paths using the &lt;code>oldpath=${phpcs_ipath##*:}&lt;/code> command. Finally, it will set the PHPCS installed paths to the old installed paths plus the current working directory using the &lt;code>phpcs --config-set installed_paths ${oldpath},$(pwd)&lt;/code> command.&lt;/p>
+&lt;p>Once you have run this command, the current working directory will be added to the PHPCS installed paths. This means that PHPCS will be able to find any custom PHP coding standards or rulesets that are located in the current working directory.&lt;/p>
+&lt;h2 id="example-usage">Example usage
+&lt;/h2>&lt;p>The following example shows how to use the command to add the current working directory to the PHPCS installed paths:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Get the current PHPCS installed paths.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">phpcs_ipath&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>phpcs --config-show installed_paths&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Remove the leading colon from the installed paths.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">oldpath&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">phpcs_ipath&lt;/span>&lt;span class="p">##*:&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Set the PHPCS installed paths to the old installed paths plus the current working directory.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">phpcs --config-set installed_paths &lt;span class="si">${&lt;/span>&lt;span class="nv">oldpath&lt;/span>&lt;span class="si">}&lt;/span>,&lt;span class="k">$(&lt;/span>&lt;span class="nb">pwd&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Once you have run this command, the current working directory will be added to the PHPCS installed paths. You can then use PHPCS to check your PHP code for compliance with the custom coding standards or rulesets that are located in the current working directory.&lt;/p>
+&lt;p>Thanks For Reading 🙏&lt;/p>
+&lt;blockquote>
+&lt;p>This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p>
+&lt;/blockquote>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to register dynamic Gutenberg block in WordPress ?</title><link>https://vanpariyar.in/blog/how-to-register-dynamic-gutenberg-block-in-wordpress/</link><pubDate>Thu, 28 Jul 2022 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-register-dynamic-gutenberg-block-in-wordpress/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/200741064-dbc5af12-37a7-492a-b2e3-3e77076ad9bb.png" alt="Featured image of post How to register dynamic Gutenberg block in WordPress ?" />&lt;h2 id="introduction">Introduction
+&lt;/h2>&lt;p>&amp;#x1f44b; Hello friend, &amp;#x1f4dc; &amp;#x1f642; &amp;#x1f3e0;&lt;/p>
+&lt;p>I was working on Gutenberg Side from a large amount of time. &amp;#x23f2;&amp;#xfe0f;. If you comfortable with the WordPress development blog you can ues the docs itself &amp;#x1f449; &lt;a class="link" href="https://developer.wordpress.org/block-editor/" title="Wordpress Block Editor Handbook"
+target="_blank" rel="noopener"
+>Official Handbook&lt;/a>.&lt;/p>
+&lt;p>In this tutorial you will learn how to make &lt;a class="link" href="https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/creating-dynamic-blocks/" target="_blank" rel="noopener"
+>dynamic block&lt;/a> using Gutenberg.&lt;/p>
+&lt;h2 id="setup">Setup
+&lt;/h2>&lt;ul>
+&lt;li>Any local development system with node.js and NPM/Yarn installed.&lt;/li>
+&lt;li>Run command in plugin folder&amp;rsquo;s via terminal&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ npx @wordpress/create-block demo-test --variant dynamic
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&amp;#x1f604; That&amp;rsquo;s it all setup is done now.&lt;/p>
+&lt;ul>
+&lt;li>After running command you will see that plugin is created with name &lt;code>demo-test&lt;/code>.&lt;/li>
+&lt;li>Activate &lt;code>Demo Test&lt;/code> Plugin from the dashboard, you will see hello world block in the Post or Page Editor with &amp;#x1f604; emoji.&lt;/li>
+&lt;/ul>
+&lt;h2 id="the-change">The Change
+&lt;/h2>&lt;p>Please check and see whole file structure in the plugin. You will find all block related code done in the &lt;code>src&lt;/code> folder &amp;#x1f4c2;.&lt;/p>
+&lt;p>Now You will not need to change the dynamic call back from the main plugin file by adding filter.&lt;/p>
+&lt;p>You can start code in &lt;code>edit.js&lt;/code>.&lt;/p>
+&lt;p>in &lt;code>src&lt;/code> folder you will see &lt;code>template.php&lt;/code> which is preconfigured by command.&lt;/p>
+&lt;p>You can write your code in the tempate and see more here &amp;#x1f449; &lt;a class="link" href="https://www.npmjs.com/package/@wordpress/create-block/" title="WordPress Create Block NPM package"
+target="_blank" rel="noopener"
+>Official NPM Package&lt;/a>.&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Clone Whole Wordpress Site With Database When You Only Have Ftp</title><link>https://vanpariyar.in/blog/2021-08-20-how-to-clone-whole-wordpress-site-with-database-when-you-only-have-ftp/</link><pubDate>Fri, 20 Aug 2021 18:18:05 +0530</pubDate><guid>https://vanpariyar.in/blog/2021-08-20-how-to-clone-whole-wordpress-site-with-database-when-you-only-have-ftp/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/130238376-7d9cdc20-90f7-4d73-a59f-02b9a9f14198.png" alt="Featured image of post How to Clone Whole Wordpress Site With Database When You Only Have Ftp" />&lt;h2 id="problem-thinking">Problem &amp;#x1f914;
+&lt;/h2>&lt;ul>
+&lt;li>How to Clone Whole Wordpress Site With Database When You Only Have Ftp&lt;/li>
+&lt;/ul>
+&lt;p>I came across a good idea that can save your time so I thought it would be great to share.&lt;/p>
+&lt;h2 id="what-i-had">What i had
+&lt;/h2>&lt;p>I had one website&amp;rsquo;s FTP only which is the WordPress website. and I was waiting to reply for 2 days.&lt;/p>
+&lt;h2 id="output">Output
+&lt;/h2>&lt;p>I need to clone the whole website. in my local environment with the database installed.&lt;/p>
+&lt;h2 id="research-book">Research &amp;#x1f4d6;
+&lt;/h2>&lt;p>After searching so many articles, found a simple tool call &lt;a class="link" href="https://www.adminer.org/" target="_blank" rel="noopener"
+>adminer&lt;/a> i know many of us know and used this tool.&lt;/p>
+&lt;h2 id="solutions-bulb">solutions &amp;#x1f4a1;
+&lt;/h2>&lt;p>have downloaded its PHP file. what I have done is, have uploaded that &lt;code>adminer-4.1.2.php&lt;/code> and renamed it to adminer.php to the document root.&lt;/p>
+&lt;p>then extract credentials from the &lt;code>wp-config.php&lt;/code> for the MYSQL.&lt;/p>
+&lt;p>simply hit the URL _ https://your-site/adminer.php&lt;/p>
+&lt;p>then entered credentials extracted from the &lt;code>wp-config.php&lt;/code> then exported the DB from its GUI.&lt;/p>
+&lt;p>files I have downloaded from the FTP and Database from the adminer. that&amp;rsquo;s all.&lt;/p>
+&lt;p>&amp;#x1f389; The client replied after 2 days found he was on vacation &amp;#x1f604;&lt;/p></description></item><item><title>How to Get an Array of Random Numbers or elements in Wordpress ?</title><link>https://vanpariyar.in/blog/how-to-get-array-of-random-numbers-in-wordpress/</link><pubDate>Tue, 30 Jun 2020 09:51:14 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-get-array-of-random-numbers-in-wordpress/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/86144953-f8bb0400-bb13-11ea-81a7-929eb9232a1c.png" alt="Featured image of post How to Get an Array of Random Numbers or elements in Wordpress ?" />&lt;p>In this blog post, we will discuss generating a different type of array of numbers.&lt;/p>
+&lt;h3 id="topics">Topics:
+&lt;/h3>&lt;ul>
+&lt;li>How to generate a random number.&lt;/li>
+&lt;li>How to generate random indexes from the array.&lt;/li>
+&lt;li>How to generate random elements from the array.&lt;/li>
+&lt;/ul>
+&lt;p>Hi &amp;#x1f44b; Welcome&lt;/p>
+&lt;hr>
+&lt;h3 id="how-to-generate-a-random-number">How to generate a Random number.
+&lt;/h3>&lt;p>we will use this function in the below code.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;?&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="nf">get_random_element&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$array_of_element&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">mt_rand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$array_of_element&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;h3 id="how-to-generate-random-indexes-from-the-array">How to generate random indexes from the array.
+&lt;/h3>&lt;ul>
+&lt;li>we have used this code to loop the above-mentioned function.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;?&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="nf">get_random_array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$array_of_element&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$count_return&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$random_array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">count&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$random_array&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="nv">$count_return&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line hl">&lt;span class="cl"> &lt;span class="nv">$random_number&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">get_random_element&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$array_of_element&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="o">!&lt;/span> &lt;span class="nx">in_array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$random_number&lt;/span> &lt;span class="p">,&lt;/span> &lt;span class="nv">$random_array&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">array_push&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$random_array&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$random_number&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nv">$random_array&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="how-to-generate-random-elements-from-the-array">How to generate random elements from the array.
+&lt;/h3>&lt;p>In this function, we have used the above function the same to get random indexes from the array.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;?&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="nf">get_random_values&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$array_of_element&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$count_return&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line hl">&lt;span class="cl"> &lt;span class="nv">$random_index&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">get_random_array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$array_of_element&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$count_return&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$return_array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">foreach&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$random_index&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nv">$key&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="nv">$random_index_number&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$return_array&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nv">$key&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">$array_of_element&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nv">$random_index_number&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nv">$return_array&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="protip">Protip
+&lt;/h3>&lt;ul>
+&lt;li>You can combine this code like this and get the array of values by passing an array.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;?&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line hl">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="nf">get_random_element&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$array_of_element&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">mt_rand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$array_of_element&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="nf">get_random_array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$array_of_element&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$count_return&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$random_array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">count&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$random_array&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="nv">$count_return&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line hl">&lt;span class="cl"> &lt;span class="nv">$random_number&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">get_random_element&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$array_of_element&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="o">!&lt;/span> &lt;span class="nx">in_array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$random_number&lt;/span> &lt;span class="p">,&lt;/span> &lt;span class="nv">$random_array&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">array_push&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$random_array&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$random_number&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nv">$random_array&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="nf">get_random_values&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$array_of_element&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$count_return&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line hl">&lt;span class="cl"> &lt;span class="nv">$random_index&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">get_random_array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$array_of_element&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$count_return&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$return_array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">foreach&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$random_index&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nv">$key&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="nv">$random_index_number&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$return_array&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nv">$key&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">$array_of_element&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nv">$random_index_number&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nv">$return_array&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="conclution">conclution
+&lt;/h3>&lt;ul>
+&lt;li>You can call this function like:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;?&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line hl">&lt;span class="cl">&lt;span class="nv">$large_array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">25&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">85&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">47&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">78&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">89&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">79&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">258&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">74&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * $arg-1 is array of elements ,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * $arg-2 is number of elements to be return
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$random_array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">get_random_values&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$large_array&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>
