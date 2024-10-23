@@ -1,7 +1,7 @@
 ---
 title: "How to Self-Host WordPress Playground on GitHub Pages with a Custom Domain"
 slug: "how-to-self-host-wordpress-playground-on-github-pages-with-a-custom-domain"
-date: 2024-09-16T23:14:11+05:30
+date: 2024-10-21T23:14:11+05:30
 # image : "https://ia800508.us.archive.org/25/items/blog-images_202309/White%20Blue%20Illustration%20Business%20Blog%20Banner.png"
 # author
 author : ["Ronak Vanpariya"]
@@ -50,13 +50,16 @@ jobs:
     environment:
       name: playground-wordpress-net-wp-cloud
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
       - uses: ./.github/actions/prepare-playground
       - run: npm run build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/packages/playground/wasm-wordpress-net # The folder to deploy
+          folder: dist/packages/playground/wasm-wordpress-net # The folder the action should deploy.
+
 ```
 
 ### 3. Run the Workflow Manually
