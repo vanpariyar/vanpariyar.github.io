@@ -50,15 +50,15 @@ jobs:
     environment:
       name: playground-wordpress-net-wp-cloud
     steps:
-			- uses: actions/checkout@v4
-				with:
-						submodules: true
-			- uses: ./.github/actions/prepare-playground
-			- run: npm run build
-			- name: Deploy 🚀
-				uses: JamesIves/github-pages-deploy-action@v4
-				with:
-					folder: dist/packages/playground/wasm-wordpress-net # The folder the action should deploy.
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: ./.github/actions/prepare-playground
+      - run: npm run build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/packages/playground/wasm-wordpress-net # The folder the action should deploy.
 
 ```
 
