@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Self Hosting on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/self-hosting/</link><description>Recent content in Self Hosting on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 21 Oct 2024 23:14:11 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/self-hosting/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Self-Host WordPress Playground on GitHub Pages with a Custom Domain</title><link>https://vanpariyar.in/blog/how-to-self-host-wordpress-playground-on-github-pages-with-a-custom-domain/</link><pubDate>Mon, 21 Oct 2024 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-self-host-wordpress-playground-on-github-pages-with-a-custom-domain/</guid><description>&lt;p>Hello 👋&lt;/p>
+&lt;p>In this post, we&amp;rsquo;ll explore how to self-host a WordPress Playground on GitHub Pages. This is a fun and educational project that not only saves bandwidth for WordPress servers but also allows you to showcase your product on a custom domain.&lt;/p>
+&lt;h2 id="why-self-host-wordpress-playground">Why Self-Host WordPress Playground?
+&lt;/h2>&lt;p>WordPress Playground primarily uses static files and runs directly in the user&amp;rsquo;s browser. By self-hosting it on GitHub Pages, you can save bandwidth on WordPress servers and provide a unique experience by using your custom domain. This is especially useful if you want to demo your product or create a personalized WordPress Playground instance.&lt;/p>
+&lt;h2 id="how-to-self-host-wordpress-playground">How to Self-Host WordPress Playground
+&lt;/h2>&lt;p>To get started, follow these steps:&lt;/p>
+&lt;h3 id="1-fork-the-wordpress-playground-repository">1. Fork the WordPress Playground Repository
+&lt;/h3>&lt;p>First, fork the WordPress Playground repository from &lt;a class="link" href="https://github.com/WordPress/wordpress-playground" target="_blank" rel="noopener"
+>GitHub&lt;/a>. This will create a copy of the repository under your GitHub account.&lt;/p>
+&lt;h3 id="2-create-a-github-actions-workflow">2. Create a GitHub Actions Workflow
+&lt;/h3>&lt;p>Next, you&amp;rsquo;ll need to set up a GitHub Actions workflow to deploy the playground to GitHub Pages. Create a new workflow file, for example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Deploy to GitHub Pages&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">workflow_dispatch&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">concurrency&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">group&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">website-deployment&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">jobs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">build_and_deploy&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">runs-on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ubuntu-latest&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">environment&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">playground-wordpress-net-wp-cloud&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">actions/checkout@v4&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">submodules&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">./.github/actions/prepare-playground&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">npm run build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Deploy 🚀&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">JamesIves/github-pages-deploy-action@v4&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">folder&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">dist/packages/playground/wasm-wordpress-net&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># The folder the action should deploy.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="3-run-the-workflow-manually">3. Run the Workflow Manually
+&lt;/h3>&lt;p>After setting up the workflow, trigger it manually. This will build the project and deploy it to GitHub Pages.&lt;/p>
+&lt;h2 id="adding-a-custom-domain-to-github-pages">Adding a Custom Domain to GitHub Pages
+&lt;/h2>&lt;p>To use a custom domain for your WordPress Playground, follow these steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Go to the settings of your GitHub Pages repository.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Under &amp;ldquo;Pages,&amp;rdquo; set up your custom domain.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Update your domain&amp;rsquo;s DNS settings:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>CNAME Record&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: &lt;code>playground&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Value&lt;/strong>: &lt;code>your-github-username.github.io&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>A Record&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: &lt;code>@&lt;/code> (or your domain name, e.g., &lt;code>domain.com&lt;/code>)&lt;/li>
+&lt;li>&lt;strong>Value&lt;/strong>: The IP address of GitHub Pages (check the latest IP addresses in GitHub documentation).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="example">Example
+&lt;/h2>&lt;p>After completing these steps, you can have your own self-hosted playground, such as &lt;a class="link" href="https://playground.vanpariyar.in/" target="_blank" rel="noopener"
+>playground.vanpariyar.in&lt;/a>.&lt;/p>
+&lt;p>Thanks For Reading 🙏&lt;/p>
+&lt;blockquote>
+&lt;p>This articles is rewritten from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p>
+&lt;/blockquote>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

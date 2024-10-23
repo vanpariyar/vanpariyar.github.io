@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Filters on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/filters/</link><description>Recent content in Filters on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 02 Dec 2020 22:28:18 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/filters/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Add Product Meta Data if Order Not Split by Woo Order Splitter Plugin</title><link>https://vanpariyar.in/blog/how-to-add-product-meta-data-if-order-not-split-by-woo-order-splitter-plugin/</link><pubDate>Wed, 02 Dec 2020 22:28:18 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-add-product-meta-data-if-order-not-split-by-woo-order-splitter-plugin/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/101244941-7ae8cd80-372f-11eb-9ef3-e17078a4db6f.png" alt="Featured image of post How to Add Product Meta Data if Order Not Split by Woo Order Splitter Plugin" />&lt;h2 id="problem-with-woocommerce-order-splitter">Problem with Woocommerce order splitter
+&lt;/h2>&lt;ul>
+&lt;li>In this article we will learn how to add product data if order is not split.&lt;/li>
+&lt;/ul>
+&lt;p>Order split is in terms of the Multi vendor woocommerce website that have below plugin installed.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a class="link" href="https://woocommerce.com/products/product-vendors" target="_blank" rel="noopener"
+>Product Vendor Plugin&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a class="link" href="https://wordpress.org/plugins/woo-order-splitter/" target="_blank" rel="noopener"
+>Woo Order Splitter&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="let-me-give-the-idea-woo-order-splitter">Let me give the idea Woo order splitter.
+&lt;/h2>&lt;p>The Product vendor plugin is creates multi vendor marketplace that have multiple vendors like &lt;a class="link" href="http://amazon.in/" target="_blank" rel="noopener"
+>amazon&lt;/a> we have multiple sellers that sell their limited Product.&lt;/p>
+&lt;p>But amazon has multiple products like TV, Fridge , mobile, Mitti Pot, Footwear and lots of variety. Because all sellers can not have all things ya there are some exceptions Like Cloudtail and all.but small sellers have limited items to sell.&lt;/p>
+&lt;p>So if anybody wants to make a website like amazon multi seller feature then this website is the right place for you.&lt;/p>
+&lt;h2 id="working-of-woocommerce-order-splitter">Working of Woocommerce order splitter
+&lt;/h2>&lt;p>Let&amp;rsquo;s Now understand the What the Order splitter is doing.It is very interesting to see here. We can split order on any term, which means if we want to split order by order vendor again taking the example of Amazon ( not sponsored &amp;#x1f605; ).&lt;/p>
+&lt;p>If we order one Grocery item and one electronic item like a Bag of Rice and Apple Iphone then there is a sure probability that our order has multiple sellers. So by default woocommerce does not assign vendors and split the order on the Product based vendor but this plugin does.&lt;/p>
+&lt;p>Let&amp;rsquo;s assume we have a woocommerce site and have thousands of products and hundreds of vendors then it will be very hard and time consuming to assign and maintain orders and deliveries with communication with different sellers.&lt;/p>
+&lt;h2 id="the-problem">The Problem
+&lt;/h2>&lt;p>We can use this plugin in this scenario, this plugin is easily splitting order, in The depth this plugin finds the vendor of each product, then makes the list of products in the order for particular seller. After that it creates a new order and assigns the vendor to specific order then the vendor can see on their dashboard and Fulfillment of the Order process starts.&lt;/p>
+&lt;p>Now you will be wondering what happens to my original order ? yes that order is definitely going to trash and the user profile will show the Two order if my original order id is 3366 then 3366 order will be deleted and new order created with the order id 3367 and 3368. And both will assign to their sellers.&lt;/p>
+&lt;h2 id="the-solution">The solution
+&lt;/h2>&lt;p>We can add below code if user Order not split but want to assign order vendor to the user order.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;?&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd">* Customization for Order meta
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd">*
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">add_action&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;woocommerce_thankyou&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;add_custom_order_meta&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">functionadd_custom_order_meta&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$order_id&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$order&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">wc_get_order&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$order_id&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="sd">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * if Order splitter works the order will be trash and empty array will return.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * so we are checking the order content.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="o">!&lt;/span> &lt;span class="k">empty&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$order&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$items&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">$order&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">get_items&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">foreach&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$items&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nv">$key&lt;/span>&lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="nv">$item&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$product_id&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">$item&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">get_product_id&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$vendor&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">get_the_terms&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$product_id&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;wcpv_product_vendors&amp;#39;&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$vendor_id&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">$vendor&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">term_id&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">update_post_meta&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$order_id&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;_vendor_id&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$vendor_id&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$vendor_data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">get_term_meta&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$vendor_id&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;vendor_data&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$vendor_info&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;vendor_email&amp;#39;&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="nv">$vendor_data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;email&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;vendor_name&amp;#39;&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="nv">$vendor&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">name&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;vendor_slug&amp;#39;&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="nv">$vendor&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">slug&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">update_post_meta&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$order_id&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;wos_vendor_data&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$vendor_info&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">break&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// For test uncomment this and place order one in view source.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// print_r( get_post_meta($order_id, &amp;#39;wos_vendor_data&amp;#39;, true) );
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// die();
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Add Anything After Wordpress Title in Backend ?</title><link>https://vanpariyar.in/blog/how-to-add-anything-after-wordpress-title-in-backend/</link><pubDate>Wed, 29 Jul 2020 22:03:57 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-add-anything-after-wordpress-title-in-backend/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/100902103-93b47180-34ea-11eb-9240-49bf5984c1e5.png" alt="Featured image of post How to Add Anything After Wordpress Title in Backend ?" />&lt;p>hi &amp;#x1f44b; Learn how to add any Html / Text after wordpress editor title field.&lt;/p>
+&lt;blockquote>
+&lt;p>Note: This is only for the Classic Editor i am not sure about Gutenberg/Block Editor.&lt;/p>
+&lt;/blockquote>
+&lt;p>Actually you will learn about how&lt;/p>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> How to add title in Classis editor&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> How to add in Gutenberg Editor&lt;/li>
+&lt;/ul>
+&lt;p>Add this in your &lt;code>function.php&lt;/code> file&lt;/p>
+&lt;blockquote>
+&lt;p>Here our post type is &lt;strong>Tags&lt;/strong>.&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;?&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">add_action&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s1">&amp;#39;edit_form_before_permalink&amp;#39;&lt;/span> &lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;add_text_below_tag_post_title&amp;#39;&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="nf">add_text_below_tag_post_title&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">global&lt;/span> &lt;span class="nv">$post&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="nx">get_post_type&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$post&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="s1">&amp;#39;tags&amp;#39;&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">echo&lt;/span> &lt;span class="s2">&amp;#34;&amp;lt;span style=&amp;#39;color: red&amp;#39;&amp;gt;demo alert (THis is the red text)&amp;lt;/span&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Change the Date From Custom Custom Field in Wordpress</title><link>https://vanpariyar.in/blog/how-to-change-the-date-from-custom-custom-field-in-wordpress/</link><pubDate>Mon, 25 May 2020 20:28:58 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-change-the-date-from-custom-custom-field-in-wordpress/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/82824334-c4c24280-9ec6-11ea-97a5-8fe8f10ef66a.png" alt="Featured image of post How to Change the Date From Custom Custom Field in Wordpress" />&lt;h2 id="hi-wave">Hi &amp;#x1f44b;
+&lt;/h2>&lt;p>we will use WordPress &lt;code>get_the_date()&lt;/code> Hook.&lt;/p>
+&lt;p>I will explain both. If you have created meta field for date &lt;code>post_custom_date&lt;/code>. OR using &lt;a class="link" href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank" rel="noopener"
+>ACF&lt;/a> created field with name &lt;code>post_custom_date&lt;/code>.&lt;/p>
+&lt;h2 id="inspiration">Inspiration
+&lt;/h2>&lt;p>When I was developing the site with &lt;a class="link" href="https://www.elegantthemes.com/gallery/divi/" target="_blank" rel="noopener"
+>Divi theme&lt;/a> there is a custom post listing module but I don&amp;rsquo;t want the date of publishing post instead i want my custom date which I have created with &lt;a class="link" href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank" rel="noopener"
+>ACF&lt;/a>.&lt;/p>
+&lt;p>So I have searched and found this solution Enjoy. &amp;#x1f389;&lt;/p>
+&lt;p>Put this code in &lt;code>functions.php&lt;/code> file.&lt;/p>
+&lt;h3 id="for-custom-meta-without-acf">For custom meta Without Acf
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;?&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="sd">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @here 10 is Priority and 3 is Number of arguments to be passed
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">add_action&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s1">&amp;#39;get_the_date&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;custom_date_callback&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10&lt;/span> &lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">function&lt;/span> &lt;span class="nf">custom_date_callback&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$the_date&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$format&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$post&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">get_post_type&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="s2">&amp;#34;custom_post_type&amp;#34;&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">is_singuler&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;custom_post_type&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$date&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">sprintf&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">esc_html&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">get_post_meta&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;post_custom_date&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$post&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">ID&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nv">$date&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="for-custom-meta-with-acf">For custom meta With Acf
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;?&lt;/span>&lt;span class="nx">php&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="sd">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @here 10 is Priority and 3 is Number of arguments to be passed
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">add_action&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s1">&amp;#39;get_the_date&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;custom_date_callback&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10&lt;/span> &lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">function&lt;/span> &lt;span class="nf">custom_date_callback&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$the_date&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$format&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$post&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">get_post_type&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="s2">&amp;#34;custom_post_type&amp;#34;&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">is_singuler&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;custom_post_type&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$date&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">sprintf&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">esc_html&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nx">get_field&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;post_custom_date&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$post&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">ID&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nv">$date&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">?&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>checkout all hooks &lt;a class="link" href="https://vanpariyar.in/tags/hooks/" >hooks&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="for-refrence">For Refrence
+&lt;/h2>&lt;p>&lt;a class="link" href="https://developer.wordpress.org/reference/functions/get_the_date/" target="_blank" rel="noopener"
+>https://developer.wordpress.org/reference/functions/get_the_date/&lt;/a>
+&lt;a class="link" href="https://developer.wordpress.org/reference/functions/the_date/" target="_blank" rel="noopener"
+>https://developer.wordpress.org/reference/functions/the_date/&lt;/a>&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/api/</link><description>Recent content in API on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 09 Sep 2024 10:00:00 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Fetch Instagram Details</title><link>https://vanpariyar.in/blog/fetch-instagram-details/</link><pubDate>Mon, 09 Sep 2024 10:00:00 +0530</pubDate><guid>https://vanpariyar.in/blog/fetch-instagram-details/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/81502620-9f490c80-92fc-11ea-8775-43e099db29a8.png" alt="Featured image of post Fetch Instagram Details" />&lt;blockquote>
+&lt;p>This guide has been updated: Instagram now requires an access token to fetch user data. This guide covers how to authenticate and retrieve user details using the Instagram Graph API.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="get-instagram-details-updated">Get-Instagram-Details (Updated)
+&lt;/h2>&lt;p>Instagram has deprecated its public API, and now you need an &lt;strong>Instagram Access Token&lt;/strong> to fetch user data. To retrieve details like username, profile picture, bio, and follower count, you must authenticate your app and get the appropriate permissions using the Instagram Graph API.&lt;/p>
+&lt;h3 id="steps-to-get-instagram-details">Steps to Get Instagram Details
+&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Set up your Instagram Developer account:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Go to the &lt;a class="link" href="https://developers.facebook.com/docs/instagram-api" target="_blank" rel="noopener"
+>Instagram for Developers&lt;/a> page.&lt;/li>
+&lt;li>Create an app and get the &lt;strong>App ID&lt;/strong> and &lt;strong>App Secret&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Get User Access Token:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>After setting up the app, use OAuth to authenticate users and retrieve the access token. You&amp;rsquo;ll need the &lt;strong>user_profile&lt;/strong> and &lt;strong>user_media&lt;/strong> permissions to access user details.&lt;/li>
+&lt;li>You can refer to &lt;a class="link" href="https://developers.facebook.com/docs/facebook-login/" target="_blank" rel="noopener"
+>Facebook&amp;rsquo;s OAuth documentation&lt;/a> for details on the authentication flow.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Make API requests:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Once authenticated, you can use the following endpoint to get the user&amp;rsquo;s data:&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>https://graph.instagram.com/me?fields=id,username,media_count,account_type&amp;amp;access_token={access-token}&lt;/code>&lt;/p>
+&lt;p>Here&amp;rsquo;s an example of how you can use &lt;strong>fetch&lt;/strong> to get the data:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;.instagram-get&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">on&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s1">&amp;#39;click&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kd">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">event&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">accessToken&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;YOUR_ACCESS_TOKEN&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// Replace with a valid access token
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">fetch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sb">`https://graph.instagram.com/me?fields=id,username,media_count,account_type&amp;amp;access_token=&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">accessToken&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">response&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">response&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">json&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;.username&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">html&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">username&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;.media-count&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">html&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">media_count&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;.account-type&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">html&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">account_type&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;.insta-details&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">show&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;slow&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">error&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Error fetching Instagram details:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">error&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="important-notes">Important Notes:
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>The new Instagram API only supports user data that you have permission to access (your account or authenticated users).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You can also fetch media-related data such as recent posts using the media endpoints:&lt;/p>
+&lt;p>&lt;code>https://graph.instagram.com/me/media?fields=id,caption,media_url&amp;amp;access_token={access-token}&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="demo-url-deprecated">Demo URL (Deprecated)
+&lt;/h3>&lt;p>The demo that previously used the public GraphQL API no longer works, as Instagram now requires OAuth authentication and access tokens. You can check the &lt;a class="link" href="https://developers.facebook.com/docs/instagram-api/" target="_blank" rel="noopener"
+>Instagram API documentation&lt;/a> for more details on building your app.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/26689210/70326031-832ad600-1859-11ea-91a5-e00e16563baa.png"
+loading="lazy"
+alt="Fetch Instagram Details"
+>&lt;/p>
+&lt;h4 id="if-you-are-still-reading-this-thumbsup-thank-you-so-very-much-for-your-time-hourglass">If you are still reading this, &amp;#x1f44d; thank you so very much for your time &amp;#x231b;.
+&lt;/h4>&lt;p>&amp;#x270b; If you are getting any errors, you can create an issue on this repo with proper details.&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to remove HTML entities from the REST API title and content in WordPress</title><link>https://vanpariyar.in/blog/how-to-remove-html-entities-from-the-rest-api-title-and-content-in-wordpress/</link><pubDate>Sun, 08 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-remove-html-entities-from-the-rest-api-title-and-content-in-wordpress/</guid><description>&lt;p>Hello everyone, &amp;#x1f44b;&lt;/p>
+&lt;h2 id="how-to-remove-html-entities-from-rest-api-title-in-wordpress">How to remove HTML entities from REST API title in WordPress
+&lt;/h2>&lt;p>WordPress supports HTML in fields that developers wouldn&amp;rsquo;t typically expect HTML in (e.g. post title). When you use the REST API to retrieve posts, the response body will include HTML, including HTML entities. This can be a problem if you are using the REST API to serve data to a non-HTML client, such as a mobile app or a JavaScript library.&lt;/p>
+&lt;p>To remove HTML entities from the REST API title, you can use the following code:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">Customise_WordPress&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">function&lt;/span> &lt;span class="fm">__construct&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Remove the REST API HTML entities.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">$post_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;post&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">add_filter&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s1">&amp;#39;rest_prepare_&amp;#39;&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="nv">$post_type&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$this&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;decode_rest_api_title&amp;#39;&lt;/span> &lt;span class="p">),&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="sd">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * Decode HTML entities from the website title.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @param string $response Actual response.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @param Object $request Actual request.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @param Object $post actual Post object.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @return $response return text with decoded entirties.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">public&lt;/span> &lt;span class="k">function&lt;/span> &lt;span class="nf">decode_rest_api_title&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$post&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$request&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="nx">isset&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$post&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$decoded_title&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">html_entity_decode&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;title&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$decoded_content&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">html_entity_decode&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;content&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;title&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">$decoded_title&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;content&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">$decoded_content&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>To use this code, simply copy and paste it into your theme&amp;rsquo;s functions.php file. Then, create a new instance of the &lt;code>Customise_WordPress&lt;/code> class. For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$customise_wordpress&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Customise_WordPress&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;My Custom WordPress&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This will remove HTML entities from the REST API title for all posts.&lt;/p>
+&lt;p>You can also modify the code to only remove HTML entities from the REST API title for specific post types. For example, to only remove HTML entities from the REST API title for posts of the &lt;code>post&lt;/code> type, you would change the following line:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$post_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;post&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>to:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$post_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;post&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You can also add additional filters to the &lt;code>add_filter()&lt;/code> call to remove HTML entities from other fields in the REST API response. For example, to remove HTML entities from the REST API content, you would add the following filter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">add_filter&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s1">&amp;#39;rest_prepare_post_content&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$this&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;decode_rest_api_content&amp;#39;&lt;/span> &lt;span class="p">),&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The &lt;code>decode_rest_api_content()&lt;/code> function would be similar to the &lt;code>decode_rest_api_title()&lt;/code> function, but it would decode the &lt;code>content&lt;/code> field instead of the &lt;code>title&lt;/code> field.&lt;/p>
+&lt;h2 id="benefits-of-removing-html-entities-from-the-rest-api-title">Benefits of removing HTML entities from the REST API title
+&lt;/h2>&lt;p>There are several benefits to removing HTML entities from the REST API title:&lt;/p>
+&lt;ul>
+&lt;li>It makes the REST API response more consistent and easier to parse.&lt;/li>
+&lt;li>It reduces the risk of XSS attacks.&lt;/li>
+&lt;li>It improves the performance of the REST API, as HTML entities need to be decoded before they can be used.&lt;/li>
+&lt;/ul>
+&lt;p>If you are using the REST API to serve data to a non-HTML client, I recommend that you remove HTML entities from the REST API title and other fields in the REST API response.&lt;/p>
+&lt;p>Thanks For Reading 🙏&lt;/p>
+&lt;blockquote>
+&lt;p>This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p>
+&lt;/blockquote>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Solutions on Ronak Vanpariya</title><link>https://vanpariyar.in/categories/solutions/</link><description>Recent content in Solutions on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 05 Sep 2024 23:14:11 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/categories/solutions/index.xml" rel="self" type="application/rss+xml"/><item><title>How to remove HTML tags from the REST API title and content in WordPress</title><link>https://vanpariyar.in/blog/how-to-remove-html-tags-from-the-rest-api-title-and-content-in-wordpress/</link><pubDate>Thu, 05 Sep 2024 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-remove-html-tags-from-the-rest-api-title-and-content-in-wordpress/</guid><description>&lt;p>Hello everyone, &amp;#x1f44b;&lt;/p>
+&lt;h2 id="how-to-remove-html-tags-from-rest-api-title-in-wordpress">How to remove HTML tags from REST API title in WordPress
+&lt;/h2>&lt;p>WordPress supports HTML in fields that developers wouldn&amp;rsquo;t typically expect HTML in (e.g. post title). When you use the REST API to retrieve posts, the response body will include HTML, including HTML tags. This can be a problem if you are using the REST API to serve data to a non-HTML client, such as a mobile app or a JavaScript library.&lt;/p>
+&lt;p>To remove HTML tags from the REST API title, you can use the following code:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">Customise_WordPress&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">function&lt;/span> &lt;span class="fm">__construct&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Remove the REST API HTML tags.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">$post_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;post&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">add_filter&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s1">&amp;#39;rest_prepare_&amp;#39;&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="nv">$post_type&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$this&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;decode_rest_api_title&amp;#39;&lt;/span> &lt;span class="p">),&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="sd">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * Decode HTML tags from the website title.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @param string $response Actual response.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @param Object $request Actual request.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @param Object $post actual Post object.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @return $response return text with decoded entirties.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">public&lt;/span> &lt;span class="k">function&lt;/span> &lt;span class="nf">decode_rest_api_title&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$post&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$request&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="nx">isset&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$post&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$decoded_title&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">wp_strip_all_tags&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;title&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$decoded_content&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">wp_strip_all_tags&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;content&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;title&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">$decoded_title&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;content&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">$decoded_content&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>To use this code, simply copy and paste it into your theme&amp;rsquo;s functions.php file. Then, create a new instance of the &lt;code>Customise_WordPress&lt;/code> class. For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$customise_wordpress&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Customise_WordPress&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This will remove HTML tags from the REST API title for all posts.&lt;/p>
+&lt;p>You can also modify the code to only remove HTML tags from the REST API title for specific post types. For example, to only remove HTML tags from the REST API title for posts of the &lt;code>post&lt;/code> type, you would change the following line:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$post_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;post&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>to:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$post_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;post&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You can also add additional filters to the &lt;code>add_filter()&lt;/code> call to remove HTML tags from other fields in the REST API response. For example, to remove HTML tags from the REST API content, you would add the following filter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">add_filter&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s1">&amp;#39;rest_prepare_post_content&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$this&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;decode_rest_api_content&amp;#39;&lt;/span> &lt;span class="p">),&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The &lt;code>decode_rest_api_content()&lt;/code> function would be similar to the &lt;code>decode_rest_api_title()&lt;/code> function, but it would decode the &lt;code>content&lt;/code> field instead of the &lt;code>title&lt;/code> field.&lt;/p>
+&lt;h2 id="benefits-of-removing-html-tags-from-the-rest-api-title">Benefits of removing HTML tags from the REST API title
+&lt;/h2>&lt;p>There are several benefits to removing HTML tags from the REST API title:&lt;/p>
+&lt;ul>
+&lt;li>It makes the REST API response more consistent and easier to parse.&lt;/li>
+&lt;li>It reduces the risk of XSS attacks.&lt;/li>
+&lt;li>It improves the performance of the REST API, as HTML tags need to be decoded before they can be used.&lt;/li>
+&lt;/ul>
+&lt;p>If you are using the REST API to serve data to a non-HTML client, I recommend that you remove HTML tags from the REST API title and other fields in the REST API response.&lt;/p>
+&lt;p>Thanks For Reading 🙏&lt;/p>
+&lt;blockquote>
+&lt;p>This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p>
+&lt;/blockquote>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to customize the render callback for a WordPress block</title><link>https://vanpariyar.in/blog/how-to-customize-the-render-callback-for-a-wordpress-block/</link><pubDate>Sat, 14 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-customize-the-render-callback-for-a-wordpress-block/</guid><description>&lt;p>Hello everyone, &amp;#x1f44b;&lt;/p>
+&lt;h2 id="what-is-render-callback">What is Render Callback
+&lt;/h2>&lt;p>WordPress blocks are a powerful way to create custom content for your website. But what if you want to customize the way a block is rendered? That&amp;rsquo;s where the &lt;code>render_callback&lt;/code> argument comes in.&lt;/p>
+&lt;p>The &lt;code>render_callback&lt;/code> argument tells WordPress which function to use to render a block. By default, WordPress uses a function called &lt;code>render_block()&lt;/code>, which simply renders the block&amp;rsquo;s HTML markup. However, you can override this function to provide your own custom rendering logic.&lt;/p>
+&lt;p>To do this, you can use the &lt;code>register_block_type_args&lt;/code> filter. This filter allows you to modify the block type arguments for any block that is registered with WordPress.&lt;/p>
+&lt;h2 id="example-for-modification">Example for modification
+&lt;/h2>&lt;p>The following code snippet shows how to customize the render callback for a block called &lt;code>demo/content-with-sidebar&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">add_filter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;register_block_type_args&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">function&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$settings&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">  &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$name&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;demo/content-with-sidebar&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">    &lt;span class="nv">$settings&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;render_callback&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;demo_blocks_content_with_sidebar&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">  &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">  &lt;span class="k">return&lt;/span> &lt;span class="nv">$settings&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">},&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>In this example, we are replacing the default render callback function with a function called &lt;code>demo_blocks_content_with_sidebar()&lt;/code>. This function could be used to render the block in a custom way, such as wrapping it in a sidebar or adding additional HTML markup.&lt;/p>
+&lt;p>To use this code snippet, simply add it to your theme&amp;rsquo;s &lt;code>functions.php&lt;/code> file or to a custom plugin. Once you have done this, WordPress will use the custom render callback function to render the &lt;code>demo/content-with-sidebar&lt;/code> block.&lt;/p>
+&lt;h2 id="callback-function">callback Function
+&lt;/h2>&lt;p>Here is an example of a custom render callback function:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="nf">demo_blocks_content_with_sidebar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$attributes&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$content&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">  &lt;span class="c1">// Wrap the block content in a sidebar.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>  &lt;span class="nv">$sidebar&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;&amp;lt;aside&amp;gt;&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">  &lt;span class="nv">$sidebar&lt;/span> &lt;span class="o">.=&lt;/span> &lt;span class="nv">$content&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">  &lt;span class="nv">$sidebar&lt;/span> &lt;span class="o">.=&lt;/span> &lt;span class="s1">&amp;#39;&amp;lt;/aside&amp;gt;&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">  &lt;span class="c1">// Return the sidebar markup.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>  &lt;span class="k">return&lt;/span> &lt;span class="nv">$sidebar&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This function would wrap the block content in a sidebar and return the resulting HTML markup.&lt;/p>
+&lt;p>You can use the &lt;code>register_block_type_args&lt;/code> filter to customize the render callback for any block that is registered with WordPress. This can be a useful way to create custom block layouts and effects.&lt;/p>
+&lt;p>Thanks For Reading 🙏&lt;/p>
+&lt;blockquote>
+&lt;p>This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p>
+&lt;/blockquote>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to remove HTML entities from the REST API title and content in WordPress</title><link>https://vanpariyar.in/blog/how-to-remove-html-entities-from-the-rest-api-title-and-content-in-wordpress/</link><pubDate>Sun, 08 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-remove-html-entities-from-the-rest-api-title-and-content-in-wordpress/</guid><description>&lt;p>Hello everyone, &amp;#x1f44b;&lt;/p>
+&lt;h2 id="how-to-remove-html-entities-from-rest-api-title-in-wordpress">How to remove HTML entities from REST API title in WordPress
+&lt;/h2>&lt;p>WordPress supports HTML in fields that developers wouldn&amp;rsquo;t typically expect HTML in (e.g. post title). When you use the REST API to retrieve posts, the response body will include HTML, including HTML entities. This can be a problem if you are using the REST API to serve data to a non-HTML client, such as a mobile app or a JavaScript library.&lt;/p>
+&lt;p>To remove HTML entities from the REST API title, you can use the following code:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">Customise_WordPress&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">function&lt;/span> &lt;span class="fm">__construct&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Remove the REST API HTML entities.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nv">$post_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;post&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">add_filter&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s1">&amp;#39;rest_prepare_&amp;#39;&lt;/span>&lt;span class="o">.&lt;/span> &lt;span class="nv">$post_type&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$this&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;decode_rest_api_title&amp;#39;&lt;/span> &lt;span class="p">),&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="sd">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * Decode HTML entities from the website title.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @param string $response Actual response.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @param Object $request Actual request.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @param Object $post actual Post object.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> * @return $response return text with decoded entirties.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">public&lt;/span> &lt;span class="k">function&lt;/span> &lt;span class="nf">decode_rest_api_title&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$post&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nv">$request&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="nx">isset&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$post&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$decoded_title&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">html_entity_decode&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;title&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$decoded_content&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">html_entity_decode&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;content&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;title&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">$decoded_title&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$response&lt;/span>&lt;span class="o">-&amp;gt;&lt;/span>&lt;span class="na">data&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;content&amp;#39;&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="s1">&amp;#39;rendered&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nv">$decoded_content&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nv">$response&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>To use this code, simply copy and paste it into your theme&amp;rsquo;s functions.php file. Then, create a new instance of the &lt;code>Customise_WordPress&lt;/code> class. For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$customise_wordpress&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Customise_WordPress&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;My Custom WordPress&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This will remove HTML entities from the REST API title for all posts.&lt;/p>
+&lt;p>You can also modify the code to only remove HTML entities from the REST API title for specific post types. For example, to only remove HTML entities from the REST API title for posts of the &lt;code>post&lt;/code> type, you would change the following line:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$post_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;post&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>to:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">$post_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;post&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You can also add additional filters to the &lt;code>add_filter()&lt;/code> call to remove HTML entities from other fields in the REST API response. For example, to remove HTML entities from the REST API content, you would add the following filter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-php" data-lang="php">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">add_filter&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="s1">&amp;#39;rest_prepare_post_content&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">array&lt;/span>&lt;span class="p">(&lt;/span> &lt;span class="nv">$this&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;decode_rest_api_content&amp;#39;&lt;/span> &lt;span class="p">),&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The &lt;code>decode_rest_api_content()&lt;/code> function would be similar to the &lt;code>decode_rest_api_title()&lt;/code> function, but it would decode the &lt;code>content&lt;/code> field instead of the &lt;code>title&lt;/code> field.&lt;/p>
+&lt;h2 id="benefits-of-removing-html-entities-from-the-rest-api-title">Benefits of removing HTML entities from the REST API title
+&lt;/h2>&lt;p>There are several benefits to removing HTML entities from the REST API title:&lt;/p>
+&lt;ul>
+&lt;li>It makes the REST API response more consistent and easier to parse.&lt;/li>
+&lt;li>It reduces the risk of XSS attacks.&lt;/li>
+&lt;li>It improves the performance of the REST API, as HTML entities need to be decoded before they can be used.&lt;/li>
+&lt;/ul>
+&lt;p>If you are using the REST API to serve data to a non-HTML client, I recommend that you remove HTML entities from the REST API title and other fields in the REST API response.&lt;/p>
+&lt;p>Thanks For Reading 🙏&lt;/p>
+&lt;blockquote>
+&lt;p>This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p>
+&lt;/blockquote>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>Remind your domain/Hosting expiry in slack and email with google apps script for Free</title><link>https://vanpariyar.in/blog/remind-your-domain-hosting-expiry-in-slack-and-email-with-google-apps-script-for-free/</link><pubDate>Mon, 01 May 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/remind-your-domain-hosting-expiry-in-slack-and-email-with-google-apps-script-for-free/</guid><description>&lt;img src="https://i.imgur.com/DxXI7Jy.png" alt="Featured image of post Remind your domain/Hosting expiry in slack and email with google apps script for Free" />&lt;blockquote>
+&lt;p>This tutorial describes how to leverage google apps script and Google sheets to remind you of your due subscription on Time for free of cost.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="introduction">Introduction
+&lt;/h2>&lt;p>Yes it is possible 🙂 with very small google apps script programs. You can use and customise this program to use in and combine with any services.&lt;/p>
+&lt;p>This article will guide you how we track our domain and server due dates. It will help to save costs while starting a small business with a small portfolio of clients.&lt;/p>
+&lt;h2 id="start-from-here">Start from here
+&lt;/h2>&lt;p>Note: Please follow if you haven&amp;rsquo;t followed this 📝 &lt;a class="link" href="https://vanpariyar.in/blog/how-to-automate-slack-message-with-google-appscript-free/" >Blog&lt;/a>&lt;/p>
+&lt;p>To get started copy 👉 &lt;a class="link" href="https://docs.google.com/spreadsheets/d/1Blowo5WQggMedNTdQbsB4cbgGVuB1mOSv2pheOlratw/copy" title="Sheet To Copy"
+target="_blank" rel="noopener"
+>This sheet&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://i.imgur.com/0Q2sgdT.png"
+loading="lazy"
+alt="This sheet"
+>&lt;/p>
+&lt;h3 id="appscript-part">Appscript Part
+&lt;/h3>&lt;p>By copying this sheet you will also get the code for the setup, I will explain later in the blog.&lt;/p>
+&lt;p>You will have a basic sheet setup. Fill the details for the website and renew the date accordingly.&lt;/p>
+&lt;h2 id="how-to-test-properly">How to Test Properly
+&lt;/h2>&lt;p>First Test the main function by running in the editor. It will show unverified because you have not verified this app on google cloud, No problem you will need to click on Advance. Then click the unsafe option. No Problem you can verify your script later.&lt;/p>
+&lt;p>This will not remind automatically, We need to set up a trigger for the function.&lt;/p>
+&lt;p>&lt;img src="https://i.imgur.com/f9ovGEa.png"
+loading="lazy"
+alt="This sheet"
+>
+&lt;img src="https://i.imgur.com/9gpV8Wv.png"
+loading="lazy"
+alt="This sheet"
+>&lt;/p>
+&lt;p>You can add and customise this code according to your needs and requirements.&lt;/p>
+&lt;p>Feel free to drop a comment if you need more tutorials like this.&lt;/p>
+&lt;h2 id="creativity-">Creativity 🪔
+&lt;/h2>&lt;ul>
+&lt;li>You can create anything for reminder or notification.&lt;/li>
+&lt;li>You can add multiple services like Email.&lt;/li>
+&lt;li>You can use Zapier type services as well.&lt;/li>
+&lt;li>You can send your server to pause the user.&lt;/li>
+&lt;li>HestiaCP and other Hosting panels provides API so we can use it on Google Sheets as well.&lt;/li>
+&lt;/ul>
+&lt;p>This list is very long and it is free to use. You do not need to pay for sass tool once you developed your desired solution.&lt;/p>
+&lt;hr />&lt;br/>
+If it is helpful and saves your valuable &lt;strong>Time&lt;/strong> ⏱ please show your support 👇.
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank">&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" >&lt;/a>
+&lt;br/>
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank">Buy me A Coffee&lt;/a>, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Clone Whole Wordpress Site With Database When You Only Have Ftp</title><link>https://vanpariyar.in/blog/2021-08-20-how-to-clone-whole-wordpress-site-with-database-when-you-only-have-ftp/</link><pubDate>Fri, 20 Aug 2021 18:18:05 +0530</pubDate><guid>https://vanpariyar.in/blog/2021-08-20-how-to-clone-whole-wordpress-site-with-database-when-you-only-have-ftp/</guid><description>&lt;img src="https://user-images.githubusercontent.com/26689210/130238376-7d9cdc20-90f7-4d73-a59f-02b9a9f14198.png" alt="Featured image of post How to Clone Whole Wordpress Site With Database When You Only Have Ftp" />&lt;h2 id="problem-thinking">Problem &amp;#x1f914;
+&lt;/h2>&lt;ul>
+&lt;li>How to Clone Whole Wordpress Site With Database When You Only Have Ftp&lt;/li>
+&lt;/ul>
+&lt;p>I came across a good idea that can save your time so I thought it would be great to share.&lt;/p>
+&lt;h2 id="what-i-had">What i had
+&lt;/h2>&lt;p>I had one website&amp;rsquo;s FTP only which is the WordPress website. and I was waiting to reply for 2 days.&lt;/p>
+&lt;h2 id="output">Output
+&lt;/h2>&lt;p>I need to clone the whole website. in my local environment with the database installed.&lt;/p>
+&lt;h2 id="research-book">Research &amp;#x1f4d6;
+&lt;/h2>&lt;p>After searching so many articles, found a simple tool call &lt;a class="link" href="https://www.adminer.org/" target="_blank" rel="noopener"
+>adminer&lt;/a> i know many of us know and used this tool.&lt;/p>
+&lt;h2 id="solutions-bulb">solutions &amp;#x1f4a1;
+&lt;/h2>&lt;p>have downloaded its PHP file. what I have done is, have uploaded that &lt;code>adminer-4.1.2.php&lt;/code> and renamed it to adminer.php to the document root.&lt;/p>
+&lt;p>then extract credentials from the &lt;code>wp-config.php&lt;/code> for the MYSQL.&lt;/p>
+&lt;p>simply hit the URL _ https://your-site/adminer.php&lt;/p>
+&lt;p>then entered credentials extracted from the &lt;code>wp-config.php&lt;/code> then exported the DB from its GUI.&lt;/p>
+&lt;p>files I have downloaded from the FTP and Database from the adminer. that&amp;rsquo;s all.&lt;/p>
+&lt;p>&amp;#x1f389; The client replied after 2 days found he was on vacation &amp;#x1f604;&lt;/p></description></item></channel></rss>
