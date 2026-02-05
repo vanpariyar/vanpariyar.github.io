@@ -1,7 +1,32 @@
 baseurl: https://vanpariyar.in
 languageCode: en-us
-theme: hugo-theme-stack
-paginate: 5
+
+pagination:
+    pagerSize: 5
+
+module:
+    imports:
+        - path: hugo-theme-stack
+          mounts:
+            - source: layouts
+              target: layouts
+            - source: layouts
+              target: layouts/_default
+            - source: layouts/_partials
+              target: layouts/partials
+            - source: layouts/_shortcodes
+              target: layouts/shortcodes
+            - source: assets
+              target: assets
+            - source: static
+              target: static
+            - source: archetypes
+              target: archetypes
+            - source: data
+              target: data
+            - source: i18n
+              target: i18n
+
 title: Ronak Vanpariya
 
 languages:

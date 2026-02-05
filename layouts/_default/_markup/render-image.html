@@ -1,0 +1,15 @@
+{{- $image := partial "helper/image" (dict "Resources" .Page.Resources "Image" .Destination) -}}
+{{- $alt := .PlainText | safeHTML -}}
+
+{{/* Check if $image is a map (successful image processing) before accessing properties */}}
+{{- $isDict := reflect.IsMap $image -}}
+{{- $galleryImage := false -}}
+{{- if $isDict -}}
+{{- $galleryImage = and $image.Height $image.Width -}}
+{{- end -}}
+
+<img src="{{ if $isDict }}{{ $image.Permalink }}{{ else }}{{ .Destination | safeURL }}{{ end }}" {{ if $isDict }} {{
+    with $image.Width }}width="{{ . }}" {{ end }} {{ with $image.Height }}height="{{ . }}" {{ end }} {{ end }}
+    loading="lazy" {{ with $alt }} alt="{{ . }}" {{ end }} {{ if $galleryImage }} class="gallery-image"
+    data-flex-grow="{{ div (mul $image.Width 100) $image.Height }}"
+    data-flex-basis="{{ div (mul $image.Width 240) $image.Height }}px" {{ end }}>

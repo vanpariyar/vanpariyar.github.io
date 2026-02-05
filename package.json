@@ -1,0 +1,28 @@
+{
+  "name": "vanpariyar.github.io",
+  "version": "1.0.0",
+  "description": "## Technology used - built using [hugo](https://gohugo.io/) - Driven by mark down",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "hugo server -D",
+    "build": "hugo --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanpariyar/vanpariyar.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanpariyar/vanpariyar.github.io/issues"
+  },
+  "homepage": "https://github.com/vanpariyar/vanpariyar.github.io#readme",
+  "devDependencies": {
+    "hugo-extended": "^0.155.2"
+  }
+}
