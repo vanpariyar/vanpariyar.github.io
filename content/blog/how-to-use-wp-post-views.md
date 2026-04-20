@@ -16,7 +16,7 @@ draft: false
 
 ## wp-post-views
 
-{{< tweet user="VanpariyaRonakJ" id="1393155253017538560" >}}
+{{< x user="VanpariyaRonakJ" id="1393155253017538560" >}}
 
 
 use Docker To use this Plugin setup. (Not Compulasory)
