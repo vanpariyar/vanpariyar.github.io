@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PHPCS on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/phpcs/</link><description>Recent content in PHPCS on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 14 Oct 2023 23:14:11 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/phpcs/index.xml" rel="self" type="application/rss+xml"/><item><title>PHPCS Setup Useful Commands</title><link>https://vanpariyar.in/blog/phpcs-setup-useful-commands/</link><pubDate>Sat, 14 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/phpcs-setup-useful-commands/</guid><description>&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;h1 id="php-setup-useful-commands"&gt;PHP Setup Useful Commands
+&lt;/h1&gt;&lt;p&gt;This blog post will discuss a useful PHP setup command that can be used to add the current working directory to the PHPCS installed paths. This can be useful for projects that use custom PHP coding standards or rulesets.&lt;/p&gt;
+&lt;h2 id="what-is-phpcs"&gt;What is PHPCS?
+&lt;/h2&gt;&lt;p&gt;PHPCS is a PHP Coding Standards Fixer. It is a tool that can be used to check PHP code for compliance with a variety of coding standards, such as PSR-1, PSR-2, and PEAR. PHPCS can also be used to fix some coding errors automatically.&lt;/p&gt;
+&lt;h2 id="what-are-phpcs-installed-paths"&gt;What are PHPCS installed paths?
+&lt;/h2&gt;&lt;p&gt;PHPCS installed paths are the directories that PHPCS will search for coding standards and rulesets. By default, PHPCS will search the following directories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;src/Standards&lt;/code&gt; directory of the PHPCS installation.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;Standards&lt;/code&gt; directory of the current working directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="how-to-add-the-current-working-directory-to-the-phpcs-installed-paths"&gt;How to add the current working directory to the PHPCS installed paths
+&lt;/h2&gt;&lt;p&gt;To add the current working directory to the PHPCS installed paths, you can use the following command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;phpcs_ipath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;phpcs --config-show installed_paths&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nv"&gt;oldpath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;phpcs_ipath&lt;/span&gt;&lt;span class="p"&gt;##*:&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; phpcs --config-set installed_paths &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;oldpath&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;,&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This command will first get the current PHPCS installed paths using the &lt;code&gt;phpcs --config-show installed_paths&lt;/code&gt; command. It will then remove the leading colon from the installed paths using the &lt;code&gt;oldpath=${phpcs_ipath##*:}&lt;/code&gt; command. Finally, it will set the PHPCS installed paths to the old installed paths plus the current working directory using the &lt;code&gt;phpcs --config-set installed_paths ${oldpath},$(pwd)&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;Once you have run this command, the current working directory will be added to the PHPCS installed paths. This means that PHPCS will be able to find any custom PHP coding standards or rulesets that are located in the current working directory.&lt;/p&gt;
+&lt;h2 id="example-usage"&gt;Example usage
+&lt;/h2&gt;&lt;p&gt;The following example shows how to use the command to add the current working directory to the PHPCS installed paths:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Get the current PHPCS installed paths.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;phpcs_ipath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;phpcs --config-show installed_paths&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Remove the leading colon from the installed paths.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;oldpath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;phpcs_ipath&lt;/span&gt;&lt;span class="p"&gt;##*:&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Set the PHPCS installed paths to the old installed paths plus the current working directory.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;phpcs --config-set installed_paths &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;oldpath&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;,&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Once you have run this command, the current working directory will be added to the PHPCS installed paths. You can then use PHPCS to check your PHP code for compliance with the custom coding standards or rulesets that are located in the current working directory.&lt;/p&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

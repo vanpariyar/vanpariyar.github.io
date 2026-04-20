@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gutenberg on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/gutenberg/</link><description>Recent content in Gutenberg on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 09 Sep 2024 12:00:00 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/gutenberg/index.xml" rel="self" type="application/rss+xml"/><item><title>Getting Started with Gutenberg Editor Custom Block Development</title><link>https://vanpariyar.in/blog/how-to-start-with-gutenberg-editor-custom-block-development/</link><pubDate>Mon, 09 Sep 2024 12:00:00 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-start-with-gutenberg-editor-custom-block-development/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post Getting Started with Gutenberg Editor Custom Block Development" /&gt;&lt;h2 id="how-to-start-with-gutenberg-editor-custom-block-development"&gt;How to Start with Gutenberg Editor Custom Block Development
+&lt;/h2&gt;&lt;p&gt;Developing custom blocks for the Gutenberg editor can be simple and rewarding. This guide will walk you through the essentials and provide key resources to get started with WordPress block development.&lt;/p&gt;
+&lt;h3 id="where-to-begin"&gt;Where to Begin?
+&lt;/h3&gt;&lt;p&gt;The best place to start is by diving into the &lt;a class="link" href="https://developer.wordpress.org/block-editor/" target="_blank" rel="noopener"
+ &gt;WordPress Block Developer Handbook&lt;/a&gt;. It covers everything from creating simple blocks to advanced customizations, and is the go-to resource once you’ve got the basics of JavaScript under your belt.&lt;/p&gt;
+&lt;h3 id="javascript-options-for-gutenberg-block-development"&gt;JavaScript Options for Gutenberg Block Development
+&lt;/h3&gt;&lt;p&gt;When it comes to developing Gutenberg blocks, you have two primary options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Vanilla JavaScript&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modern ESNext (ES6+) standards&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;While both can work, I recommend using &lt;strong&gt;ESNext standards&lt;/strong&gt; to leverage the latest JavaScript features and take advantage of modern workflows.&lt;/p&gt;
+&lt;p&gt;A great tool to get you started with Gutenberg block development is &lt;a class="link" href="https://github.com/ahmadawais/create-guten-block" target="_blank" rel="noopener"
+ &gt;Create Guten Block&lt;/a&gt;, an open-source NPM package. This package comes pre-configured with &lt;strong&gt;Webpack&lt;/strong&gt; and &lt;strong&gt;ESLint&lt;/strong&gt;, making setup a breeze. It’s perfect for developers looking for a hassle-free environment to start building custom blocks.&lt;/p&gt;
+&lt;h3 id="react-and-gutenberg-the-relationship"&gt;React and Gutenberg: The Relationship
+&lt;/h3&gt;&lt;p&gt;Gutenberg is built on top of &lt;strong&gt;React&lt;/strong&gt;, so if you have experience with React, you’re already a step ahead. Knowing React’s component-based architecture will make Gutenberg block development much easier.&lt;/p&gt;
+&lt;h4 id="can-you-use-react-hooks-in-gutenberg"&gt;Can You Use React Hooks in Gutenberg?
+&lt;/h4&gt;&lt;p&gt;Yes! Since Gutenberg uses React under the hood, you can utilize hooks such as:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;useState()&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;useRef()&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Hooks allow you to manage state and references in your blocks just like you would in a React application. You can import them from &lt;code&gt;wp.element&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you’re new to hooks, check out the official &lt;a class="link" href="https://reactjs.org/docs/hooks-intro.html" target="_blank" rel="noopener"
+ &gt;React Hooks Documentation&lt;/a&gt; to get started.&lt;/p&gt;
+&lt;h3 id="my-development-experience"&gt;My Development Experience
+&lt;/h3&gt;&lt;h4 id="simple-javascript-blocks"&gt;Simple JavaScript Blocks
+&lt;/h4&gt;&lt;p&gt;I’ve built a few simple Gutenberg blocks using vanilla JavaScript. You can check out a demo on my GitHub repository here:&lt;br&gt;
+&lt;a class="link" href="https://github.com/vanpariyar/gutenberg-blocks-plugin" target="_blank" rel="noopener"
+ &gt;https://github.com/vanpariyar/gutenberg-blocks-plugin&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="esnext-and-modern-development"&gt;ESNext and Modern Development
+&lt;/h4&gt;&lt;p&gt;For more complex projects, I prefer using &lt;strong&gt;ESNext&lt;/strong&gt;. One of the plugins I developed using this approach is available on GitHub:&lt;br&gt;
+&lt;a class="link" href="https://github.com/vanpariyar/gutenberg-instagram-post-grid" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;vanpariyar/gutenberg-instagram-post-grid&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can also check out this plugin on WordPress’s plugin repository:&lt;br&gt;
+&lt;a class="link" href="https://wordpress.org/plugins/social-gallery-block" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;Social Gallery Block&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="additional-demos"&gt;Additional Demos
+&lt;/h3&gt;&lt;p&gt;I’ve also created other demos showcasing different features of Gutenberg block development. One such demo involves fetching random quotes and saving them in the WordPress database:&lt;br&gt;
+&lt;a class="link" href="https://github.com/vanpariyar/gutenberg-demo-esnext" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;vanpariyar/gutenberg-demo-esnext&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="final-thoughts"&gt;Final Thoughts
+&lt;/h3&gt;&lt;p&gt;If you’re just starting out with Gutenberg block development, it may feel overwhelming at first. But with tools like &lt;strong&gt;Create Guten Block&lt;/strong&gt; and resources like the &lt;strong&gt;WordPress Developer Handbook&lt;/strong&gt;, you’ll be able to develop custom blocks quickly and efficiently. Keep experimenting and don’t hesitate to dive into the React ecosystem—it’ll pay off in the long run.&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to customize the render callback for a WordPress block</title><link>https://vanpariyar.in/blog/how-to-customize-the-render-callback-for-a-wordpress-block/</link><pubDate>Sat, 14 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-customize-the-render-callback-for-a-wordpress-block/</guid><description>&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;h2 id="what-is-render-callback"&gt;What is Render Callback
+&lt;/h2&gt;&lt;p&gt;WordPress blocks are a powerful way to create custom content for your website. But what if you want to customize the way a block is rendered? That&amp;rsquo;s where the &lt;code&gt;render_callback&lt;/code&gt; argument comes in.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;render_callback&lt;/code&gt; argument tells WordPress which function to use to render a block. By default, WordPress uses a function called &lt;code&gt;render_block()&lt;/code&gt;, which simply renders the block&amp;rsquo;s HTML markup. However, you can override this function to provide your own custom rendering logic.&lt;/p&gt;
+&lt;p&gt;To do this, you can use the &lt;code&gt;register_block_type_args&lt;/code&gt; filter. This filter allows you to modify the block type arguments for any block that is registered with WordPress.&lt;/p&gt;
+&lt;h2 id="example-for-modification"&gt;Example for modification
+&lt;/h2&gt;&lt;p&gt;The following code snippet shows how to customize the render callback for a block called &lt;code&gt;demo/content-with-sidebar&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;register_block_type_args&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;demo/content-with-sidebar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;    &lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;render_callback&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;demo_blocks_content_with_sidebar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="k"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;In this example, we are replacing the default render callback function with a function called &lt;code&gt;demo_blocks_content_with_sidebar()&lt;/code&gt;. This function could be used to render the block in a custom way, such as wrapping it in a sidebar or adding additional HTML markup.&lt;/p&gt;
+&lt;p&gt;To use this code snippet, simply add it to your theme&amp;rsquo;s &lt;code&gt;functions.php&lt;/code&gt; file or to a custom plugin. Once you have done this, WordPress will use the custom render callback function to render the &lt;code&gt;demo/content-with-sidebar&lt;/code&gt; block.&lt;/p&gt;
+&lt;h2 id="callback-function"&gt;callback Function
+&lt;/h2&gt;&lt;p&gt;Here is an example of a custom render callback function:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;span class="lnt"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;demo_blocks_content_with_sidebar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$attributes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="c1"&gt;// Wrap the block content in a sidebar.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;aside&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;.=&lt;/span&gt; &lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;.=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;/aside&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="c1"&gt;// Return the sidebar markup.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$sidebar&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This function would wrap the block content in a sidebar and return the resulting HTML markup.&lt;/p&gt;
+&lt;p&gt;You can use the &lt;code&gt;register_block_type_args&lt;/code&gt; filter to customize the render callback for any block that is registered with WordPress. This can be a useful way to create custom block layouts and effects.&lt;/p&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

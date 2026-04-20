@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Solutions on Ronak Vanpariya</title><link>https://vanpariyar.in/categories/solutions/</link><description>Recent content in Solutions on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 05 Feb 2026 14:25:00 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/categories/solutions/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Add Dynamic UPI QR Code to Frappe Books Invoice Template</title><link>https://vanpariyar.in/blog/how-to-add-upi-qr-code-to-frappe-books-invoice/</link><pubDate>Thu, 05 Feb 2026 14:25:00 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-add-upi-qr-code-to-frappe-books-invoice/</guid><description>&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;h2 id="how-to-add-dynamic-upi-qr-code-to-frappe-books-invoice"&gt;How to Add Dynamic UPI QR Code to Frappe Books Invoice
+&lt;/h2&gt;&lt;p&gt;If you&amp;rsquo;re using &lt;a class="link" href="https://frappebooks.com/" target="_blank" rel="noopener"
+ &gt;Frappe Books&lt;/a&gt; for invoicing in India, adding a &lt;strong&gt;dynamic UPI QR code&lt;/strong&gt; to your invoices makes it incredibly easy for customers to pay you.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The best part?&lt;/strong&gt; The QR code automatically includes the invoice amount and reference number - no manual work needed!&lt;/p&gt;
+&lt;h2 id="what-youll-get"&gt;What You&amp;rsquo;ll Get
+&lt;/h2&gt;&lt;p&gt;✅ QR code with &lt;strong&gt;exact invoice amount&lt;/strong&gt;&lt;br&gt;
+✅ Invoice number as &lt;strong&gt;payment reference&lt;/strong&gt;&lt;br&gt;
+✅ Your UPI ID pre-filled&lt;br&gt;
+✅ Works with &lt;strong&gt;any UPI app&lt;/strong&gt; (GPay, PhonePe, Paytm, etc.)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="step-1-open-your-print-template"&gt;Step 1: Open Your Print Template
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Open &lt;strong&gt;Frappe Books&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Go to &lt;strong&gt;Settings&lt;/strong&gt; → &lt;strong&gt;Print Template&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Click on your invoice template to edit it&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="step-2-copy--paste-this-code"&gt;Step 2: Copy &amp;amp; Paste This Code
+&lt;/h2&gt;&lt;p&gt;Add this code inside your &lt;code&gt;&amp;lt;footer&amp;gt;&lt;/code&gt; section:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&amp;lt;!-- Payment Details with QR Code --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;mt-12 flex justify-between&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;&amp;lt;!-- Bank Details (Left Side) --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h3&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;text-lg font-semibold&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Payment Details:&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h3&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;mt-4 text-lg whitespace-pre-line&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Account Name:&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; Your Company Name &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;br&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Account No:&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 1234 5678 9012 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;br&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;IFSC:&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; BANKCODE1234 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;br&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Bank Name:&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; Your Bank &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;br&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;UPI:&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; yourcompany@upi &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;br&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;&amp;lt;!-- UPI QR Code (Right Side) --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;text-xl&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Pay with UPI QR:&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;strong&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;border-4 p-1 border-black border-dashed&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;:src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;&amp;#39;https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;amp;data=&amp;#39; + encodeURIComponent(&amp;#39;upi://pay?pa=YOUR_UPI_ID&amp;amp;pn=YOUR_COMPANY_NAME&amp;amp;tn=For Bill &amp;#39; + doc.name + &amp;#39;&amp;amp;cu=INR&amp;amp;am=&amp;#39; + doc.grandTotal.toString().replace(/[^\d.]/g, &amp;#39;&amp;#39;))&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;UPI QR Code&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;w-full h-auto&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="step-3-replace-with-your-details"&gt;Step 3: Replace With Your Details
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;You only need to change 2 things:&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id="-1-your-upi-id"&gt;🔹 1. Your UPI ID
+&lt;/h3&gt;&lt;p&gt;Find &lt;code&gt;YOUR_UPI_ID&lt;/code&gt; and replace with your actual UPI ID.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;code&gt;mybusiness@okaxis&lt;/code&gt; or &lt;code&gt;9876543210@paytm&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="-2-your-company-name"&gt;🔹 2. Your Company Name
+&lt;/h3&gt;&lt;p&gt;Find &lt;code&gt;YOUR_COMPANY_NAME&lt;/code&gt; and replace with your business name.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;code&gt;ABC Traders&lt;/code&gt; or &lt;code&gt;My Business Pvt Ltd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s it! No URL encoding needed - the template handles it automatically using &lt;code&gt;encodeURIComponent()&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="understanding-the-code"&gt;Understanding the Code
+&lt;/h2&gt;&lt;p&gt;Here&amp;rsquo;s what the UPI URL looks like (before encoding):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;upi://pay?pa=YOUR_UPI_ID&amp;amp;pn=YOUR_COMPANY_NAME&amp;amp;tn=For Bill SINV-0001&amp;amp;cu=INR&amp;amp;am=1500.00
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Parameter&lt;/th&gt;
+ &lt;th&gt;What It Does&lt;/th&gt;
+ &lt;th&gt;Value&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;pa&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Payee Address (UPI ID)&lt;/td&gt;
+ &lt;td&gt;Your UPI ID&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;pn&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Payee Name&lt;/td&gt;
+ &lt;td&gt;Your company name&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;tn&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Transaction Note&lt;/td&gt;
+ &lt;td&gt;&amp;ldquo;For Bill&amp;rdquo; + Invoice Number&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;cu&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Currency&lt;/td&gt;
+ &lt;td&gt;INR&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;am&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Amount&lt;/td&gt;
+ &lt;td&gt;Invoice grand total&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The &lt;code&gt;encodeURIComponent()&lt;/code&gt; function automatically converts special characters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spaces become &lt;code&gt;%20&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@&lt;/code&gt; becomes &lt;code&gt;%40&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="how-dynamic-values-work"&gt;How Dynamic Values Work
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Invoice number - pulled automatically
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="c1"&gt;// → &amp;#34;SINV-0001&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Amount - extracts only numbers from grand total
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grandTotal&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;toString&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;/[^\d.]/g&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;// → &amp;#34;1500.00&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="test-your-qr-code"&gt;Test Your QR Code
+&lt;/h2&gt;&lt;p&gt;⚠️ &lt;strong&gt;Before using in production:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a test invoice&lt;/li&gt;
+&lt;li&gt;Preview the invoice&lt;/li&gt;
+&lt;li&gt;Scan the QR code with any UPI app&lt;/li&gt;
+&lt;li&gt;Verify amount and details are correct&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="troubleshooting"&gt;Troubleshooting
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;QR code shows wrong amount?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Make sure &lt;code&gt;doc.grandTotal&lt;/code&gt; exists in your template.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;QR code not scanning?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Double-check your UPI ID is correct.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Layout looks broken?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Adjust the CSS classes to match your template&amp;rsquo;s styling.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This article is based on my personal implementation in Frappe Books. Please let me know if you found any issues, in comment section below.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to remove HTML tags from the REST API title and content in WordPress</title><link>https://vanpariyar.in/blog/how-to-remove-html-tags-from-the-rest-api-title-and-content-in-wordpress/</link><pubDate>Thu, 05 Sep 2024 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-remove-html-tags-from-the-rest-api-title-and-content-in-wordpress/</guid><description>&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;h2 id="how-to-remove-html-tags-from-rest-api-title-in-wordpress"&gt;How to remove HTML tags from REST API title in WordPress
+&lt;/h2&gt;&lt;p&gt;WordPress supports HTML in fields that developers wouldn&amp;rsquo;t typically expect HTML in (e.g. post title). When you use the REST API to retrieve posts, the response body will include HTML, including HTML tags. This can be a problem if you are using the REST API to serve data to a non-HTML client, such as a mobile app or a JavaScript library.&lt;/p&gt;
+&lt;p&gt;To remove HTML tags from the REST API title, you can use the following code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Customise_WordPress&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="fm"&gt;__construct&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Remove the REST API HTML tags.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;post&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rest_prepare_&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;$post_type&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decode_rest_api_title&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * Decode HTML tags from the website title.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param string $response Actual response.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param Object $request Actual request.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param Object $post actual Post object.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @return $response return text with decoded entirties.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;decode_rest_api_title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$request&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;isset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$decoded_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;wp_strip_all_tags&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$decoded_content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;wp_strip_all_tags&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$decoded_title&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$decoded_content&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;To use this code, simply copy and paste it into your theme&amp;rsquo;s functions.php file. Then, create a new instance of the &lt;code&gt;Customise_WordPress&lt;/code&gt; class. For example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$customise_wordpress&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;Customise_WordPress&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This will remove HTML tags from the REST API title for all posts.&lt;/p&gt;
+&lt;p&gt;You can also modify the code to only remove HTML tags from the REST API title for specific post types. For example, to only remove HTML tags from the REST API title for posts of the &lt;code&gt;post&lt;/code&gt; type, you would change the following line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;post&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;post&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You can also add additional filters to the &lt;code&gt;add_filter()&lt;/code&gt; call to remove HTML tags from other fields in the REST API response. For example, to remove HTML tags from the REST API content, you would add the following filter:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rest_prepare_post_content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decode_rest_api_content&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The &lt;code&gt;decode_rest_api_content()&lt;/code&gt; function would be similar to the &lt;code&gt;decode_rest_api_title()&lt;/code&gt; function, but it would decode the &lt;code&gt;content&lt;/code&gt; field instead of the &lt;code&gt;title&lt;/code&gt; field.&lt;/p&gt;
+&lt;h2 id="benefits-of-removing-html-tags-from-the-rest-api-title"&gt;Benefits of removing HTML tags from the REST API title
+&lt;/h2&gt;&lt;p&gt;There are several benefits to removing HTML tags from the REST API title:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It makes the REST API response more consistent and easier to parse.&lt;/li&gt;
+&lt;li&gt;It reduces the risk of XSS attacks.&lt;/li&gt;
+&lt;li&gt;It improves the performance of the REST API, as HTML tags need to be decoded before they can be used.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are using the REST API to serve data to a non-HTML client, I recommend that you remove HTML tags from the REST API title and other fields in the REST API response.&lt;/p&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to customize the render callback for a WordPress block</title><link>https://vanpariyar.in/blog/how-to-customize-the-render-callback-for-a-wordpress-block/</link><pubDate>Sat, 14 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-customize-the-render-callback-for-a-wordpress-block/</guid><description>&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;h2 id="what-is-render-callback"&gt;What is Render Callback
+&lt;/h2&gt;&lt;p&gt;WordPress blocks are a powerful way to create custom content for your website. But what if you want to customize the way a block is rendered? That&amp;rsquo;s where the &lt;code&gt;render_callback&lt;/code&gt; argument comes in.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;render_callback&lt;/code&gt; argument tells WordPress which function to use to render a block. By default, WordPress uses a function called &lt;code&gt;render_block()&lt;/code&gt;, which simply renders the block&amp;rsquo;s HTML markup. However, you can override this function to provide your own custom rendering logic.&lt;/p&gt;
+&lt;p&gt;To do this, you can use the &lt;code&gt;register_block_type_args&lt;/code&gt; filter. This filter allows you to modify the block type arguments for any block that is registered with WordPress.&lt;/p&gt;
+&lt;h2 id="example-for-modification"&gt;Example for modification
+&lt;/h2&gt;&lt;p&gt;The following code snippet shows how to customize the render callback for a block called &lt;code&gt;demo/content-with-sidebar&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;register_block_type_args&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;demo/content-with-sidebar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;    &lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;render_callback&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;demo_blocks_content_with_sidebar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="k"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;In this example, we are replacing the default render callback function with a function called &lt;code&gt;demo_blocks_content_with_sidebar()&lt;/code&gt;. This function could be used to render the block in a custom way, such as wrapping it in a sidebar or adding additional HTML markup.&lt;/p&gt;
+&lt;p&gt;To use this code snippet, simply add it to your theme&amp;rsquo;s &lt;code&gt;functions.php&lt;/code&gt; file or to a custom plugin. Once you have done this, WordPress will use the custom render callback function to render the &lt;code&gt;demo/content-with-sidebar&lt;/code&gt; block.&lt;/p&gt;
+&lt;h2 id="callback-function"&gt;callback Function
+&lt;/h2&gt;&lt;p&gt;Here is an example of a custom render callback function:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;span class="lnt"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;demo_blocks_content_with_sidebar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$attributes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="c1"&gt;// Wrap the block content in a sidebar.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;aside&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;.=&lt;/span&gt; &lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;.=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;/aside&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="c1"&gt;// Return the sidebar markup.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$sidebar&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This function would wrap the block content in a sidebar and return the resulting HTML markup.&lt;/p&gt;
+&lt;p&gt;You can use the &lt;code&gt;register_block_type_args&lt;/code&gt; filter to customize the render callback for any block that is registered with WordPress. This can be a useful way to create custom block layouts and effects.&lt;/p&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to remove HTML entities from the REST API title and content in WordPress</title><link>https://vanpariyar.in/blog/how-to-remove-html-entities-from-the-rest-api-title-and-content-in-wordpress/</link><pubDate>Sun, 08 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-remove-html-entities-from-the-rest-api-title-and-content-in-wordpress/</guid><description>&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;h2 id="how-to-remove-html-entities-from-rest-api-title-in-wordpress"&gt;How to remove HTML entities from REST API title in WordPress
+&lt;/h2&gt;&lt;p&gt;WordPress supports HTML in fields that developers wouldn&amp;rsquo;t typically expect HTML in (e.g. post title). When you use the REST API to retrieve posts, the response body will include HTML, including HTML entities. This can be a problem if you are using the REST API to serve data to a non-HTML client, such as a mobile app or a JavaScript library.&lt;/p&gt;
+&lt;p&gt;To remove HTML entities from the REST API title, you can use the following code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Customise_WordPress&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="fm"&gt;__construct&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Remove the REST API HTML entities.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;post&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rest_prepare_&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;$post_type&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decode_rest_api_title&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * Decode HTML entities from the website title.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param string $response Actual response.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param Object $request Actual request.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param Object $post actual Post object.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @return $response return text with decoded entirties.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;decode_rest_api_title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$request&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;isset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$decoded_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;html_entity_decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$decoded_content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;html_entity_decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$decoded_title&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$decoded_content&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;To use this code, simply copy and paste it into your theme&amp;rsquo;s functions.php file. Then, create a new instance of the &lt;code&gt;Customise_WordPress&lt;/code&gt; class. For example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$customise_wordpress&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;Customise_WordPress&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;My Custom WordPress&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This will remove HTML entities from the REST API title for all posts.&lt;/p&gt;
+&lt;p&gt;You can also modify the code to only remove HTML entities from the REST API title for specific post types. For example, to only remove HTML entities from the REST API title for posts of the &lt;code&gt;post&lt;/code&gt; type, you would change the following line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;post&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;post&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You can also add additional filters to the &lt;code&gt;add_filter()&lt;/code&gt; call to remove HTML entities from other fields in the REST API response. For example, to remove HTML entities from the REST API content, you would add the following filter:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rest_prepare_post_content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decode_rest_api_content&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The &lt;code&gt;decode_rest_api_content()&lt;/code&gt; function would be similar to the &lt;code&gt;decode_rest_api_title()&lt;/code&gt; function, but it would decode the &lt;code&gt;content&lt;/code&gt; field instead of the &lt;code&gt;title&lt;/code&gt; field.&lt;/p&gt;
+&lt;h2 id="benefits-of-removing-html-entities-from-the-rest-api-title"&gt;Benefits of removing HTML entities from the REST API title
+&lt;/h2&gt;&lt;p&gt;There are several benefits to removing HTML entities from the REST API title:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It makes the REST API response more consistent and easier to parse.&lt;/li&gt;
+&lt;li&gt;It reduces the risk of XSS attacks.&lt;/li&gt;
+&lt;li&gt;It improves the performance of the REST API, as HTML entities need to be decoded before they can be used.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are using the REST API to serve data to a non-HTML client, I recommend that you remove HTML entities from the REST API title and other fields in the REST API response.&lt;/p&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>Remind your domain/Hosting expiry in slack and email with google apps script for Free</title><link>https://vanpariyar.in/blog/remind-your-domain-hosting-expiry-in-slack-and-email-with-google-apps-script-for-free/</link><pubDate>Mon, 01 May 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/remind-your-domain-hosting-expiry-in-slack-and-email-with-google-apps-script-for-free/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post Remind your domain/Hosting expiry in slack and email with google apps script for Free" /&gt;&lt;blockquote&gt;
+&lt;p&gt;This tutorial describes how to leverage google apps script and Google sheets to remind you of your due subscription on Time for free of cost.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="introduction"&gt;Introduction
+&lt;/h2&gt;&lt;p&gt;Yes it is possible 🙂 with very small google apps script programs. You can use and customise this program to use in and combine with any services.&lt;/p&gt;
+&lt;p&gt;This article will guide you how we track our domain and server due dates. It will help to save costs while starting a small business with a small portfolio of clients.&lt;/p&gt;
+&lt;h2 id="start-from-here"&gt;Start from here
+&lt;/h2&gt;&lt;p&gt;Note: Please follow if you haven&amp;rsquo;t followed this 📝 &lt;a class="link" href="https://vanpariyar.in/blog/how-to-automate-slack-message-with-google-appscript-free/" &gt;Blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To get started copy 👉 &lt;a class="link" href="https://docs.google.com/spreadsheets/d/1Blowo5WQggMedNTdQbsB4cbgGVuB1mOSv2pheOlratw/copy" title="Sheet To Copy"
+ target="_blank" rel="noopener"
+ &gt;This sheet&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/0Q2sgdT_6577706871108980715.png" width="661" height="347" 
+ loading="lazy" alt="This sheet" class="gallery-image"
+ data-flex-grow="190"
+ data-flex-basis="457px" &gt;&lt;/p&gt;
+&lt;h3 id="appscript-part"&gt;Appscript Part
+&lt;/h3&gt;&lt;p&gt;By copying this sheet you will also get the code for the setup, I will explain later in the blog.&lt;/p&gt;
+&lt;p&gt;You will have a basic sheet setup. Fill the details for the website and renew the date accordingly.&lt;/p&gt;
+&lt;h2 id="how-to-test-properly"&gt;How to Test Properly
+&lt;/h2&gt;&lt;p&gt;First Test the main function by running in the editor. It will show unverified because you have not verified this app on google cloud, No problem you will need to click on Advance. Then click the unsafe option. No Problem you can verify your script later.&lt;/p&gt;
+&lt;p&gt;This will not remind automatically, We need to set up a trigger for the function.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/f9ovGEa_12060918447662118326.png" width="326" height="392" 
+ loading="lazy" alt="This sheet" class="gallery-image"
+ data-flex-grow="83"
+ data-flex-basis="199px" &gt;
+&lt;img src="https://vanpariyar.in/9gpV8Wv_3172408110549041301.png" width="745" height="820" 
+ loading="lazy" alt="This sheet" class="gallery-image"
+ data-flex-grow="90"
+ data-flex-basis="218px" &gt;&lt;/p&gt;
+&lt;p&gt;You can add and customise this code according to your needs and requirements.&lt;/p&gt;
+&lt;p&gt;Feel free to drop a comment if you need more tutorials like this.&lt;/p&gt;
+&lt;h2 id="creativity-"&gt;Creativity 🪔
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;You can create anything for reminder or notification.&lt;/li&gt;
+&lt;li&gt;You can add multiple services like Email.&lt;/li&gt;
+&lt;li&gt;You can use Zapier type services as well.&lt;/li&gt;
+&lt;li&gt;You can send your server to pause the user.&lt;/li&gt;
+&lt;li&gt;HestiaCP and other Hosting panels provides API so we can use it on Google Sheets as well.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This list is very long and it is free to use. You do not need to pay for sass tool once you developed your desired solution.&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Clone Whole Wordpress Site With Database When You Only Have Ftp</title><link>https://vanpariyar.in/blog/2021-08-20-how-to-clone-whole-wordpress-site-with-database-when-you-only-have-ftp/</link><pubDate>Fri, 20 Aug 2021 18:18:05 +0530</pubDate><guid>https://vanpariyar.in/blog/2021-08-20-how-to-clone-whole-wordpress-site-with-database-when-you-only-have-ftp/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to Clone Whole Wordpress Site With Database When You Only Have Ftp" /&gt;&lt;h2 id="problem-thinking"&gt;Problem &amp;#x1f914;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;How to Clone Whole Wordpress Site With Database When You Only Have Ftp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I came across a good idea that can save your time so I thought it would be great to share.&lt;/p&gt;
+&lt;h2 id="what-i-had"&gt;What i had
+&lt;/h2&gt;&lt;p&gt;I had one website&amp;rsquo;s FTP only which is the WordPress website. and I was waiting to reply for 2 days.&lt;/p&gt;
+&lt;h2 id="output"&gt;Output
+&lt;/h2&gt;&lt;p&gt;I need to clone the whole website. in my local environment with the database installed.&lt;/p&gt;
+&lt;h2 id="research-book"&gt;Research &amp;#x1f4d6;
+&lt;/h2&gt;&lt;p&gt;After searching so many articles, found a simple tool call &lt;a class="link" href="https://www.adminer.org/" target="_blank" rel="noopener"
+ &gt;adminer&lt;/a&gt; i know many of us know and used this tool.&lt;/p&gt;
+&lt;h2 id="solutions-bulb"&gt;solutions &amp;#x1f4a1;
+&lt;/h2&gt;&lt;p&gt;have downloaded its PHP file. what I have done is, have uploaded that &lt;code&gt;adminer-4.1.2.php&lt;/code&gt; and renamed it to adminer.php to the document root.&lt;/p&gt;
+&lt;p&gt;then extract credentials from the &lt;code&gt;wp-config.php&lt;/code&gt; for the MYSQL.&lt;/p&gt;
+&lt;p&gt;simply hit the URL _ https://your-site/adminer.php&lt;/p&gt;
+&lt;p&gt;then entered credentials extracted from the &lt;code&gt;wp-config.php&lt;/code&gt; then exported the DB from its GUI.&lt;/p&gt;
+&lt;p&gt;files I have downloaded from the FTP and Database from the adminer. that&amp;rsquo;s all.&lt;/p&gt;
+&lt;p&gt;&amp;#x1f389; The client replied after 2 days found he was on vacation &amp;#x1f604;&lt;/p&gt;</description></item></channel></rss>

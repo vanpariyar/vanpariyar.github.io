@@ -1,0 +1,1491 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wordpress on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/wordpress/</link><description>Recent content in Wordpress on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 09 Sep 2024 12:00:00 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/wordpress/index.xml" rel="self" type="application/rss+xml"/><item><title>Getting Started with Gutenberg Editor Custom Block Development</title><link>https://vanpariyar.in/blog/how-to-start-with-gutenberg-editor-custom-block-development/</link><pubDate>Mon, 09 Sep 2024 12:00:00 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-start-with-gutenberg-editor-custom-block-development/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post Getting Started with Gutenberg Editor Custom Block Development" /&gt;&lt;h2 id="how-to-start-with-gutenberg-editor-custom-block-development"&gt;How to Start with Gutenberg Editor Custom Block Development
+&lt;/h2&gt;&lt;p&gt;Developing custom blocks for the Gutenberg editor can be simple and rewarding. This guide will walk you through the essentials and provide key resources to get started with WordPress block development.&lt;/p&gt;
+&lt;h3 id="where-to-begin"&gt;Where to Begin?
+&lt;/h3&gt;&lt;p&gt;The best place to start is by diving into the &lt;a class="link" href="https://developer.wordpress.org/block-editor/" target="_blank" rel="noopener"
+ &gt;WordPress Block Developer Handbook&lt;/a&gt;. It covers everything from creating simple blocks to advanced customizations, and is the go-to resource once you’ve got the basics of JavaScript under your belt.&lt;/p&gt;
+&lt;h3 id="javascript-options-for-gutenberg-block-development"&gt;JavaScript Options for Gutenberg Block Development
+&lt;/h3&gt;&lt;p&gt;When it comes to developing Gutenberg blocks, you have two primary options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Vanilla JavaScript&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modern ESNext (ES6+) standards&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;While both can work, I recommend using &lt;strong&gt;ESNext standards&lt;/strong&gt; to leverage the latest JavaScript features and take advantage of modern workflows.&lt;/p&gt;
+&lt;p&gt;A great tool to get you started with Gutenberg block development is &lt;a class="link" href="https://github.com/ahmadawais/create-guten-block" target="_blank" rel="noopener"
+ &gt;Create Guten Block&lt;/a&gt;, an open-source NPM package. This package comes pre-configured with &lt;strong&gt;Webpack&lt;/strong&gt; and &lt;strong&gt;ESLint&lt;/strong&gt;, making setup a breeze. It’s perfect for developers looking for a hassle-free environment to start building custom blocks.&lt;/p&gt;
+&lt;h3 id="react-and-gutenberg-the-relationship"&gt;React and Gutenberg: The Relationship
+&lt;/h3&gt;&lt;p&gt;Gutenberg is built on top of &lt;strong&gt;React&lt;/strong&gt;, so if you have experience with React, you’re already a step ahead. Knowing React’s component-based architecture will make Gutenberg block development much easier.&lt;/p&gt;
+&lt;h4 id="can-you-use-react-hooks-in-gutenberg"&gt;Can You Use React Hooks in Gutenberg?
+&lt;/h4&gt;&lt;p&gt;Yes! Since Gutenberg uses React under the hood, you can utilize hooks such as:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;useState()&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;useRef()&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Hooks allow you to manage state and references in your blocks just like you would in a React application. You can import them from &lt;code&gt;wp.element&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you’re new to hooks, check out the official &lt;a class="link" href="https://reactjs.org/docs/hooks-intro.html" target="_blank" rel="noopener"
+ &gt;React Hooks Documentation&lt;/a&gt; to get started.&lt;/p&gt;
+&lt;h3 id="my-development-experience"&gt;My Development Experience
+&lt;/h3&gt;&lt;h4 id="simple-javascript-blocks"&gt;Simple JavaScript Blocks
+&lt;/h4&gt;&lt;p&gt;I’ve built a few simple Gutenberg blocks using vanilla JavaScript. You can check out a demo on my GitHub repository here:&lt;br&gt;
+&lt;a class="link" href="https://github.com/vanpariyar/gutenberg-blocks-plugin" target="_blank" rel="noopener"
+ &gt;https://github.com/vanpariyar/gutenberg-blocks-plugin&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="esnext-and-modern-development"&gt;ESNext and Modern Development
+&lt;/h4&gt;&lt;p&gt;For more complex projects, I prefer using &lt;strong&gt;ESNext&lt;/strong&gt;. One of the plugins I developed using this approach is available on GitHub:&lt;br&gt;
+&lt;a class="link" href="https://github.com/vanpariyar/gutenberg-instagram-post-grid" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;vanpariyar/gutenberg-instagram-post-grid&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can also check out this plugin on WordPress’s plugin repository:&lt;br&gt;
+&lt;a class="link" href="https://wordpress.org/plugins/social-gallery-block" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;Social Gallery Block&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="additional-demos"&gt;Additional Demos
+&lt;/h3&gt;&lt;p&gt;I’ve also created other demos showcasing different features of Gutenberg block development. One such demo involves fetching random quotes and saving them in the WordPress database:&lt;br&gt;
+&lt;a class="link" href="https://github.com/vanpariyar/gutenberg-demo-esnext" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;vanpariyar/gutenberg-demo-esnext&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="final-thoughts"&gt;Final Thoughts
+&lt;/h3&gt;&lt;p&gt;If you’re just starting out with Gutenberg block development, it may feel overwhelming at first. But with tools like &lt;strong&gt;Create Guten Block&lt;/strong&gt; and resources like the &lt;strong&gt;WordPress Developer Handbook&lt;/strong&gt;, you’ll be able to develop custom blocks quickly and efficiently. Keep experimenting and don’t hesitate to dive into the React ecosystem—it’ll pay off in the long run.&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>Fetch Instagram Details</title><link>https://vanpariyar.in/blog/fetch-instagram-details/</link><pubDate>Mon, 09 Sep 2024 10:00:00 +0530</pubDate><guid>https://vanpariyar.in/blog/fetch-instagram-details/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post Fetch Instagram Details" /&gt;&lt;blockquote&gt;
+&lt;p&gt;This guide has been updated: Instagram now requires an access token to fetch user data. This guide covers how to authenticate and retrieve user details using the Instagram Graph API.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="get-instagram-details-updated"&gt;Get-Instagram-Details (Updated)
+&lt;/h2&gt;&lt;p&gt;Instagram has deprecated its public API, and now you need an &lt;strong&gt;Instagram Access Token&lt;/strong&gt; to fetch user data. To retrieve details like username, profile picture, bio, and follower count, you must authenticate your app and get the appropriate permissions using the Instagram Graph API.&lt;/p&gt;
+&lt;h3 id="steps-to-get-instagram-details"&gt;Steps to Get Instagram Details
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Set up your Instagram Developer account:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to the &lt;a class="link" href="https://developers.facebook.com/docs/instagram-api" target="_blank" rel="noopener"
+ &gt;Instagram for Developers&lt;/a&gt; page.&lt;/li&gt;
+&lt;li&gt;Create an app and get the &lt;strong&gt;App ID&lt;/strong&gt; and &lt;strong&gt;App Secret&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;&lt;strong&gt;Get User Access Token:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;After setting up the app, use OAuth to authenticate users and retrieve the access token. You&amp;rsquo;ll need the &lt;strong&gt;user_profile&lt;/strong&gt; and &lt;strong&gt;user_media&lt;/strong&gt; permissions to access user details.&lt;/li&gt;
+&lt;li&gt;You can refer to &lt;a class="link" href="https://developers.facebook.com/docs/facebook-login/" target="_blank" rel="noopener"
+ &gt;Facebook&amp;rsquo;s OAuth documentation&lt;/a&gt; for details on the authentication flow.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;&lt;strong&gt;Make API requests:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Once authenticated, you can use the following endpoint to get the user&amp;rsquo;s data:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://graph.instagram.com/me?fields=id,username,media_count,account_type&amp;amp;access_token={access-token}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s an example of how you can use &lt;strong&gt;fetch&lt;/strong&gt; to get the data:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.instagram-get&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;on&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;event&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;accessToken&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;YOUR_ACCESS_TOKEN&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// Replace with a valid access token
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sb"&gt;`https://graph.instagram.com/me?fields=id,username,media_count,account_type&amp;amp;access_token=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;accessToken&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;response&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;.username&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;html&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;username&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;.media-count&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;html&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;media_count&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;.account-type&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;html&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;account_type&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.insta-details&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;show&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;slow&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;catch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;error&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Error fetching Instagram details:&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;error&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="important-notes"&gt;Important Notes:
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The new Instagram API only supports user data that you have permission to access (your account or authenticated users).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can also fetch media-related data such as recent posts using the media endpoints:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://graph.instagram.com/me/media?fields=id,caption,media_url&amp;amp;access_token={access-token}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="demo-url-deprecated---do-not-use"&gt;Demo URL (Deprecated) - Do not use
+&lt;/h3&gt;&lt;p&gt;The demo that previously used the public GraphQL API no longer works, as Instagram now requires OAuth authentication and access tokens. You can check the &lt;a class="link" href="https://developers.facebook.com/docs/instagram-api/" target="_blank" rel="noopener"
+ &gt;Instagram API documentation&lt;/a&gt; for more details on building your app.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/70326031-832ad600-1859-11ea-91a5-e00e16563baa_8952297469197869118.png" width="820" height="205" 
+ loading="lazy" alt="Fetch Instagram Details" class="gallery-image"
+ data-flex-grow="400"
+ data-flex-basis="960px" &gt;&lt;/p&gt;
+&lt;h4 id="if-you-are-still-reading-this-thumbsup-thank-you-so-very-much-for-your-time-hourglass"&gt;If you are still reading this, &amp;#x1f44d; thank you so very much for your time &amp;#x231b;.
+&lt;/h4&gt;&lt;p&gt;&amp;#x270b; If you are getting any errors, you can create an issue on this repo with proper details.&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to remove HTML tags from the REST API title and content in WordPress</title><link>https://vanpariyar.in/blog/how-to-remove-html-tags-from-the-rest-api-title-and-content-in-wordpress/</link><pubDate>Thu, 05 Sep 2024 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-remove-html-tags-from-the-rest-api-title-and-content-in-wordpress/</guid><description>&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;h2 id="how-to-remove-html-tags-from-rest-api-title-in-wordpress"&gt;How to remove HTML tags from REST API title in WordPress
+&lt;/h2&gt;&lt;p&gt;WordPress supports HTML in fields that developers wouldn&amp;rsquo;t typically expect HTML in (e.g. post title). When you use the REST API to retrieve posts, the response body will include HTML, including HTML tags. This can be a problem if you are using the REST API to serve data to a non-HTML client, such as a mobile app or a JavaScript library.&lt;/p&gt;
+&lt;p&gt;To remove HTML tags from the REST API title, you can use the following code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Customise_WordPress&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="fm"&gt;__construct&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Remove the REST API HTML tags.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;post&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rest_prepare_&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;$post_type&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decode_rest_api_title&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * Decode HTML tags from the website title.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param string $response Actual response.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param Object $request Actual request.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param Object $post actual Post object.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @return $response return text with decoded entirties.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;decode_rest_api_title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$request&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;isset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$decoded_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;wp_strip_all_tags&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$decoded_content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;wp_strip_all_tags&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$decoded_title&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$decoded_content&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;To use this code, simply copy and paste it into your theme&amp;rsquo;s functions.php file. Then, create a new instance of the &lt;code&gt;Customise_WordPress&lt;/code&gt; class. For example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$customise_wordpress&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;Customise_WordPress&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This will remove HTML tags from the REST API title for all posts.&lt;/p&gt;
+&lt;p&gt;You can also modify the code to only remove HTML tags from the REST API title for specific post types. For example, to only remove HTML tags from the REST API title for posts of the &lt;code&gt;post&lt;/code&gt; type, you would change the following line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;post&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;post&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You can also add additional filters to the &lt;code&gt;add_filter()&lt;/code&gt; call to remove HTML tags from other fields in the REST API response. For example, to remove HTML tags from the REST API content, you would add the following filter:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rest_prepare_post_content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decode_rest_api_content&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The &lt;code&gt;decode_rest_api_content()&lt;/code&gt; function would be similar to the &lt;code&gt;decode_rest_api_title()&lt;/code&gt; function, but it would decode the &lt;code&gt;content&lt;/code&gt; field instead of the &lt;code&gt;title&lt;/code&gt; field.&lt;/p&gt;
+&lt;h2 id="benefits-of-removing-html-tags-from-the-rest-api-title"&gt;Benefits of removing HTML tags from the REST API title
+&lt;/h2&gt;&lt;p&gt;There are several benefits to removing HTML tags from the REST API title:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It makes the REST API response more consistent and easier to parse.&lt;/li&gt;
+&lt;li&gt;It reduces the risk of XSS attacks.&lt;/li&gt;
+&lt;li&gt;It improves the performance of the REST API, as HTML tags need to be decoded before they can be used.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are using the REST API to serve data to a non-HTML client, I recommend that you remove HTML tags from the REST API title and other fields in the REST API response.&lt;/p&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to customize the render callback for a WordPress block</title><link>https://vanpariyar.in/blog/how-to-customize-the-render-callback-for-a-wordpress-block/</link><pubDate>Sat, 14 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-customize-the-render-callback-for-a-wordpress-block/</guid><description>&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;h2 id="what-is-render-callback"&gt;What is Render Callback
+&lt;/h2&gt;&lt;p&gt;WordPress blocks are a powerful way to create custom content for your website. But what if you want to customize the way a block is rendered? That&amp;rsquo;s where the &lt;code&gt;render_callback&lt;/code&gt; argument comes in.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;render_callback&lt;/code&gt; argument tells WordPress which function to use to render a block. By default, WordPress uses a function called &lt;code&gt;render_block()&lt;/code&gt;, which simply renders the block&amp;rsquo;s HTML markup. However, you can override this function to provide your own custom rendering logic.&lt;/p&gt;
+&lt;p&gt;To do this, you can use the &lt;code&gt;register_block_type_args&lt;/code&gt; filter. This filter allows you to modify the block type arguments for any block that is registered with WordPress.&lt;/p&gt;
+&lt;h2 id="example-for-modification"&gt;Example for modification
+&lt;/h2&gt;&lt;p&gt;The following code snippet shows how to customize the render callback for a block called &lt;code&gt;demo/content-with-sidebar&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;register_block_type_args&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;demo/content-with-sidebar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;    &lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;render_callback&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;demo_blocks_content_with_sidebar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="k"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;In this example, we are replacing the default render callback function with a function called &lt;code&gt;demo_blocks_content_with_sidebar()&lt;/code&gt;. This function could be used to render the block in a custom way, such as wrapping it in a sidebar or adding additional HTML markup.&lt;/p&gt;
+&lt;p&gt;To use this code snippet, simply add it to your theme&amp;rsquo;s &lt;code&gt;functions.php&lt;/code&gt; file or to a custom plugin. Once you have done this, WordPress will use the custom render callback function to render the &lt;code&gt;demo/content-with-sidebar&lt;/code&gt; block.&lt;/p&gt;
+&lt;h2 id="callback-function"&gt;callback Function
+&lt;/h2&gt;&lt;p&gt;Here is an example of a custom render callback function:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;span class="lnt"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;demo_blocks_content_with_sidebar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$attributes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="c1"&gt;// Wrap the block content in a sidebar.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;aside&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;.=&lt;/span&gt; &lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;.=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;/aside&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="c1"&gt;// Return the sidebar markup.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$sidebar&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This function would wrap the block content in a sidebar and return the resulting HTML markup.&lt;/p&gt;
+&lt;p&gt;You can use the &lt;code&gt;register_block_type_args&lt;/code&gt; filter to customize the render callback for any block that is registered with WordPress. This can be a useful way to create custom block layouts and effects.&lt;/p&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>PHPCS Setup Useful Commands</title><link>https://vanpariyar.in/blog/phpcs-setup-useful-commands/</link><pubDate>Sat, 14 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/phpcs-setup-useful-commands/</guid><description>&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;h1 id="php-setup-useful-commands"&gt;PHP Setup Useful Commands
+&lt;/h1&gt;&lt;p&gt;This blog post will discuss a useful PHP setup command that can be used to add the current working directory to the PHPCS installed paths. This can be useful for projects that use custom PHP coding standards or rulesets.&lt;/p&gt;
+&lt;h2 id="what-is-phpcs"&gt;What is PHPCS?
+&lt;/h2&gt;&lt;p&gt;PHPCS is a PHP Coding Standards Fixer. It is a tool that can be used to check PHP code for compliance with a variety of coding standards, such as PSR-1, PSR-2, and PEAR. PHPCS can also be used to fix some coding errors automatically.&lt;/p&gt;
+&lt;h2 id="what-are-phpcs-installed-paths"&gt;What are PHPCS installed paths?
+&lt;/h2&gt;&lt;p&gt;PHPCS installed paths are the directories that PHPCS will search for coding standards and rulesets. By default, PHPCS will search the following directories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;src/Standards&lt;/code&gt; directory of the PHPCS installation.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;Standards&lt;/code&gt; directory of the current working directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="how-to-add-the-current-working-directory-to-the-phpcs-installed-paths"&gt;How to add the current working directory to the PHPCS installed paths
+&lt;/h2&gt;&lt;p&gt;To add the current working directory to the PHPCS installed paths, you can use the following command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;phpcs_ipath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;phpcs --config-show installed_paths&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nv"&gt;oldpath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;phpcs_ipath&lt;/span&gt;&lt;span class="p"&gt;##*:&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; phpcs --config-set installed_paths &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;oldpath&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;,&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This command will first get the current PHPCS installed paths using the &lt;code&gt;phpcs --config-show installed_paths&lt;/code&gt; command. It will then remove the leading colon from the installed paths using the &lt;code&gt;oldpath=${phpcs_ipath##*:}&lt;/code&gt; command. Finally, it will set the PHPCS installed paths to the old installed paths plus the current working directory using the &lt;code&gt;phpcs --config-set installed_paths ${oldpath},$(pwd)&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;Once you have run this command, the current working directory will be added to the PHPCS installed paths. This means that PHPCS will be able to find any custom PHP coding standards or rulesets that are located in the current working directory.&lt;/p&gt;
+&lt;h2 id="example-usage"&gt;Example usage
+&lt;/h2&gt;&lt;p&gt;The following example shows how to use the command to add the current working directory to the PHPCS installed paths:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Get the current PHPCS installed paths.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;phpcs_ipath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;phpcs --config-show installed_paths&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Remove the leading colon from the installed paths.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;oldpath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;phpcs_ipath&lt;/span&gt;&lt;span class="p"&gt;##*:&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Set the PHPCS installed paths to the old installed paths plus the current working directory.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;phpcs --config-set installed_paths &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;oldpath&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;,&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Once you have run this command, the current working directory will be added to the PHPCS installed paths. You can then use PHPCS to check your PHP code for compliance with the custom coding standards or rulesets that are located in the current working directory.&lt;/p&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to remove HTML entities from the REST API title and content in WordPress</title><link>https://vanpariyar.in/blog/how-to-remove-html-entities-from-the-rest-api-title-and-content-in-wordpress/</link><pubDate>Sun, 08 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-remove-html-entities-from-the-rest-api-title-and-content-in-wordpress/</guid><description>&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;h2 id="how-to-remove-html-entities-from-rest-api-title-in-wordpress"&gt;How to remove HTML entities from REST API title in WordPress
+&lt;/h2&gt;&lt;p&gt;WordPress supports HTML in fields that developers wouldn&amp;rsquo;t typically expect HTML in (e.g. post title). When you use the REST API to retrieve posts, the response body will include HTML, including HTML entities. This can be a problem if you are using the REST API to serve data to a non-HTML client, such as a mobile app or a JavaScript library.&lt;/p&gt;
+&lt;p&gt;To remove HTML entities from the REST API title, you can use the following code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Customise_WordPress&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="fm"&gt;__construct&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Remove the REST API HTML entities.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;post&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rest_prepare_&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;$post_type&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decode_rest_api_title&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * Decode HTML entities from the website title.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param string $response Actual response.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param Object $request Actual request.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param Object $post actual Post object.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @return $response return text with decoded entirties.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;decode_rest_api_title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$request&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;isset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$decoded_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;html_entity_decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$decoded_content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;html_entity_decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$decoded_title&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rendered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$decoded_content&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;To use this code, simply copy and paste it into your theme&amp;rsquo;s functions.php file. Then, create a new instance of the &lt;code&gt;Customise_WordPress&lt;/code&gt; class. For example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$customise_wordpress&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;Customise_WordPress&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;My Custom WordPress&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This will remove HTML entities from the REST API title for all posts.&lt;/p&gt;
+&lt;p&gt;You can also modify the code to only remove HTML entities from the REST API title for specific post types. For example, to only remove HTML entities from the REST API title for posts of the &lt;code&gt;post&lt;/code&gt; type, you would change the following line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;post&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$post_type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;post&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You can also add additional filters to the &lt;code&gt;add_filter()&lt;/code&gt; call to remove HTML entities from other fields in the REST API response. For example, to remove HTML entities from the REST API content, you would add the following filter:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rest_prepare_post_content&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;decode_rest_api_content&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The &lt;code&gt;decode_rest_api_content()&lt;/code&gt; function would be similar to the &lt;code&gt;decode_rest_api_title()&lt;/code&gt; function, but it would decode the &lt;code&gt;content&lt;/code&gt; field instead of the &lt;code&gt;title&lt;/code&gt; field.&lt;/p&gt;
+&lt;h2 id="benefits-of-removing-html-entities-from-the-rest-api-title"&gt;Benefits of removing HTML entities from the REST API title
+&lt;/h2&gt;&lt;p&gt;There are several benefits to removing HTML entities from the REST API title:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It makes the REST API response more consistent and easier to parse.&lt;/li&gt;
+&lt;li&gt;It reduces the risk of XSS attacks.&lt;/li&gt;
+&lt;li&gt;It improves the performance of the REST API, as HTML entities need to be decoded before they can be used.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are using the REST API to serve data to a non-HTML client, I recommend that you remove HTML entities from the REST API title and other fields in the REST API response.&lt;/p&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to install HestiaCP and install WordPress in VPS</title><link>https://vanpariyar.in/blog/how-to-install-hestiacp-and-install-wordpress-in-vps/</link><pubDate>Thu, 21 Sep 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-install-hestiacp-and-install-wordpress-in-vps/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to install HestiaCP and install WordPress in VPS" /&gt;&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;p&gt;Before we dive into the installation process, let&amp;rsquo;s briefly talk about why you might want to consider using HestiaCP for your WordPress hosting.&lt;/p&gt;
+&lt;h2 id="why-choose-hestiacp"&gt;Why Choose HestiaCP?
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Open Source:&lt;/strong&gt; HestiaCP is a free, open-source control panel that puts you in control of your server. You can customize it to meet your specific needs, and there are no licensing costs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;User-Friendly:&lt;/strong&gt; HestiaCP offers an intuitive and user-friendly interface, making server management accessible even for those without advanced technical knowledge.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Resource Efficiency:&lt;/strong&gt; It&amp;rsquo;s designed to be lightweight and efficient, which is particularly valuable if you&amp;rsquo;re running a VPS or a smaller server.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security:&lt;/strong&gt; HestiaCP includes various security features to help protect your server and WordPress sites.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now, let&amp;rsquo;s get into the nitty-gritty of installing HestiaCP on your VPS:&lt;/p&gt;
+&lt;h2 id="installing-hestiacp-on-your-vps"&gt;Installing HestiaCP on Your VPS
+&lt;/h2&gt;&lt;h3 id="prerequisites"&gt;Prerequisites:
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;A VPS with a fresh installation of a supported Linux distribution (e.g., Ubuntu, Debian).&lt;/li&gt;
+&lt;li&gt;SSH access to your VPS.&lt;/li&gt;
+&lt;li&gt;Basic command-line knowledge.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="the-installation-process"&gt;The Installation Process:
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SSH into Your VPS:&lt;/strong&gt; Connect to your VPS using SSH. You&amp;rsquo;ll need the server&amp;rsquo;s IP address and your SSH key.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Update Your System:&lt;/strong&gt; Ensure your system is up-to-date by running:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Download and Run the Installation Script:&lt;/strong&gt; HestiaCP provides a convenient script for installation. You can download and execute it with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wget https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bash hst-install.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can get more options on the hestiaCP documents.&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Follow the Prompts:&lt;/strong&gt; The script will guide you through the installation process, asking for information such as your email address, hostname, and more. Be sure to provide accurate details.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Wait for Installation to Complete:&lt;/strong&gt; The installation process might take a few minutes. Once it&amp;rsquo;s finished, you&amp;rsquo;ll receive information about accessing your HestiaCP control panel.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Access HestiaCP:&lt;/strong&gt; Open a web browser and go to &lt;code&gt;https://your-server-ip:8083&lt;/code&gt; to access the HestiaCP control panel. Log in using the credentials you set during the installation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Configure Your Server and Hosting:&lt;/strong&gt; From the control panel, you can create websites, set up databases, configure DNS records, and more. It&amp;rsquo;s a powerful tool to manage your WordPress hosting environment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That&amp;rsquo;s it! You now have HestiaCP installed on your VPS, ready to host your WordPress websites efficiently and securely. Remember, HestiaCP offers a wide range of features and options, so take your time to explore and configure it to suit your specific needs.&lt;/p&gt;
+&lt;p&gt;I hope this overview has been helpful in getting you started with HestiaCP on your VPS. If you have any questions or need further assistance, feel free to ask, and I&amp;rsquo;ll do my best to help. Happy WordPress hosting!&lt;/p&gt;
+&lt;p&gt;Thank you for having me today, and I&amp;rsquo;m looking forward to any questions or discussions you might have on this topic.&lt;/p&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to register dynamic Gutenberg block in WordPress ?</title><link>https://vanpariyar.in/blog/how-to-register-dynamic-gutenberg-block-in-wordpress/</link><pubDate>Thu, 28 Jul 2022 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-register-dynamic-gutenberg-block-in-wordpress/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to register dynamic Gutenberg block in WordPress ?" /&gt;&lt;h2 id="introduction"&gt;Introduction
+&lt;/h2&gt;&lt;p&gt;&amp;#x1f44b; Hello friend, &amp;#x1f4dc; &amp;#x1f642; &amp;#x1f3e0;&lt;/p&gt;
+&lt;p&gt;I was working on Gutenberg Side from a large amount of time. &amp;#x23f2;&amp;#xfe0f;. If you comfortable with the WordPress development blog you can ues the docs itself &amp;#x1f449; &lt;a class="link" href="https://developer.wordpress.org/block-editor/" title="Wordpress Block Editor Handbook"
+ target="_blank" rel="noopener"
+ &gt;Official Handbook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this tutorial you will learn how to make &lt;a class="link" href="https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/creating-dynamic-blocks/" target="_blank" rel="noopener"
+ &gt;dynamic block&lt;/a&gt; using Gutenberg.&lt;/p&gt;
+&lt;h2 id="setup"&gt;Setup
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Any local development system with node.js and NPM/Yarn installed.&lt;/li&gt;
+&lt;li&gt;Run command in plugin folder&amp;rsquo;s via terminal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ npx @wordpress/create-block demo-test --variant dynamic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&amp;#x1f604; That&amp;rsquo;s it all setup is done now.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;After running command you will see that plugin is created with name &lt;code&gt;demo-test&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Activate &lt;code&gt;Demo Test&lt;/code&gt; Plugin from the dashboard, you will see hello world block in the Post or Page Editor with &amp;#x1f604; emoji.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="the-change"&gt;The Change
+&lt;/h2&gt;&lt;p&gt;Please check and see whole file structure in the plugin. You will find all block related code done in the &lt;code&gt;src&lt;/code&gt; folder &amp;#x1f4c2;.&lt;/p&gt;
+&lt;p&gt;Now You will not need to change the dynamic call back from the main plugin file by adding filter.&lt;/p&gt;
+&lt;p&gt;You can start code in &lt;code&gt;edit.js&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;in &lt;code&gt;src&lt;/code&gt; folder you will see &lt;code&gt;template.php&lt;/code&gt; which is preconfigured by command.&lt;/p&gt;
+&lt;p&gt;You can write your code in the tempate and see more here &amp;#x1f449; &lt;a class="link" href="https://www.npmjs.com/package/@wordpress/create-block/" title="WordPress Create Block NPM package"
+ target="_blank" rel="noopener"
+ &gt;Official NPM Package&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Clone Whole Wordpress Site With Database When You Only Have Ftp</title><link>https://vanpariyar.in/blog/2021-08-20-how-to-clone-whole-wordpress-site-with-database-when-you-only-have-ftp/</link><pubDate>Fri, 20 Aug 2021 18:18:05 +0530</pubDate><guid>https://vanpariyar.in/blog/2021-08-20-how-to-clone-whole-wordpress-site-with-database-when-you-only-have-ftp/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to Clone Whole Wordpress Site With Database When You Only Have Ftp" /&gt;&lt;h2 id="problem-thinking"&gt;Problem &amp;#x1f914;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;How to Clone Whole Wordpress Site With Database When You Only Have Ftp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I came across a good idea that can save your time so I thought it would be great to share.&lt;/p&gt;
+&lt;h2 id="what-i-had"&gt;What i had
+&lt;/h2&gt;&lt;p&gt;I had one website&amp;rsquo;s FTP only which is the WordPress website. and I was waiting to reply for 2 days.&lt;/p&gt;
+&lt;h2 id="output"&gt;Output
+&lt;/h2&gt;&lt;p&gt;I need to clone the whole website. in my local environment with the database installed.&lt;/p&gt;
+&lt;h2 id="research-book"&gt;Research &amp;#x1f4d6;
+&lt;/h2&gt;&lt;p&gt;After searching so many articles, found a simple tool call &lt;a class="link" href="https://www.adminer.org/" target="_blank" rel="noopener"
+ &gt;adminer&lt;/a&gt; i know many of us know and used this tool.&lt;/p&gt;
+&lt;h2 id="solutions-bulb"&gt;solutions &amp;#x1f4a1;
+&lt;/h2&gt;&lt;p&gt;have downloaded its PHP file. what I have done is, have uploaded that &lt;code&gt;adminer-4.1.2.php&lt;/code&gt; and renamed it to adminer.php to the document root.&lt;/p&gt;
+&lt;p&gt;then extract credentials from the &lt;code&gt;wp-config.php&lt;/code&gt; for the MYSQL.&lt;/p&gt;
+&lt;p&gt;simply hit the URL _ https://your-site/adminer.php&lt;/p&gt;
+&lt;p&gt;then entered credentials extracted from the &lt;code&gt;wp-config.php&lt;/code&gt; then exported the DB from its GUI.&lt;/p&gt;
+&lt;p&gt;files I have downloaded from the FTP and Database from the adminer. that&amp;rsquo;s all.&lt;/p&gt;
+&lt;p&gt;&amp;#x1f389; The client replied after 2 days found he was on vacation &amp;#x1f604;&lt;/p&gt;</description></item><item><title>How to Add Product Meta Data if Order Not Split by Woo Order Splitter Plugin</title><link>https://vanpariyar.in/blog/how-to-add-product-meta-data-if-order-not-split-by-woo-order-splitter-plugin/</link><pubDate>Wed, 02 Dec 2020 22:28:18 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-add-product-meta-data-if-order-not-split-by-woo-order-splitter-plugin/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to Add Product Meta Data if Order Not Split by Woo Order Splitter Plugin" /&gt;&lt;h2 id="problem-with-woocommerce-order-splitter"&gt;Problem with Woocommerce order splitter
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;In this article we will learn how to add product data if order is not split.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Order split is in terms of the Multi vendor woocommerce website that have below plugin installed.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class="link" href="https://woocommerce.com/products/product-vendors" target="_blank" rel="noopener"
+ &gt;Product Vendor Plugin&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class="link" href="https://wordpress.org/plugins/woo-order-splitter/" target="_blank" rel="noopener"
+ &gt;Woo Order Splitter&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="let-me-give-the-idea-woo-order-splitter"&gt;Let me give the idea Woo order splitter.
+&lt;/h2&gt;&lt;p&gt;The Product vendor plugin is creates multi vendor marketplace that have multiple vendors like &lt;a class="link" href="http://amazon.in/" target="_blank" rel="noopener"
+ &gt;amazon&lt;/a&gt; we have multiple sellers that sell their limited Product.&lt;/p&gt;
+&lt;p&gt;But amazon has multiple products like TV, Fridge , mobile, Mitti Pot, Footwear and lots of variety. Because all sellers can not have all things ya there are some exceptions Like Cloudtail and all.but small sellers have limited items to sell.&lt;/p&gt;
+&lt;p&gt;So if anybody wants to make a website like amazon multi seller feature then this website is the right place for you.&lt;/p&gt;
+&lt;h2 id="working-of-woocommerce-order-splitter"&gt;Working of Woocommerce order splitter
+&lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s Now understand the What the Order splitter is doing.It is very interesting to see here. We can split order on any term, which means if we want to split order by order vendor again taking the example of Amazon ( not sponsored &amp;#x1f605; ).&lt;/p&gt;
+&lt;p&gt;If we order one Grocery item and one electronic item like a Bag of Rice and Apple Iphone then there is a sure probability that our order has multiple sellers. So by default woocommerce does not assign vendors and split the order on the Product based vendor but this plugin does.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s assume we have a woocommerce site and have thousands of products and hundreds of vendors then it will be very hard and time consuming to assign and maintain orders and deliveries with communication with different sellers.&lt;/p&gt;
+&lt;h2 id="the-problem"&gt;The Problem
+&lt;/h2&gt;&lt;p&gt;We can use this plugin in this scenario, this plugin is easily splitting order, in The depth this plugin finds the vendor of each product, then makes the list of products in the order for particular seller. After that it creates a new order and assigns the vendor to specific order then the vendor can see on their dashboard and Fulfillment of the Order process starts.&lt;/p&gt;
+&lt;p&gt;Now you will be wondering what happens to my original order ? yes that order is definitely going to trash and the user profile will show the Two order if my original order id is 3366 then 3366 order will be deleted and new order created with the order id 3367 and 3368. And both will assign to their sellers.&lt;/p&gt;
+&lt;h2 id="the-solution"&gt;The solution
+&lt;/h2&gt;&lt;p&gt;We can add below code if user Order not split but want to assign order vendor to the user order.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;span class="lnt"&gt;41
+&lt;/span&gt;&lt;span class="lnt"&gt;42
+&lt;/span&gt;&lt;span class="lnt"&gt;43
+&lt;/span&gt;&lt;span class="lnt"&gt;44
+&lt;/span&gt;&lt;span class="lnt"&gt;45
+&lt;/span&gt;&lt;span class="lnt"&gt;46
+&lt;/span&gt;&lt;span class="lnt"&gt;47
+&lt;/span&gt;&lt;span class="lnt"&gt;48
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;* Customization for Order meta
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;*/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_action&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;woocommerce_thankyou&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;add_custom_order_meta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;functionadd_custom_order_meta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$order_id&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$order&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;wc_get_order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$order_id&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * if Order splitter works the order will be trash and empty array will return.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * so we are checking the order content.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt; &lt;span class="k"&gt;empty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$order&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$items&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$order&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;get_items&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;foreach&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$items&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nv"&gt;$key&lt;/span&gt;&lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$item&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$product_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$item&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;get_product_id&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$vendor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;get_the_terms&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$product_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;wcpv_product_vendors&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$vendor_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$vendor&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;term_id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;update_post_meta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$order_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;_vendor_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$vendor_id&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$vendor_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;get_term_meta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$vendor_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;vendor_data&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$vendor_info&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s1"&gt;&amp;#39;vendor_email&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$vendor_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;email&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s1"&gt;&amp;#39;vendor_name&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$vendor&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s1"&gt;&amp;#39;vendor_slug&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$vendor&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;slug&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;update_post_meta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$order_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;wos_vendor_data&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$vendor_info&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// For test uncomment this and place order one in view source.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// print_r( get_post_meta($order_id, &amp;#39;wos_vendor_data&amp;#39;, true) );
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// die();
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Add Anything After Wordpress Title in Backend ?</title><link>https://vanpariyar.in/blog/how-to-add-anything-after-wordpress-title-in-backend/</link><pubDate>Wed, 29 Jul 2020 22:03:57 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-add-anything-after-wordpress-title-in-backend/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to Add Anything After Wordpress Title in Backend ?" /&gt;&lt;p&gt;hi &amp;#x1f44b; Learn how to add any Html / Text after wordpress editor title field.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: This is only for the Classic Editor i am not sure about Gutenberg/Block Editor.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Actually you will learn about how&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; How to add title in Classis editor&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; How to add in Gutenberg Editor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Add this in your &lt;code&gt;function.php&lt;/code&gt; file&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Here our post type is &lt;strong&gt;Tags&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;span class="lnt"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_action&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;edit_form_before_permalink&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;add_text_below_tag_post_title&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;add_text_below_tag_post_title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;global&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;get_post_type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$post&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;===&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tags&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&amp;lt;span style=&amp;#39;color: red&amp;#39;&amp;gt;demo alert (THis is the red text)&amp;lt;/span&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Automate the Wordpress Plugin Upload With Github Actions ?</title><link>https://vanpariyar.in/blog/how-to-automate-the-wordpress-plugin-upload-with-github-actions/</link><pubDate>Fri, 03 Jul 2020 22:13:29 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-automate-the-wordpress-plugin-upload-with-github-actions/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to Automate the Wordpress Plugin Upload With Github Actions ?" /&gt;&lt;p&gt;Hello Friends, &amp;#x1f44b;
+today we will learn about something interesting which is automation for wordoress svn repository.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Automation is fun and make us more productive.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="introduction"&gt;Introduction
+&lt;/h2&gt;&lt;p&gt;I recommand you to open side by side this github link &lt;a href="https://github.com/vanpariyar/wp-post-views" target="_blank"&gt;Plugin Repo&lt;/a&gt; to understand properly.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;First of all we need atleast one plugin hosted in the Wordpress Plugin directory.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="get-started"&gt;Get started
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Upload Your plugin to github&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;after uplaoding your plugin&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;goto &lt;code&gt;actions &amp;gt; setup new workflow yourself&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/86532198-9c762c80-bee5-11ea-8cc4-c2103ec0da5a_5762860660168197864.png" width="1366" height="768" 
+ loading="lazy" alt="setup new workflow in github" class="gallery-image"
+ data-flex-grow="177"
+ data-flex-basis="426px" &gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/vanpariyar/wp-post-views/blob/master/.github/workflows/main.yml" rel="nofollow"&gt;Click To Copy Workflow File&lt;/a&gt; and paste on your File.&lt;/p&gt;
+&lt;p&gt;change the plugin url and other stuff that you want to ingnore.Like i have ingnored readme.md etc.&lt;/p&gt;
+&lt;h2 id="creating-secrets-on-github"&gt;Creating Secrets on Github
+&lt;/h2&gt;&lt;p&gt;For Doing That goto settings of Repository.&lt;/p&gt;
+&lt;p&gt;Click on Secret Tab.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/86532526-5e2e3c80-bee8-11ea-85b9-a707340cfb02_14825483099645851031.png" width="515" height="540" 
+ loading="lazy" alt="Screenshot from 2020-07-05 17-50-31" class="gallery-image"
+ data-flex-grow="95"
+ data-flex-basis="228px" &gt;&lt;/p&gt;
+&lt;p&gt;Then add New As mentions in the Workflow file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;WORDPRESS_PASSWORD&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;WORDPRESS_USERNAME&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;By doing this setup done.&lt;/p&gt;
+&lt;h2 id="how-to-upload-on-wordpress"&gt;How to upload on wordpress
+&lt;/h2&gt;&lt;p&gt;As mentions on Workflow file we will run this setup on every tag release.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;name: Deploy
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;on:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; push:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; tags:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; - &lt;span class="s1"&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;jobs:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; tag:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; runs-on: ubuntu-latest
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; steps:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; - uses: actions/checkout@master
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; - name: WordPress Plugin Deploy
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;#see rtCamp repo for the &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; uses: rtCamp/action-wordpress-org-plugin-deploy@master
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; env:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;#CUSTOM_COMMAND: &amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;#CUSTOM_PATH: &amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; EXCLUDE_LIST: docker-compose.yml README.md _config.yml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; SLUG: wp-post-views
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; WORDPRESS_PASSWORD: &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{ secrets.WORDPRESS_PASSWORD &lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; WORDPRESS_USERNAME: &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{ secrets.WORDPRESS_USERNAME &lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;To release tag Goto your Release Then &lt;code&gt; Click Draft a new Release.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;when you create new relese do not forgot to change your plugin version and readme.txt file version&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Get an Array of Random Numbers or elements in Wordpress ?</title><link>https://vanpariyar.in/blog/how-to-get-array-of-random-numbers-in-wordpress/</link><pubDate>Tue, 30 Jun 2020 09:51:14 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-get-array-of-random-numbers-in-wordpress/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to Get an Array of Random Numbers or elements in Wordpress ?" /&gt;&lt;p&gt;In this blog post, we will discuss generating a different type of array of numbers.&lt;/p&gt;
+&lt;h3 id="topics"&gt;Topics:
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;How to generate a random number.&lt;/li&gt;
+&lt;li&gt;How to generate random indexes from the array.&lt;/li&gt;
+&lt;li&gt;How to generate random elements from the array.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hi &amp;#x1f44b; Welcome&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="how-to-generate-a-random-number"&gt;How to generate a Random number.
+&lt;/h3&gt;&lt;p&gt;we will use this function in the below code.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;get_random_element&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;mt_rand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$array_of_element&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id="how-to-generate-random-indexes-from-the-array"&gt;How to generate random indexes from the array.
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;we have used this code to loop the above-mentioned function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;get_random_array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$count_return&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$random_array&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$random_array&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nv"&gt;$count_return&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line hl"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$random_number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;get_random_element&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt; &lt;span class="nx"&gt;in_array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$random_number&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$random_array&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;array_push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$random_array&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$random_number&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$random_array&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id="how-to-generate-random-elements-from-the-array"&gt;How to generate random elements from the array.
+&lt;/h3&gt;&lt;p&gt;In this function, we have used the above function the same to get random indexes from the array.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;get_random_values&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$count_return&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line hl"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$random_index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;get_random_array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$count_return&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$return_array&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;foreach&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$random_index&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nv"&gt;$key&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$random_index_number&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$return_array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$random_index_number&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$return_array&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id="protip"&gt;Protip
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;You can combine this code like this and get the array of values by passing an array.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line hl"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;get_random_element&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;mt_rand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$array_of_element&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;get_random_array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$count_return&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$random_array&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$random_array&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nv"&gt;$count_return&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line hl"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$random_number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;get_random_element&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt; &lt;span class="nx"&gt;in_array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$random_number&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$random_array&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;array_push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$random_array&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$random_number&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$random_array&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;get_random_values&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$count_return&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line hl"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$random_index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;get_random_array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$count_return&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$return_array&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;foreach&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$random_index&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nv"&gt;$key&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$random_index_number&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$return_array&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$array_of_element&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$random_index_number&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$return_array&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id="conclution"&gt;conclution
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;You can call this function like:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line hl"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$large_array&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;85&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;47&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;78&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;89&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;79&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;258&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;74&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * $arg-1 is array of elements , 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * $arg-2 is number of elements to be return
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;*/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;$random_array&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;get_random_values&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$large_array&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>Your Browser Does Not Support Cookie Wordpress</title><link>https://vanpariyar.in/blog/your-browser-does-not-support-cookie-wordpress/</link><pubDate>Wed, 10 Jun 2020 13:44:17 +0530</pubDate><guid>https://vanpariyar.in/blog/your-browser-does-not-support-cookie-wordpress/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post Your Browser Does Not Support Cookie Wordpress" /&gt;&lt;h2 id="your-browser-does-not-support-cookie-wordpress"&gt;Your browser does not support cookie wordpress
+&lt;/h2&gt;&lt;p&gt;I am recently working with the wordpress staging setup and i realise that i can not Login in to wordpress site.&lt;/p&gt;
+&lt;p&gt;Lots of solutions were searched online and asked by many people but last i found this solution.&lt;/p&gt;
+&lt;p&gt;Literally it took me 1 to 2 hours just to migrate Local Site to Beta site.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="steps"&gt;Steps:
+&lt;/h3&gt;&lt;p&gt;Here Are the steps that I have tried.Hope it solves your issue.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Just migrate the database first before migrating site. You can use plugins Like &lt;a class="link" href="https://wordpress.org/plugins/wp-migrate-db/" target="_blank" rel="noopener"
+ &gt;Wp Migrate DB&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Upload your files to staging or Beta server.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Then upload your database.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;This is the simple step to avoid the Cookie issue. Because wordpress sometimes confuses cookies.&lt;/p&gt;
+&lt;p&gt;Cookies are saved in Wordpress transient so might be an issue.&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Change the Date From Custom Custom Field in Wordpress</title><link>https://vanpariyar.in/blog/how-to-change-the-date-from-custom-custom-field-in-wordpress/</link><pubDate>Mon, 25 May 2020 20:28:58 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-change-the-date-from-custom-custom-field-in-wordpress/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to Change the Date From Custom Custom Field in Wordpress" /&gt;&lt;h2 id="hi-wave"&gt;Hi &amp;#x1f44b;
+&lt;/h2&gt;&lt;p&gt;we will use WordPress &lt;code&gt;get_the_date()&lt;/code&gt; Hook.&lt;/p&gt;
+&lt;p&gt;I will explain both. If you have created meta field for date &lt;code&gt;post_custom_date&lt;/code&gt;. OR using &lt;a class="link" href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank" rel="noopener"
+ &gt;ACF&lt;/a&gt; created field with name &lt;code&gt;post_custom_date&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="inspiration"&gt;Inspiration
+&lt;/h2&gt;&lt;p&gt;When I was developing the site with &lt;a class="link" href="https://www.elegantthemes.com/gallery/divi/" target="_blank" rel="noopener"
+ &gt;Divi theme&lt;/a&gt; there is a custom post listing module but I don&amp;rsquo;t want the date of publishing post instead i want my custom date which I have created with &lt;a class="link" href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank" rel="noopener"
+ &gt;ACF&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So I have searched and found this solution Enjoy. &amp;#x1f389;&lt;/p&gt;
+&lt;p&gt;Put this code in &lt;code&gt;functions.php&lt;/code&gt; file.&lt;/p&gt;
+&lt;h3 id="for-custom-meta-without-acf"&gt;For custom meta Without Acf
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @here 10 is Priority and 3 is Number of arguments to be passed
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;add_action&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;get_the_date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;custom_date_callback&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;custom_date_callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$the_date&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$format&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;get_post_type&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;===&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;custom_post_type&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;is_singuler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;custom_post_type&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;sprintf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;esc_html&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;get_post_meta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;post_custom_date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;ID&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$date&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="for-custom-meta-with-acf"&gt;For custom meta With Acf
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @here 10 is Priority and 3 is Number of arguments to be passed
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;add_action&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;get_the_date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;custom_date_callback&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;custom_date_callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$the_date&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$format&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;get_post_type&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;===&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;custom_post_type&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;is_singuler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;custom_post_type&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;sprintf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;esc_html&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;get_field&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;post_custom_date&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$post&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;ID&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$date&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;checkout all hooks &lt;a class="link" href="https://vanpariyar.in/tags/hooks/" &gt;hooks&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="for-refrence"&gt;For Refrence
+&lt;/h2&gt;&lt;p&gt;&lt;a class="link" href="https://developer.wordpress.org/reference/functions/get_the_date/" target="_blank" rel="noopener"
+ &gt;https://developer.wordpress.org/reference/functions/get_the_date/&lt;/a&gt;
+&lt;a class="link" href="https://developer.wordpress.org/reference/functions/the_date/" target="_blank" rel="noopener"
+ &gt;https://developer.wordpress.org/reference/functions/the_date/&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to Change Page Title by Custom Field in Wordpress</title><link>https://vanpariyar.in/blog/how-to-change-page-title-by-custom-field-in-wordpress/</link><pubDate>Fri, 22 May 2020 11:58:48 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-change-page-title-by-custom-field-in-wordpress/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to Change Page Title by Custom Field in Wordpress" /&gt;&lt;h2 id="prerequisite"&gt;Prerequisite
+&lt;/h2&gt;&lt;p&gt;If I get right you come here to change this &amp;#x1f60a; see in Pic below.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/82746322-014d4b80-9dac-11ea-850c-e9c085ced98f_4803149161047195242.png" width="622" height="278" 
+ loading="lazy" alt="How to Change Page Title by Custom Field in Wordpress" class="gallery-image"
+ data-flex-grow="223"
+ data-flex-basis="536px" &gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;If you are using &lt;strong&gt;custom theme&lt;/strong&gt; make sure you have used this hook in your head tag. Because we are going to &lt;strong&gt;filter that value&lt;/strong&gt; based on &lt;code&gt;wp_title( );&lt;/code&gt; hook.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;title&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt; &lt;span class="nx"&gt;wp_title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;|&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;right&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt; &amp;lt;/title&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Let&amp;rsquo;s say we have custom field meta key &lt;code&gt;_custom_post_name&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you have created the &lt;a class="link" href="https://www.advancedcustomfields.com/" target="_blank" rel="noopener"
+ &gt;ACF&lt;/a&gt; field then your field name will be &amp;ldquo;_&amp;rdquo; + &lt;code&gt;your_field_name&lt;/code&gt; means if you have created &lt;code&gt;page_title&lt;/code&gt; then your meta key will be &lt;code&gt;_page_title&lt;/code&gt;. &amp;#x1f44d;&lt;/p&gt;
+&lt;h2 id="how-to-modify-title"&gt;how to modify title?
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;For any single Page or Post&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * Customize the title for the Single page, if one is not set.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param string $title The original title.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @return string The title to use.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;wp_title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;change_page_title_callabck&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;change_page_title_callabck&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$title&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$separator&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * To change the title on your single or post page
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;is_single&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Add your meta key here
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$custom_post_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;get_post_meta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;get_the_ID&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;add_your_meta_key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;true&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$custom_post_title&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$custom_post_title&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;$seprator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$title&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;For custom post type&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nx"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * Customize the title for the Single page, if one is not set.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @param string $title The original title.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * @return string The title to use.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;wp_title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;change_page_title_callabck&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;change_page_title_callabck&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$title&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$separator&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="sd"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; * To change the title on your single or post page
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;is_single&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;custom_post_type&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;get_post_type&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Add your meta key here
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$custom_post_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;get_post_meta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;get_the_ID&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;add_your_meta_key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;true&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;$custom_post_title&lt;/span&gt; &lt;span class="p"&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$custom_post_title&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;$seprator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$title&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="for-different-pages"&gt;For different Pages?
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;for category you can use &lt;code&gt;is_cat()&lt;/code&gt; OR &lt;code&gt;is_tax()&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;for archive you can use &lt;code&gt;is_archive()&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;for Reference of &lt;code&gt;wp_title( );&lt;/code&gt; hook.&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://developer.wordpress.org/reference/hooks/wp_title/" target="_blank" rel="noopener"
+ &gt;https://developer.wordpress.org/reference/hooks/wp_title/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://developer.wordpress.org/reference/functions/wp_title/" target="_blank" rel="noopener"
+ &gt;https://developer.wordpress.org/reference/functions/wp_title/&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>Google assistant with Wordpress blog</title><link>https://vanpariyar.in/blog/google-assistant-with-wordpress-actions-on-google/</link><pubDate>Fri, 08 May 2020 15:40:24 +0600</pubDate><guid>https://vanpariyar.in/blog/google-assistant-with-wordpress-actions-on-google/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post Google assistant with Wordpress blog" /&gt;&lt;h2 id="google-assistant-chat-app-that"&gt;Google assistant chat app that
+&lt;/h2&gt;&lt;h3 id="fetch-the-new-recent-blog-from-creole-studios-website"&gt;fetch the new recent blog from creole Studios website.
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Made With Express and node Js Backend.&lt;/li&gt;
+&lt;li&gt;Used &lt;a class="link" href="https://developer.wordpress.org/rest-api/reference/posts/#definition" target="_blank" rel="noopener"
+ &gt;WP Rest API&lt;/a&gt; To get response from the Website.&lt;/li&gt;
+&lt;li&gt;Chat UI Powerd By &lt;a class="link" href="https://developers.google.com/assistant/conversational/responses" target="_blank" rel="noopener"
+ &gt;Google Assistant SDK Response API&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Platform Of hosting &lt;a class="link" href="https://glitch.com/" target="_blank" rel="noopener"
+ &gt;Glitch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;See &lt;a class="link" href="https://glitch.com/edit/#!/creole-studios-blog" target="_blank" rel="noopener"
+ &gt;Demo On Glitch&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thanks. Built With &amp;#x2764;&amp;#xfe0f; For amazing People.&lt;/p&gt;
+&lt;p&gt;Please open the Google assistant in your &amp;#x1f4f1; mobile phone.
+and &lt;strong&gt;Say Talk to Creole Studios Blog&lt;/strong&gt;
+Then You can say one line Given below.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Get recent blog.&lt;/li&gt;
+&lt;li&gt;Get new blog.&lt;/li&gt;
+&lt;li&gt;Get Blog.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It will fetch the recent Blog from the Our website. &amp;#x1f44d;&lt;/p&gt;
+&lt;p&gt;If you get the error, Please do second time.&lt;/p&gt;
+&lt;p&gt;Becuase Glitch is Free platform that sleeps after 5 minute of inactivity.&lt;/p&gt;
+&lt;p&gt;your first request is Wakes up server and Second time you&amp;rsquo;ll get output.&lt;/p&gt;
+&lt;p&gt;list all your valuable suggestions directly on &lt;a class="link" href="https://github.com/vanpariyar/google-assistant-creolestudios-blog/issues" target="_blank" rel="noopener"
+ &gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to use SOcial Gallary Block In wordpress</title><link>https://vanpariyar.in/blog/instagram-post-grid-in-wordpress-gutenberg/</link><pubDate>Sat, 14 Mar 2020 15:40:24 +0600</pubDate><guid>https://vanpariyar.in/blog/instagram-post-grid-in-wordpress-gutenberg/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to use SOcial Gallary Block In wordpress" /&gt;&lt;p&gt;Easy Doker Setup&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;snap install docker
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pip install docker-compose
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker-compose up
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;goto : http://localhost:8080/&lt;/p&gt;
+&lt;h3 id="live-plugin--"&gt;Live Plugin -&amp;gt; &lt;a class="link" href="https://wordpress.org/plugins/social-gallery-block/" target="_blank" rel="noopener"
+ &gt;https://wordpress.org/plugins/social-gallery-block/&lt;/a&gt;
+&lt;/h3&gt;&lt;h3 id="see-the-demo"&gt;See the Demo
+&lt;/h3&gt;&lt;p&gt;Enter any Public UserName To this Plugin and You Will see the recent 16 posts.&lt;/p&gt;
+&lt;p&gt;Welcome You to develop This Plugin More efficient.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/76748799-66c7ff00-67a1-11ea-83a3-d24205d2fa56_9167536606593583676.png" width="1426" height="964" 
+ loading="lazy" alt="Screenshot from 2020-03-16 15-33-19fasd" class="gallery-image"
+ data-flex-grow="147"
+ data-flex-basis="355px" &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/78034043-d4b91c80-7384-11ea-9889-a1639ec29de2_11436773225467889059.png" width="1300" height="709" 
+ loading="lazy" alt="Screenshot from 2020-03-31 19-07-03" class="gallery-image"
+ data-flex-grow="183"
+ data-flex-basis="440px" &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/78034061-d7b40d00-7384-11ea-89ff-d1fa97c4db5b_11691382175178456973.png" width="1291" height="667" 
+ loading="lazy" alt="Screenshot from 2020-03-31 19-07-06" class="gallery-image"
+ data-flex-grow="193"
+ data-flex-basis="464px" &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/78034067-da166700-7384-11ea-9f9a-e36c271fd321_8619812180554429215.png" width="1289" height="709" 
+ loading="lazy" alt="Screenshot from 2020-03-31 19-07-13" class="gallery-image"
+ data-flex-grow="181"
+ data-flex-basis="436px" &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/78034079-dbe02a80-7384-11ea-82d9-b10c416aef52_15784027338080957149.png" width="1280" height="707" 
+ loading="lazy" alt="Screenshot from 2020-03-31 19-07-17" class="gallery-image"
+ data-flex-grow="181"
+ data-flex-basis="434px" &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/78034091-dda9ee00-7384-11ea-85b9-f68dfddf3aac_13266724299623019555.png" width="1265" height="667" 
+ loading="lazy" alt="Screenshot from 2020-03-31 19-07-35" class="gallery-image"
+ data-flex-grow="189"
+ data-flex-basis="455px" &gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Thanks for the reading &amp;#x1f44d;&lt;/p&gt;
+&lt;h4 id="have-any-doubts-or-suggetions-thinking_face"&gt;Have any doubts or suggetions :thinking_face:
+&lt;/h4&gt;&lt;p&gt;Feel free to &lt;a class="link" href="https://vanpariyar.in/contact/" &gt;connect&lt;/a&gt; social media platform given on this page :- &lt;a class="link" href="https://vanpariyar.in/contact/" &gt;Contact page&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This project was bootstrapped with &lt;a class="link" href="https://github.com/ahmadawais/create-guten-block" target="_blank" rel="noopener"
+ &gt;Create Guten Block&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Below you will find some information on how to run scripts.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can find the most recent version of this guide &lt;a class="link" href="https://github.com/ahmadawais/create-guten-block" target="_blank" rel="noopener"
+ &gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="--npm-start"&gt;👉 &lt;code&gt;npm start&lt;/code&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Use to compile and run the block in development mode.&lt;/li&gt;
+&lt;li&gt;Watches for any changes and reports back any errors in your code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="--npm-run-build"&gt;👉 &lt;code&gt;npm run build&lt;/code&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Use to build production code for your block inside &lt;code&gt;dist&lt;/code&gt; folder.&lt;/li&gt;
+&lt;li&gt;Runs once and reports back the gzip file sizes of the produced code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="--npm-run-eject"&gt;👉 &lt;code&gt;npm run eject&lt;/code&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Use to eject your plugin out of &lt;code&gt;create-guten-block&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Provides all the configurations so you can customize the project as you want.&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s a one-way street, &lt;code&gt;eject&lt;/code&gt; and you have to maintain everything yourself.&lt;/li&gt;
+&lt;li&gt;You don&amp;rsquo;t normally have to &lt;code&gt;eject&lt;/code&gt; a project because by ejecting you lose the connection with &lt;code&gt;create-guten-block&lt;/code&gt; and from there onwards you have to update and maintain all the dependencies on your own.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to use WP Post Views</title><link>https://vanpariyar.in/blog/how-to-use-wp-post-views/</link><pubDate>Sat, 14 Mar 2020 15:40:24 +0600</pubDate><guid>https://vanpariyar.in/blog/how-to-use-wp-post-views/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to use WP Post Views" /&gt;&lt;h2 id="wp-post-views"&gt;wp-post-views
+&lt;/h2&gt;&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Happy to announce that 😊&lt;br&gt;&lt;br&gt;Plugin made as fun project 🙌 but&lt;br&gt;&lt;br&gt;Plugins crossed : 500+ Active installation&lt;br&gt;&lt;br&gt;And 2,500 download so far.&lt;br&gt;&lt;br&gt;Thanks &lt;a href="https://twitter.com/dhanani_brijesh?ref_src=twsrc%5Etfw"&gt;@dhanani_brijesh&lt;/a&gt;&lt;a href="https://twitter.com/AnkitaTanti?ref_src=twsrc%5Etfw"&gt;@AnkitaTanti&lt;/a&gt; for your contribution 🙏&lt;a href="https://t.co/GkxGHtVuKj"&gt;https://t.co/GkxGHtVuKj&lt;/a&gt;&lt;/p&gt;&amp;mdash; Ronak J Vanpariya (@VanpariyaRonakJ) &lt;a href="https://twitter.com/VanpariyaRonakJ/status/1393155253017538560?ref_src=twsrc%5Etfw"&gt;May 14, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+
+&lt;p&gt;use Docker To use this Plugin setup. (Not Compulasory)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; $ git clone https://github.com/vanpariyar/wp-post-views.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; $ cd wp-post-views
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; $ docker-compose up -d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Goto : &lt;a class="link" href="http://localhost:9999/" target="_blank" rel="noopener"
+ &gt;localhost:9999/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="tutorial"&gt;Tutorial
+&lt;/h2&gt;&lt;div class="video-wrapper"&gt;
+ &lt;iframe loading="lazy" 
+ src="https://www.youtube.com/embed/11NH5xOBs68" 
+ allowfullscreen 
+ title="YouTube Video"
+ &gt;
+ &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Live URL: &lt;a class="link" href="https://wordpress.org/plugins/wp-post-views/" target="_blank" rel="noopener"
+ &gt;https://wordpress.org/plugins/wp-post-views/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is the simple plugin that counts the views of the your wordpress website and store the views in the database&lt;/p&gt;
+&lt;p&gt;For this repository i would like to give full credits to &lt;a class="link" href="https://github.com/AnkitaTanti" target="_blank" rel="noopener"
+ &gt;AnkitaTanti&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Contribution is highly appriciated.&lt;/p&gt;
+&lt;h2 id="for-contribution-make-the-saperate-branch"&gt;For contribution make the saperate branch.
+&lt;/h2&gt;&lt;p&gt;NOTE : Make sure we are Developing the Plugin.&amp;#x1f605;
+Please Don&amp;rsquo;t upload Whole wordpress setup.&lt;/p&gt;
+&lt;h2 id="features"&gt;Features:
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;We have option to show views count in the post coloumn.&lt;/li&gt;
+&lt;li&gt;(You can disable this)All views are filterd with IP address. To just make sure get right count
+-Support for the Custom post type by selecting menually in settings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="installation"&gt;Installation
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Upload the plugin in to your wp-content &amp;gt; Plugins folder&lt;/li&gt;
+&lt;li&gt;You can change plugin settings in Admin panel &amp;gt; Settings &amp;gt; Wp Post View Settings&lt;/li&gt;
+&lt;li&gt;There are some options are by default selected for you but you can Change it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>
