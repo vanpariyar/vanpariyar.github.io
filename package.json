@@ -9,6 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "hugo server -D",
+    "cms:local": "npx @sveltia/cms-proxy-server",
     "build": "hugo --minify"
   },
   "repository": {
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/vanpariyar/vanpariyar.github.io#readme",
   "devDependencies": {
+    "@types/node": "^25.6.0",
     "hugo-extended": "^0.155.2"
   }
 }

@@ -30,3 +30,5 @@ assets/jsconfig.json
 .DS_Store
 node_modules
 docs
+
+.env

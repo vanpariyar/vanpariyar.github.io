@@ -1,0 +1,60 @@
+backend:
+  name: github
+  repo: vanpariyar/vanpariyar.github.io
+  branch: master
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Author", name: "author", widget: "list", required: false }
+      - { 
+          label: "Categories", 
+          name: "categories", 
+          widget: "select", 
+          multiple: true,
+          options: ["Life", "Solutions", "Technology"] 
+        }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Keywords", name: "keywords", widget: "list", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content/page"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    identifier_field: "title"
+    path: "{{title}}/index"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Date", name: "date", widget: "datetime", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "authors"
+    label: "Authors"
+    folder: "content/author"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    identifier_field: "title"
+    path: "{{slug}}/_index"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
