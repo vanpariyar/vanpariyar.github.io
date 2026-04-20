@@ -26,6 +26,20 @@ module:
               target: data
             - source: i18n
               target: i18n
+    # Explicitly mount project root folders so they aren't ignored
+    mounts:
+        - source: content
+          target: content
+        - source: static
+          target: static
+        - source: layouts
+          target: layouts
+        - source: assets
+          target: assets
+        - source: data
+          target: data
+        - source: i18n
+          target: i18n
 
 title: Ronak Vanpariya
 
