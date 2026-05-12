@@ -7,9 +7,15 @@ author:
 categories:
   - Technology
 tags:
-  - '"WordPress", "Gutenberg", "JavaScript", "PHP", "Web Performance"'
+  - WordPress
+  - Gutenberg
+  - JavaScript
+  - PHP
+  - Web Performance
 description: Here is a technical breakdown of the five reasons why RTC was pulled, and what it means for the engineering side of WordPress.
-keywords: []
+keywords:
+  - WordPress 7.0
+  - Technology
 draft: false
 ---
 
@@ -23,13 +29,13 @@ Here is a technical breakdown of the five reasons why RTC was pulled, and what i
 
 ***
 
-### 1. The "Surface Area" Problem
+## 1. The "Surface Area" Problem
 
 WordPress isn't just a post editor; it’s a Full Site Editor (FSE). RTC needs to work across paragraph blocks, global styles, template parts, and navigation menus. 
 
 When you increase the surface area, you increase the potential for \*\*state desynchronization\*\*. If a user is editing a Global Header while another is adjusting a Template, the dependency graph becomes a nightmare to manage in real-time.
 
-### 2. Race Conditions in Collaborative Editing
+## 2. Race Conditions in Collaborative Editing
 
 In a standard WordPress setup, the last person to click "Update" wins. In RTC, we use algorithms like \*\*CRDTs (Conflict-free Replicated Data Types)\*\* or \*\*Operational Transformation (OT)\*\* to merge changes.
 
@@ -52,7 +58,7 @@ If two users edit the same block attribute simultaneously, a "race condition" oc
 // In 7.0 testing, these conflicts were causing React to throw fatal 'Minified State' errors.
 ```
 
-### 3. Server Load and Scaling Bottlenecks
+## 3. Server Load and Scaling Bottlenecks
 
 Most WordPress sites run on **stateless PHP environments** (Nginx/Apache). RTC, however, is inherently **stateful**.
 
@@ -78,13 +84,13 @@ async function syncCollaborativeChanges() {
 
 The Core team realized that shipping this would likely crash thousands of sites hosted on entry-level servers that aren't optimized for high-concurrency REST API traffic.
 
-### 4. Memory Efficiency & Client-Side Bloat
+## 4. Memory Efficiency & Client-Side Bloat
 
 Collaborative engines (like Yjs or Automerge) maintain a "history" of every change to resolve conflicts. On long-form posts with thousands of edits, this history grows in the browser's memory.
 
 During fuzz testing, it was discovered that the RTC implementation was consuming massive amounts of RAM. For users on lower-end hardware, the browser tab would simply hang. As a "Democratizer of Publishing," WordPress cannot ship a feature that excludes users with older computers.
 
-### 5. Fuzz Testing & Edge Case Bugs
+## 5. Fuzz Testing & Edge Case Bugs
 
 The team used **Fuzzing**—an automated testing technique that injects random, chaotic data into the editor. This revealed recurring bugs where the block tree would "break" (invalid HTML) when multiple users performed complex actions like "Nested Inner Block Drag-and-Drop" simultaneously.
 
@@ -98,7 +104,7 @@ npm run test:fuzz --target=collaboration-engine --intensity=high
 # [FAIL] Block Validation Error: Expected but found corrupted buffer.
 ```
 
-### The Silver Lining for Developers
+## The Silver Lining for Developers
 
 While the delay is disappointing, it's a win for **stability**. If you are a plugin developer, this gives you more time to ensure your custom blocks are "Collaboration Ready."
 
@@ -111,3 +117,5 @@ While the delay is disappointing, it's a win for **stability**. If you are a plu
 **Final Thought:** I’d rather have a stable, single-user WordPress 7.0 than a broken, multi-user one. In the world of Open Source, "Ready when it's ready" is always better than "Shipped because of a deadline."
 
 _Follow me for more deep dives into the WordPress Core. Have thoughts on RTC? Let’s discuss in the comments below._
+
+{{< footer-donation >}}
