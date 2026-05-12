@@ -1,5 +1,6 @@
 ---
 title: 'Technical Post-Mortem: Why Real-Time Collaboration Was Pulled from WordPress 7.0'
+slug: technical-post-mortem-why-real-time-collaboration-was-pulled-from-wordpress-7-0
 date: 2026-05-09T15:54:00
 image: ''
 author:
