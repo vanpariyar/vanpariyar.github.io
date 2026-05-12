@@ -11,20 +11,16 @@ collections:
     label: "Blog"
     folder: "content/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    # slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Slug must be lowercase and can only contain letters, numbers, and hyphens."] }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Author", name: "author", widget: "list", required: false }
-      - { 
-          label: "Categories", 
-          name: "categories", 
-          widget: "select", 
-          multiple: true,
-          options: ["Life", "Solutions", "Technology"] 
-        }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Categories", name: "categories", widget: "select", multiple: true, options: ["Life", "Solutions", "Technology"] }
+      # --- Multiple Tags Configuration ---
+      - { label: "Tags", name: "tags", widget: "list", summary: "{{fields.tags}}", help: "Type a tag and press enter" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Keywords", name: "keywords", widget: "list", required: false }
       - { label: "Draft", name: "draft", widget: "boolean", default: false }

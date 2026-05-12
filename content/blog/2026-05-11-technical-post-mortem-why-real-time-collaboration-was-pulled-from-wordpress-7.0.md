@@ -30,19 +30,19 @@ Here is a technical breakdown of the five reasons why RTC was pulled, and what i
 
 ***
 
-## 1. The "Surface Area" Problem
+## The "Surface Area" Problem
 
 WordPress isn't just a post editor; it’s a Full Site Editor (FSE). RTC needs to work across paragraph blocks, global styles, template parts, and navigation menus. 
 
 When you increase the surface area, you increase the potential for \*\*state desynchronization\*\*. If a user is editing a Global Header while another is adjusting a Template, the dependency graph becomes a nightmare to manage in real-time.
 
-## 2. Race Conditions in Collaborative Editing
+## Race Conditions in Collaborative Editing
 
 In a standard WordPress setup, the last person to click "Update" wins. In RTC, we use algorithms like \*\*CRDTs (Conflict-free Replicated Data Types)\*\* or \*\*Operational Transformation (OT)\*\* to merge changes.
 
 If two users edit the same block attribute simultaneously, a "race condition" occurs. If the logic isn't perfect, you end up with "zombie" data.
 
-\*\***Conceptual example of a failing sync state:**
+**Conceptual example of a failing sync state:**
 
 ```json
 // User A and User B both send an update to the same block simultaneously
@@ -69,7 +69,7 @@ To make RTC work, the server needs to keep track of who is doing what, _right no
 
 JavaScript
 
-```plain
+```javascript
 // A simplified version of what "Heartbeat" polling looks like under heavy RTC
 async function syncCollaborativeChanges() {
     const response = await fetch('/wp-json/wp/v2/sync/123');
@@ -97,7 +97,7 @@ The team used **Fuzzing**—an automated testing technique that injects random, 
 
 Bash
 
-```plain
+```shell
 # Example of a conceptual Fuzz Test command that likely failed
 npm run test:fuzz --target=collaboration-engine --intensity=high
 
