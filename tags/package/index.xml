@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Package on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/package/</link><description>Recent content in Package on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Jun 2021 16:43:52 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/package/index.xml" rel="self" type="application/rss+xml"/><item><title>How Create NPM Package With Scoped @organization</title><link>https://vanpariyar.in/blog/2021-06-11-how-create-npm-package-with-scoped-organization/</link><pubDate>Fri, 11 Jun 2021 16:43:52 +0530</pubDate><guid>https://vanpariyar.in/blog/2021-06-11-how-create-npm-package-with-scoped-organization/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How Create NPM Package With Scoped @organization" /&gt;&lt;h2 id="introduction"&gt;Introduction
+&lt;/h2&gt;&lt;p&gt;Today we will learn how to create a NPM package like this &lt;a class="link" href="https://www.npmjs.com/package/@vanpariyar/text-manipulation" target="_blank" rel="noopener"
+ &gt;https://www.npmjs.com/package/@vanpariyar/text-manipulation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I was wondering how I can make my own package in the javascript and publish it to the NPM registry ? &amp;#x1f914;.&lt;/p&gt;
+&lt;p&gt;So I found the below step that you can easily register your NPM package with your scoped. &amp;#x1fa94; ( This is Lamp in India &amp;#x1f4a1; &amp;#x1f604;)
+Like if you see &lt;code&gt;@angular/package-name&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="requirements-100"&gt;Requirements &amp;#x1f4af;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Node.js installed&lt;/li&gt;
+&lt;li&gt;git installed&lt;/li&gt;
+&lt;li&gt;NPM account for publishing package.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="starting"&gt;Starting
+&lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s start the development now.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir text-manipulation
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; text-manipulation
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Npm login
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;After &lt;code&gt;npm login&lt;/code&gt; enter your username, password, email&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm init --scope&lt;span class="o"&gt;=&lt;/span&gt;@my-org 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;// OR
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; npm init --scope&lt;span class="o"&gt;=&lt;/span&gt;@my-username
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Now you will have the prompt that you need to answer for your package. Like the Package version, Github Repo etc.&lt;/p&gt;
+&lt;p&gt;Now &lt;code&gt;open index.js&lt;/code&gt; in your preferred editor. Then write your code in the file. &amp;#x1f58a;&amp;#xfe0f;&lt;/p&gt;
+&lt;p&gt;Add &lt;code&gt;.gitignore&lt;/code&gt; to ignore &lt;code&gt;node_modules&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# .gitignore&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;node_mudules
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Then if you have a public account you need to add this parameter with the &lt;code&gt;npm publish&lt;/code&gt; command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm publish --access public
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="conclusion"&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;Nice, &amp;#x1f389; You have published your first NPM package.&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

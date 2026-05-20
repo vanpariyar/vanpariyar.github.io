@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/github/</link><description>Recent content in Github on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 03 Jul 2020 22:13:29 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Automate the Wordpress Plugin Upload With Github Actions ?</title><link>https://vanpariyar.in/blog/how-to-automate-the-wordpress-plugin-upload-with-github-actions/</link><pubDate>Fri, 03 Jul 2020 22:13:29 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-automate-the-wordpress-plugin-upload-with-github-actions/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to Automate the Wordpress Plugin Upload With Github Actions ?" /&gt;&lt;p&gt;Hello Friends, &amp;#x1f44b;
+today we will learn about something interesting which is automation for wordoress svn repository.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Automation is fun and make us more productive.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="introduction"&gt;Introduction
+&lt;/h2&gt;&lt;p&gt;I recommand you to open side by side this github link &lt;a href="https://github.com/vanpariyar/wp-post-views" target="_blank"&gt;Plugin Repo&lt;/a&gt; to understand properly.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;First of all we need atleast one plugin hosted in the Wordpress Plugin directory.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="get-started"&gt;Get started
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Upload Your plugin to github&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;after uplaoding your plugin&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;goto &lt;code&gt;actions &amp;gt; setup new workflow yourself&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/86532198-9c762c80-bee5-11ea-8cc4-c2103ec0da5a_5762860660168197864.png" width="1366" height="768" 
+ loading="lazy" alt="setup new workflow in github" class="gallery-image"
+ data-flex-grow="177"
+ data-flex-basis="426px" &gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/vanpariyar/wp-post-views/blob/master/.github/workflows/main.yml" rel="nofollow"&gt;Click To Copy Workflow File&lt;/a&gt; and paste on your File.&lt;/p&gt;
+&lt;p&gt;change the plugin url and other stuff that you want to ingnore.Like i have ingnored readme.md etc.&lt;/p&gt;
+&lt;h2 id="creating-secrets-on-github"&gt;Creating Secrets on Github
+&lt;/h2&gt;&lt;p&gt;For Doing That goto settings of Repository.&lt;/p&gt;
+&lt;p&gt;Click on Secret Tab.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://vanpariyar.in/86532526-5e2e3c80-bee8-11ea-85b9-a707340cfb02_14825483099645851031.png" width="515" height="540" 
+ loading="lazy" alt="Screenshot from 2020-07-05 17-50-31" class="gallery-image"
+ data-flex-grow="95"
+ data-flex-basis="228px" &gt;&lt;/p&gt;
+&lt;p&gt;Then add New As mentions in the Workflow file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;WORDPRESS_PASSWORD&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;WORDPRESS_USERNAME&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;By doing this setup done.&lt;/p&gt;
+&lt;h2 id="how-to-upload-on-wordpress"&gt;How to upload on wordpress
+&lt;/h2&gt;&lt;p&gt;As mentions on Workflow file we will run this setup on every tag release.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;name: Deploy
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;on:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; push:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; tags:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; - &lt;span class="s1"&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;jobs:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; tag:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; runs-on: ubuntu-latest
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; steps:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; - uses: actions/checkout@master
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; - name: WordPress Plugin Deploy
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;#see rtCamp repo for the &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; uses: rtCamp/action-wordpress-org-plugin-deploy@master
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; env:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;#CUSTOM_COMMAND: &amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;#CUSTOM_PATH: &amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; EXCLUDE_LIST: docker-compose.yml README.md _config.yml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; SLUG: wp-post-views
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; WORDPRESS_PASSWORD: &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{ secrets.WORDPRESS_PASSWORD &lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; WORDPRESS_USERNAME: &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{ secrets.WORDPRESS_USERNAME &lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;To release tag Goto your Release Then &lt;code&gt; Click Draft a new Release.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;when you create new relese do not forgot to change your plugin version and readme.txt file version&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

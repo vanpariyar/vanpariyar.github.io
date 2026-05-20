@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Errors on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/errors/</link><description>Recent content in Errors on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 10 Jun 2020 13:44:17 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/errors/index.xml" rel="self" type="application/rss+xml"/><item><title>Your Browser Does Not Support Cookie Wordpress</title><link>https://vanpariyar.in/blog/your-browser-does-not-support-cookie-wordpress/</link><pubDate>Wed, 10 Jun 2020 13:44:17 +0530</pubDate><guid>https://vanpariyar.in/blog/your-browser-does-not-support-cookie-wordpress/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post Your Browser Does Not Support Cookie Wordpress" /&gt;&lt;h2 id="your-browser-does-not-support-cookie-wordpress"&gt;Your browser does not support cookie wordpress
+&lt;/h2&gt;&lt;p&gt;I am recently working with the wordpress staging setup and i realise that i can not Login in to wordpress site.&lt;/p&gt;
+&lt;p&gt;Lots of solutions were searched online and asked by many people but last i found this solution.&lt;/p&gt;
+&lt;p&gt;Literally it took me 1 to 2 hours just to migrate Local Site to Beta site.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="steps"&gt;Steps:
+&lt;/h3&gt;&lt;p&gt;Here Are the steps that I have tried.Hope it solves your issue.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Just migrate the database first before migrating site. You can use plugins Like &lt;a class="link" href="https://wordpress.org/plugins/wp-migrate-db/" target="_blank" rel="noopener"
+ &gt;Wp Migrate DB&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Upload your files to staging or Beta server.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Then upload your database.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;This is the simple step to avoid the Cookie issue. Because wordpress sometimes confuses cookies.&lt;/p&gt;
+&lt;p&gt;Cookies are saved in Wordpress transient so might be an issue.&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>
