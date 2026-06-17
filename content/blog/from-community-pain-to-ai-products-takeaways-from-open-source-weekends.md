@@ -1,7 +1,7 @@
 ---
 title: 'From Community Pain to AI Products: Takeaways from Open Source Weekends'
 slug: from-community-pain-to-ai-products-takeaways-from-open-source-weekends
-date: 2026-06-16T21:49
+date: 2026-06-16T21:49:00Z
 image: ''
 author:
   - Ronak Vanpariya

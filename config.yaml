@@ -1,5 +1,5 @@
 baseurl: https://vanpariyar.in
-languageCode: en-us
+locale: en-us
 
 pagination:
     pagerSize: 5
@@ -45,16 +45,16 @@ title: Ronak Vanpariya
 
 languages:
     en:
-        languageName: English
+        label: English
         title: Ronak Vanpariya
         weight: 1
     # zh-cn:
-    #     languageName: 中文
+    #     label: 中文
     #     title: 演示站点
     #     weight: 2
     # ar:
-    #     languageName: عربي
-    #     languagedirection: rtl
+    #     label: عربي
+    #     direction: rtl
     #     title: موقع تجريبي
     #     weight: 3
 
