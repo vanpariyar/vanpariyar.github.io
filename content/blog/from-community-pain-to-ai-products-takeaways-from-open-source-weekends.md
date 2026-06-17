@@ -23,7 +23,7 @@ I took away some incredible insights from the event, particularly from the sessi
 
 Here are my key takeaways.
 
-### The Community Loop: Building What Matters
+## The Community Loop: Building What Matters
 
 One of the most profound concepts discussed was the "Community Loop." It’s a framework for how meaningful products are born:
 
@@ -33,7 +33,7 @@ It starts simply by talking to people within a community—whether that's a loca
 
 We see this constantly in ecosystems like Laravel, where tools are born out of real developer friction. A great example of this evolution is **Lara Copilot**—an AI-enabled product that directly targets the pain points of developers by integrating intelligent assistance right where they need it.
 
-### The Skills That Actually Matter
+## The Skills That Actually Matter
 
 When teaching programming or mentoring developers, it’s easy to focus solely on syntax or documentation (like reading through W3Schools). But as AI becomes more capable, the skills that separate great engineers from the rest are changing.
 
@@ -44,7 +44,7 @@ Vishal highlighted that the most critical skills today aren't just technical; th
 - **Communication:** Clearly articulating ideas between stakeholders, community members, and even AI prompts.
 - **Empathy:** Understanding the user's pain to fuel that "Community Loop."
 
-### The Next Frontier: AI and Agentic UI
+## The Next Frontier: AI and Agentic UI
 
 We aren't just building static tools anymore; we are moving toward intelligent, agentic systems. A perfect parallel to the discussions at OSD is the current shift toward Model Context Protocol (MCP) apps.
 
@@ -52,7 +52,7 @@ For instance, building Agentic UIs deployed on Amazon Bedrock for sales analytic
 
 To build these kinds of advanced, AI-enabled tools, you need the foundational skills mentioned above. You have to understand the domain deeply enough to know _what_ data the AI needs to access.
 
-### Final Thoughts: Fail Fast, Build Together
+## Final Thoughts: Fail Fast, Build Together
 
 The overarching message from Open Source Weekends is clear: **Learn AI, and build with others.** If you want to spot opportunities, you have to be in the trenches having conversations. Embrace a "fail fast" mentality. Build prototypes, share them with the community, listen to the feedback, and iterate.
 
