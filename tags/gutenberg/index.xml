@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gutenberg on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/gutenberg/</link><description>Recent content in Gutenberg on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 09 May 2026 15:54:00 +0000</lastBuildDate><atom:link href="https://vanpariyar.in/tags/gutenberg/index.xml" rel="self" type="application/rss+xml"/><item><title>Technical Post-Mortem: Why Real-Time Collaboration Was Pulled from WordPress 7.0</title><link>https://vanpariyar.in/blog/technical-post-mortem-why-real-time-collaboration-was-pulled-from-wordpress-7-0/</link><pubDate>Sat, 09 May 2026 15:54:00 +0000</pubDate><guid>https://vanpariyar.in/blog/technical-post-mortem-why-real-time-collaboration-was-pulled-from-wordpress-7-0/</guid><description>&lt;hr&gt;
+&lt;p&gt;The WordPress community recently received a major update regarding the roadmap for version 7.0. In a &lt;a class="link" href="https://make.wordpress.org/core/2026/05/08/rtc-removed-from-7-0/" target="_blank" rel="noopener"
+ &gt;pivotal announcement&lt;/a&gt;, Matt Mullenweg confirmed that **Real-Time Collaboration (RTC)**—the crown jewel of Gutenberg Phase 3—will not ship with the 7.0 release.&lt;/p&gt;
+&lt;p&gt;As developers, we know that &amp;ldquo;Real-Time&amp;rdquo; is often a synonym for &amp;ldquo;Complex.&amp;rdquo; Moving from a single-user state to a synchronized multi-user state is a fundamental paradigm shift.&lt;/p&gt;
+&lt;p&gt;Here is a technical breakdown of the five reasons why RTC was pulled, and what it means for the engineering side of WordPress.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-surface-area-problem"&gt;The &amp;ldquo;Surface Area&amp;rdquo; Problem
+&lt;/h2&gt;&lt;p&gt;WordPress isn&amp;rsquo;t just a post editor; it’s a Full Site Editor (FSE). RTC needs to work across paragraph blocks, global styles, template parts, and navigation menus.&lt;/p&gt;
+&lt;p&gt;When you increase the surface area, you increase the potential for **state desynchronization**. If a user is editing a Global Header while another is adjusting a Template, the dependency graph becomes a nightmare to manage in real-time.&lt;/p&gt;
+&lt;h2 id="race-conditions-in-collaborative-editing"&gt;Race Conditions in Collaborative Editing
+&lt;/h2&gt;&lt;p&gt;In a standard WordPress setup, the last person to click &amp;ldquo;Update&amp;rdquo; wins. In RTC, we use algorithms like **CRDTs (Conflict-free Replicated Data Types)** or **Operational Transformation (OT)** to merge changes.&lt;/p&gt;
+&lt;p&gt;If two users edit the same block attribute simultaneously, a &amp;ldquo;race condition&amp;rdquo; occurs. If the logic isn&amp;rsquo;t perfect, you end up with &amp;ldquo;zombie&amp;rdquo; data.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conceptual example of a failing sync state:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// User A and User B both send an update to the same block simultaneously
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Without a robust RTC engine, the state becomes unpredictable
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;blockId&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;uuid-1234&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;attributes&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;content&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;User A&amp;#39;s edit&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// Sent at 12:00:00.001
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;fontSize&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;22px&amp;#34;&lt;/span&gt; &lt;span class="c1"&gt;// User B sent this at 12:00:00.002
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Race condition: Does the UI render the content update OR the font change first?
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// In 7.0 testing, these conflicts were causing React to throw fatal &amp;#39;Minified State&amp;#39; errors.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="3-server-load-and-scaling-bottlenecks"&gt;3. Server Load and Scaling Bottlenecks
+&lt;/h2&gt;&lt;p&gt;Most WordPress sites run on &lt;strong&gt;stateless PHP environments&lt;/strong&gt; (Nginx/Apache). RTC, however, is inherently &lt;strong&gt;stateful&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;To make RTC work, the server needs to keep track of who is doing what, &lt;em&gt;right now&lt;/em&gt;. While SaaS tools use WebSockets (Node.js/Go), many WordPress hosts don&amp;rsquo;t support persistent socket connections. This forces a fallback to &lt;strong&gt;Long Polling&lt;/strong&gt;, which can crush a shared hosting server.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Polling Nightmare:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;JavaScript&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// A simplified version of what &amp;#34;Heartbeat&amp;#34; polling looks like under heavy RTC
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;async&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;syncCollaborativeChanges&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kr"&gt;await&lt;/span&gt; &lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/wp-json/wp/v2/sync/123&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kr"&gt;await&lt;/span&gt; &lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Imagine 10 authors polling this every 500ms...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// That is 1,200 requests per minute just to check for changes.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;updateEditorState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;syncCollaborativeChanges&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The Core team realized that shipping this would likely crash thousands of sites hosted on entry-level servers that aren&amp;rsquo;t optimized for high-concurrency REST API traffic.&lt;/p&gt;
+&lt;h2 id="4-memory-efficiency--client-side-bloat"&gt;4. Memory Efficiency &amp;amp; Client-Side Bloat
+&lt;/h2&gt;&lt;p&gt;Collaborative engines (like Yjs or Automerge) maintain a &amp;ldquo;history&amp;rdquo; of every change to resolve conflicts. On long-form posts with thousands of edits, this history grows in the browser&amp;rsquo;s memory.&lt;/p&gt;
+&lt;p&gt;During fuzz testing, it was discovered that the RTC implementation was consuming massive amounts of RAM. For users on lower-end hardware, the browser tab would simply hang. As a &amp;ldquo;Democratizer of Publishing,&amp;rdquo; WordPress cannot ship a feature that excludes users with older computers.&lt;/p&gt;
+&lt;h2 id="5-fuzz-testing--edge-case-bugs"&gt;5. Fuzz Testing &amp;amp; Edge Case Bugs
+&lt;/h2&gt;&lt;p&gt;The team used &lt;strong&gt;Fuzzing&lt;/strong&gt;—an automated testing technique that injects random, chaotic data into the editor. This revealed recurring bugs where the block tree would &amp;ldquo;break&amp;rdquo; (invalid HTML) when multiple users performed complex actions like &amp;ldquo;Nested Inner Block Drag-and-Drop&amp;rdquo; simultaneously.&lt;/p&gt;
+&lt;p&gt;Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Example of a conceptual Fuzz Test command that likely failed&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm run test:fuzz --target&lt;span class="o"&gt;=&lt;/span&gt;collaboration-engine --intensity&lt;span class="o"&gt;=&lt;/span&gt;high
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Result: &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# [FAIL] Block Validation Error: Expected but found corrupted buffer.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="the-silver-lining-for-developers"&gt;The Silver Lining for Developers
+&lt;/h2&gt;&lt;p&gt;While the delay is disappointing, it&amp;rsquo;s a win for &lt;strong&gt;stability&lt;/strong&gt;. If you are a plugin developer, this gives you more time to ensure your custom blocks are &amp;ldquo;Collaboration Ready.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What you should do now:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Audit your &lt;code&gt;save()&lt;/code&gt; and &lt;code&gt;edit()&lt;/code&gt; functions:&lt;/strong&gt; Ensure they are pure and don&amp;rsquo;t rely on side effects that could break in a synchronized environment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Follow the Gutenberg Plugin:&lt;/strong&gt; The feature isn&amp;rsquo;t dead; it’s moving back to the Gutenberg feature plugin for more &amp;ldquo;incubation.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Monitor Ticket&lt;/strong&gt; &lt;a class="link" href="https://core.trac.wordpress.org/ticket/65205" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;#65205&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;:&lt;/strong&gt; This is where the code &amp;ldquo;unwinding&amp;rdquo; from 7.0 is happening.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Final Thought:&lt;/strong&gt; I’d rather have a stable, single-user WordPress 7.0 than a broken, multi-user one. In the world of Open Source, &amp;ldquo;Ready when it&amp;rsquo;s ready&amp;rdquo; is always better than &amp;ldquo;Shipped because of a deadline.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Follow me for more deep dives into the WordPress Core. Have thoughts on RTC? Let’s discuss in the comments below.&lt;/em&gt;&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>Getting Started with Gutenberg Editor Custom Block Development</title><link>https://vanpariyar.in/blog/how-to-start-with-gutenberg-editor-custom-block-development/</link><pubDate>Mon, 09 Sep 2024 12:00:00 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-start-with-gutenberg-editor-custom-block-development/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post Getting Started with Gutenberg Editor Custom Block Development" /&gt;&lt;h2 id="how-to-start-with-gutenberg-editor-custom-block-development"&gt;How to Start with Gutenberg Editor Custom Block Development
+&lt;/h2&gt;&lt;p&gt;Developing custom blocks for the Gutenberg editor can be simple and rewarding. This guide will walk you through the essentials and provide key resources to get started with WordPress block development.&lt;/p&gt;
+&lt;h3 id="where-to-begin"&gt;Where to Begin?
+&lt;/h3&gt;&lt;p&gt;The best place to start is by diving into the &lt;a class="link" href="https://developer.wordpress.org/block-editor/" target="_blank" rel="noopener"
+ &gt;WordPress Block Developer Handbook&lt;/a&gt;. It covers everything from creating simple blocks to advanced customizations, and is the go-to resource once you’ve got the basics of JavaScript under your belt.&lt;/p&gt;
+&lt;h3 id="javascript-options-for-gutenberg-block-development"&gt;JavaScript Options for Gutenberg Block Development
+&lt;/h3&gt;&lt;p&gt;When it comes to developing Gutenberg blocks, you have two primary options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Vanilla JavaScript&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modern ESNext (ES6+) standards&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;While both can work, I recommend using &lt;strong&gt;ESNext standards&lt;/strong&gt; to leverage the latest JavaScript features and take advantage of modern workflows.&lt;/p&gt;
+&lt;p&gt;A great tool to get you started with Gutenberg block development is &lt;a class="link" href="https://github.com/ahmadawais/create-guten-block" target="_blank" rel="noopener"
+ &gt;Create Guten Block&lt;/a&gt;, an open-source NPM package. This package comes pre-configured with &lt;strong&gt;Webpack&lt;/strong&gt; and &lt;strong&gt;ESLint&lt;/strong&gt;, making setup a breeze. It’s perfect for developers looking for a hassle-free environment to start building custom blocks.&lt;/p&gt;
+&lt;h3 id="react-and-gutenberg-the-relationship"&gt;React and Gutenberg: The Relationship
+&lt;/h3&gt;&lt;p&gt;Gutenberg is built on top of &lt;strong&gt;React&lt;/strong&gt;, so if you have experience with React, you’re already a step ahead. Knowing React’s component-based architecture will make Gutenberg block development much easier.&lt;/p&gt;
+&lt;h4 id="can-you-use-react-hooks-in-gutenberg"&gt;Can You Use React Hooks in Gutenberg?
+&lt;/h4&gt;&lt;p&gt;Yes! Since Gutenberg uses React under the hood, you can utilize hooks such as:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;useState()&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;useRef()&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Hooks allow you to manage state and references in your blocks just like you would in a React application. You can import them from &lt;code&gt;wp.element&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you’re new to hooks, check out the official &lt;a class="link" href="https://reactjs.org/docs/hooks-intro.html" target="_blank" rel="noopener"
+ &gt;React Hooks Documentation&lt;/a&gt; to get started.&lt;/p&gt;
+&lt;h3 id="my-development-experience"&gt;My Development Experience
+&lt;/h3&gt;&lt;h4 id="simple-javascript-blocks"&gt;Simple JavaScript Blocks
+&lt;/h4&gt;&lt;p&gt;I’ve built a few simple Gutenberg blocks using vanilla JavaScript. You can check out a demo on my GitHub repository here:&lt;br&gt;
+&lt;a class="link" href="https://github.com/vanpariyar/gutenberg-blocks-plugin" target="_blank" rel="noopener"
+ &gt;https://github.com/vanpariyar/gutenberg-blocks-plugin&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="esnext-and-modern-development"&gt;ESNext and Modern Development
+&lt;/h4&gt;&lt;p&gt;For more complex projects, I prefer using &lt;strong&gt;ESNext&lt;/strong&gt;. One of the plugins I developed using this approach is available on GitHub:&lt;br&gt;
+&lt;a class="link" href="https://github.com/vanpariyar/gutenberg-instagram-post-grid" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;vanpariyar/gutenberg-instagram-post-grid&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can also check out this plugin on WordPress’s plugin repository:&lt;br&gt;
+&lt;a class="link" href="https://wordpress.org/plugins/social-gallery-block" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;Social Gallery Block&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="additional-demos"&gt;Additional Demos
+&lt;/h3&gt;&lt;p&gt;I’ve also created other demos showcasing different features of Gutenberg block development. One such demo involves fetching random quotes and saving them in the WordPress database:&lt;br&gt;
+&lt;a class="link" href="https://github.com/vanpariyar/gutenberg-demo-esnext" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;vanpariyar/gutenberg-demo-esnext&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="final-thoughts"&gt;Final Thoughts
+&lt;/h3&gt;&lt;p&gt;If you’re just starting out with Gutenberg block development, it may feel overwhelming at first. But with tools like &lt;strong&gt;Create Guten Block&lt;/strong&gt; and resources like the &lt;strong&gt;WordPress Developer Handbook&lt;/strong&gt;, you’ll be able to develop custom blocks quickly and efficiently. Keep experimenting and don’t hesitate to dive into the React ecosystem—it’ll pay off in the long run.&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item><item><title>How to customize the render callback for a WordPress block</title><link>https://vanpariyar.in/blog/how-to-customize-the-render-callback-for-a-wordpress-block/</link><pubDate>Sat, 14 Oct 2023 23:14:11 +0530</pubDate><guid>https://vanpariyar.in/blog/how-to-customize-the-render-callback-for-a-wordpress-block/</guid><description>&lt;p&gt;Hello everyone, &amp;#x1f44b;&lt;/p&gt;
+&lt;h2 id="what-is-render-callback"&gt;What is Render Callback
+&lt;/h2&gt;&lt;p&gt;WordPress blocks are a powerful way to create custom content for your website. But what if you want to customize the way a block is rendered? That&amp;rsquo;s where the &lt;code&gt;render_callback&lt;/code&gt; argument comes in.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;render_callback&lt;/code&gt; argument tells WordPress which function to use to render a block. By default, WordPress uses a function called &lt;code&gt;render_block()&lt;/code&gt;, which simply renders the block&amp;rsquo;s HTML markup. However, you can override this function to provide your own custom rendering logic.&lt;/p&gt;
+&lt;p&gt;To do this, you can use the &lt;code&gt;register_block_type_args&lt;/code&gt; filter. This filter allows you to modify the block type arguments for any block that is registered with WordPress.&lt;/p&gt;
+&lt;h2 id="example-for-modification"&gt;Example for modification
+&lt;/h2&gt;&lt;p&gt;The following code snippet shows how to customize the render callback for a block called &lt;code&gt;demo/content-with-sidebar&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;register_block_type_args&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;demo/content-with-sidebar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;    &lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;render_callback&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;demo_blocks_content_with_sidebar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$settings&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="k"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;In this example, we are replacing the default render callback function with a function called &lt;code&gt;demo_blocks_content_with_sidebar()&lt;/code&gt;. This function could be used to render the block in a custom way, such as wrapping it in a sidebar or adding additional HTML markup.&lt;/p&gt;
+&lt;p&gt;To use this code snippet, simply add it to your theme&amp;rsquo;s &lt;code&gt;functions.php&lt;/code&gt; file or to a custom plugin. Once you have done this, WordPress will use the custom render callback function to render the &lt;code&gt;demo/content-with-sidebar&lt;/code&gt; block.&lt;/p&gt;
+&lt;h2 id="callback-function"&gt;callback Function
+&lt;/h2&gt;&lt;p&gt;Here is an example of a custom render callback function:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;span class="lnt"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;demo_blocks_content_with_sidebar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$attributes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="c1"&gt;// Wrap the block content in a sidebar.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;aside&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;.=&lt;/span&gt; &lt;span class="nv"&gt;$content&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="nv"&gt;$sidebar&lt;/span&gt; &lt;span class="o"&gt;.=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;/aside&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="c1"&gt;// Return the sidebar markup.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$sidebar&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This function would wrap the block content in a sidebar and return the resulting HTML markup.&lt;/p&gt;
+&lt;p&gt;You can use the &lt;code&gt;register_block_type_args&lt;/code&gt; filter to customize the render callback for any block that is registered with WordPress. This can be a useful way to create custom block layouts and effects.&lt;/p&gt;
+&lt;p&gt;Thanks For Reading 🙏&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This articles is generated Manually from generative AI, But carefully reviewed by Me personally. Please let me know if you found any issues, in comment section below.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

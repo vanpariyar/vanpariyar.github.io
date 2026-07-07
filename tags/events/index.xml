@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Events on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/events/</link><description>Recent content in Events on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 16 Jun 2026 21:49:00 +0000</lastBuildDate><atom:link href="https://vanpariyar.in/tags/events/index.xml" rel="self" type="application/rss+xml"/><item><title>From Community Pain to AI Products: Takeaways from Open Source Weekends</title><link>https://vanpariyar.in/blog/from-community-pain-to-ai-products-takeaways-from-open-source-weekends/</link><pubDate>Tue, 16 Jun 2026 21:49:00 +0000</pubDate><guid>https://vanpariyar.in/blog/from-community-pain-to-ai-products-takeaways-from-open-source-weekends/</guid><description>&lt;p&gt;There is a unique energy that comes from gathering with other developers. Stagnation and working in silos delay growth, limit our perspective, and inevitably lead to burnout. Breaking out of that cycle requires shared learning—something that was on full display at the recent &lt;a class="link" href="https://osd.opensourceweekend.org/" target="_blank" rel="noopener"
+ &gt;Open Source Weekends (OSD)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I took away some incredible insights from the event, particularly from the session by Vishal Rajpurohit (Co-founder of Vittior Cloud). The central theme? How to bridge the gap between open-source communities, human empathy, and the next wave of AI products.&lt;/p&gt;
+&lt;p&gt;Here are my key takeaways.&lt;/p&gt;
+&lt;h2 id="the-community-loop-building-what-matters"&gt;The Community Loop: Building What Matters
+&lt;/h2&gt;&lt;p&gt;One of the most profound concepts discussed was the &amp;ldquo;Community Loop.&amp;rdquo; It’s a framework for how meaningful products are born:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conversation → Pain → Trust → Product → Community&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It starts simply by talking to people within a community—whether that&amp;rsquo;s a local meetup, the Frontend Nation AI community, or global events like Laracon. Through conversation, you uncover genuine &lt;em&gt;pain points&lt;/em&gt;. When you step up to solve those pains, you build &lt;em&gt;trust&lt;/em&gt;. That trust is the foundation of a successful &lt;em&gt;product&lt;/em&gt;, which in turn feeds back into and grows the &lt;em&gt;community&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;We see this constantly in ecosystems like Laravel, where tools are born out of real developer friction. A great example of this evolution is &lt;strong&gt;Lara Copilot&lt;/strong&gt;—an AI-enabled product that directly targets the pain points of developers by integrating intelligent assistance right where they need it.&lt;/p&gt;
+&lt;h2 id="the-skills-that-actually-matter"&gt;The Skills That Actually Matter
+&lt;/h2&gt;&lt;p&gt;When teaching programming or mentoring developers, it’s easy to focus solely on syntax or documentation (like reading through W3Schools). But as AI becomes more capable, the skills that separate great engineers from the rest are changing.&lt;/p&gt;
+&lt;p&gt;Vishal highlighted that the most critical skills today aren&amp;rsquo;t just technical; they are deeply human:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Problem Framing:&lt;/strong&gt; AI can write the code, but you have to know how to define the problem accurately.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Domain Mastery:&lt;/strong&gt; Deep, specialized knowledge is your moat. For example, understanding the intricacies of cyber security in the shipping industry is a context an AI doesn&amp;rsquo;t inherently possess.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Communication:&lt;/strong&gt; Clearly articulating ideas between stakeholders, community members, and even AI prompts.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Empathy:&lt;/strong&gt; Understanding the user&amp;rsquo;s pain to fuel that &amp;ldquo;Community Loop.&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="the-next-frontier-ai-and-agentic-ui"&gt;The Next Frontier: AI and Agentic UI
+&lt;/h2&gt;&lt;p&gt;We aren&amp;rsquo;t just building static tools anymore; we are moving toward intelligent, agentic systems. A perfect parallel to the discussions at OSD is the current shift toward Model Context Protocol (MCP) apps.&lt;/p&gt;
+&lt;p&gt;For instance, building Agentic UIs deployed on Amazon Bedrock for sales analytics (like &lt;a class="link" href="https://dev.to/aws/how-i-built-mcp-apps-based-sales-analytics-agentic-ui-deployed-it-on-amazon-bedrock-agentcore-4e9i" target="_blank" rel="noopener"
+ &gt;this excellent breakdown on Dev.to&lt;/a&gt;) shows exactly where the industry is heading. We are moving from simple conversational interfaces to AI agents that can access real-time data, manipulate UIs, and solve complex business logic.&lt;/p&gt;
+&lt;p&gt;To build these kinds of advanced, AI-enabled tools, you need the foundational skills mentioned above. You have to understand the domain deeply enough to know &lt;em&gt;what&lt;/em&gt; data the AI needs to access.&lt;/p&gt;
+&lt;h2 id="final-thoughts-fail-fast-build-together"&gt;Final Thoughts: Fail Fast, Build Together
+&lt;/h2&gt;&lt;p&gt;The overarching message from Open Source Weekends is clear: &lt;strong&gt;Learn AI, and build with others.&lt;/strong&gt; If you want to spot opportunities, you have to be in the trenches having conversations. Embrace a &amp;ldquo;fail fast&amp;rdquo; mentality. Build prototypes, share them with the community, listen to the feedback, and iterate.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;You can check out more about Vishal’s work at&lt;/em&gt; &lt;a class="link" href="https://vishal.life/" target="_blank" rel="noopener"
+ &gt;&lt;em&gt;vishal.life&lt;/em&gt;&lt;/a&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

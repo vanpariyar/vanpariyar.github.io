@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web Performance on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/web-performance/</link><description>Recent content in Web Performance on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 09 May 2026 15:54:00 +0000</lastBuildDate><atom:link href="https://vanpariyar.in/tags/web-performance/index.xml" rel="self" type="application/rss+xml"/><item><title>Technical Post-Mortem: Why Real-Time Collaboration Was Pulled from WordPress 7.0</title><link>https://vanpariyar.in/blog/technical-post-mortem-why-real-time-collaboration-was-pulled-from-wordpress-7-0/</link><pubDate>Sat, 09 May 2026 15:54:00 +0000</pubDate><guid>https://vanpariyar.in/blog/technical-post-mortem-why-real-time-collaboration-was-pulled-from-wordpress-7-0/</guid><description>&lt;hr&gt;
+&lt;p&gt;The WordPress community recently received a major update regarding the roadmap for version 7.0. In a &lt;a class="link" href="https://make.wordpress.org/core/2026/05/08/rtc-removed-from-7-0/" target="_blank" rel="noopener"
+ &gt;pivotal announcement&lt;/a&gt;, Matt Mullenweg confirmed that **Real-Time Collaboration (RTC)**—the crown jewel of Gutenberg Phase 3—will not ship with the 7.0 release.&lt;/p&gt;
+&lt;p&gt;As developers, we know that &amp;ldquo;Real-Time&amp;rdquo; is often a synonym for &amp;ldquo;Complex.&amp;rdquo; Moving from a single-user state to a synchronized multi-user state is a fundamental paradigm shift.&lt;/p&gt;
+&lt;p&gt;Here is a technical breakdown of the five reasons why RTC was pulled, and what it means for the engineering side of WordPress.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-surface-area-problem"&gt;The &amp;ldquo;Surface Area&amp;rdquo; Problem
+&lt;/h2&gt;&lt;p&gt;WordPress isn&amp;rsquo;t just a post editor; it’s a Full Site Editor (FSE). RTC needs to work across paragraph blocks, global styles, template parts, and navigation menus.&lt;/p&gt;
+&lt;p&gt;When you increase the surface area, you increase the potential for **state desynchronization**. If a user is editing a Global Header while another is adjusting a Template, the dependency graph becomes a nightmare to manage in real-time.&lt;/p&gt;
+&lt;h2 id="race-conditions-in-collaborative-editing"&gt;Race Conditions in Collaborative Editing
+&lt;/h2&gt;&lt;p&gt;In a standard WordPress setup, the last person to click &amp;ldquo;Update&amp;rdquo; wins. In RTC, we use algorithms like **CRDTs (Conflict-free Replicated Data Types)** or **Operational Transformation (OT)** to merge changes.&lt;/p&gt;
+&lt;p&gt;If two users edit the same block attribute simultaneously, a &amp;ldquo;race condition&amp;rdquo; occurs. If the logic isn&amp;rsquo;t perfect, you end up with &amp;ldquo;zombie&amp;rdquo; data.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conceptual example of a failing sync state:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// User A and User B both send an update to the same block simultaneously
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Without a robust RTC engine, the state becomes unpredictable
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;blockId&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;uuid-1234&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;attributes&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;content&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;User A&amp;#39;s edit&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// Sent at 12:00:00.001
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;fontSize&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;22px&amp;#34;&lt;/span&gt; &lt;span class="c1"&gt;// User B sent this at 12:00:00.002
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// Race condition: Does the UI render the content update OR the font change first?
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// In 7.0 testing, these conflicts were causing React to throw fatal &amp;#39;Minified State&amp;#39; errors.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="3-server-load-and-scaling-bottlenecks"&gt;3. Server Load and Scaling Bottlenecks
+&lt;/h2&gt;&lt;p&gt;Most WordPress sites run on &lt;strong&gt;stateless PHP environments&lt;/strong&gt; (Nginx/Apache). RTC, however, is inherently &lt;strong&gt;stateful&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;To make RTC work, the server needs to keep track of who is doing what, &lt;em&gt;right now&lt;/em&gt;. While SaaS tools use WebSockets (Node.js/Go), many WordPress hosts don&amp;rsquo;t support persistent socket connections. This forces a fallback to &lt;strong&gt;Long Polling&lt;/strong&gt;, which can crush a shared hosting server.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Polling Nightmare:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;JavaScript&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;// A simplified version of what &amp;#34;Heartbeat&amp;#34; polling looks like under heavy RTC
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;async&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;syncCollaborativeChanges&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kr"&gt;await&lt;/span&gt; &lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/wp-json/wp/v2/sync/123&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kr"&gt;await&lt;/span&gt; &lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Imagine 10 authors polling this every 500ms...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// That is 1,200 requests per minute just to check for changes.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;updateEditorState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;syncCollaborativeChanges&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The Core team realized that shipping this would likely crash thousands of sites hosted on entry-level servers that aren&amp;rsquo;t optimized for high-concurrency REST API traffic.&lt;/p&gt;
+&lt;h2 id="4-memory-efficiency--client-side-bloat"&gt;4. Memory Efficiency &amp;amp; Client-Side Bloat
+&lt;/h2&gt;&lt;p&gt;Collaborative engines (like Yjs or Automerge) maintain a &amp;ldquo;history&amp;rdquo; of every change to resolve conflicts. On long-form posts with thousands of edits, this history grows in the browser&amp;rsquo;s memory.&lt;/p&gt;
+&lt;p&gt;During fuzz testing, it was discovered that the RTC implementation was consuming massive amounts of RAM. For users on lower-end hardware, the browser tab would simply hang. As a &amp;ldquo;Democratizer of Publishing,&amp;rdquo; WordPress cannot ship a feature that excludes users with older computers.&lt;/p&gt;
+&lt;h2 id="5-fuzz-testing--edge-case-bugs"&gt;5. Fuzz Testing &amp;amp; Edge Case Bugs
+&lt;/h2&gt;&lt;p&gt;The team used &lt;strong&gt;Fuzzing&lt;/strong&gt;—an automated testing technique that injects random, chaotic data into the editor. This revealed recurring bugs where the block tree would &amp;ldquo;break&amp;rdquo; (invalid HTML) when multiple users performed complex actions like &amp;ldquo;Nested Inner Block Drag-and-Drop&amp;rdquo; simultaneously.&lt;/p&gt;
+&lt;p&gt;Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Example of a conceptual Fuzz Test command that likely failed&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm run test:fuzz --target&lt;span class="o"&gt;=&lt;/span&gt;collaboration-engine --intensity&lt;span class="o"&gt;=&lt;/span&gt;high
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Result: &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# [FAIL] Block Validation Error: Expected but found corrupted buffer.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="the-silver-lining-for-developers"&gt;The Silver Lining for Developers
+&lt;/h2&gt;&lt;p&gt;While the delay is disappointing, it&amp;rsquo;s a win for &lt;strong&gt;stability&lt;/strong&gt;. If you are a plugin developer, this gives you more time to ensure your custom blocks are &amp;ldquo;Collaboration Ready.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What you should do now:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Audit your &lt;code&gt;save()&lt;/code&gt; and &lt;code&gt;edit()&lt;/code&gt; functions:&lt;/strong&gt; Ensure they are pure and don&amp;rsquo;t rely on side effects that could break in a synchronized environment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Follow the Gutenberg Plugin:&lt;/strong&gt; The feature isn&amp;rsquo;t dead; it’s moving back to the Gutenberg feature plugin for more &amp;ldquo;incubation.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Monitor Ticket&lt;/strong&gt; &lt;a class="link" href="https://core.trac.wordpress.org/ticket/65205" target="_blank" rel="noopener"
+ &gt;&lt;strong&gt;#65205&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;:&lt;/strong&gt; This is where the code &amp;ldquo;unwinding&amp;rdquo; from 7.0 is happening.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Final Thought:&lt;/strong&gt; I’d rather have a stable, single-user WordPress 7.0 than a broken, multi-user one. In the world of Open Source, &amp;ldquo;Ready when it&amp;rsquo;s ready&amp;rdquo; is always better than &amp;ldquo;Shipped because of a deadline.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Follow me for more deep dives into the WordPress Core. Have thoughts on RTC? Let’s discuss in the comments below.&lt;/em&gt;&lt;/p&gt;
+&lt;hr /&gt;&lt;br/&gt;
+If it is helpful and saves your valuable &lt;strong&gt;Time&lt;/strong&gt; ⏱ please show your support 👇.
+
+&lt;a href="https://www.buymeacoffee.com/vanpariyar" target="_blank"&gt;&lt;img src="https://vanpariyar.in/images/buy-me-a-coffie.png" alt="Buy Me A Coffee" style="height: auto; margin:auto; width:90%; max-width: 90%;" &gt;&lt;/a&gt;
+&lt;br/&gt;
+
+&lt;a href="https://buymeacoff.ee/?via=vanpariyar" target="_blank"&gt;Buy me A Coffee&lt;/a&gt;, Thank you and canva ( For Beautiful designs ). Thanks for the reading 👍.</description></item></channel></rss>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FreeScout on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/freescout/</link><description>Recent content in FreeScout on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 07 Jul 2026 00:24:00 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/freescout/index.xml" rel="self" type="application/rss+xml"/><item><title>FreeScout on HestiaCP: Fixing 500 Internal Server Errors</title><link>https://vanpariyar.in/blog/freescout-on-hestiacp-fixing-500-internal-server-errors/</link><pubDate>Tue, 07 Jul 2026 00:24:00 +0530</pubDate><guid>https://vanpariyar.in/blog/freescout-on-hestiacp-fixing-500-internal-server-errors/</guid><description>&lt;p&gt;So, you want to build a &amp;ldquo;community-first, private-second&amp;rdquo; support funnel for your plugins or software. You’ve wisely chosen &lt;strong&gt;bbPress&lt;/strong&gt; for the public, Google-indexed forum layer, and you want &lt;strong&gt;FreeScout&lt;/strong&gt; (the magnificent, self-hosted open-source HelpDesk) to securely handle the private tickets where customers hand over sensitive staging credentials.&lt;/p&gt;
+&lt;p&gt;You also have &lt;strong&gt;HestiaCP&lt;/strong&gt; running your server because you like clean control panels and automated Let&amp;rsquo;s Encrypt SSLs.&lt;/p&gt;
+&lt;p&gt;You think to yourself: &lt;em&gt;&amp;ldquo;I’ll just upload the zip, click next, and be done in 5 minutes.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cue the dramatic music.&lt;/strong&gt; 🎬&lt;/p&gt;
+&lt;p&gt;Instead of a beautiful dashboard, you are greeted by the developer&amp;rsquo;s favorite jumpscare: &lt;strong&gt;500 Internal Server Error&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;If you are currently staring at that error, take a deep breath. Here is the ultimate, battle-tested guide to getting FreeScout running cleanly on HestiaCP, written in the blood of real-time debugging logs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="step-1-the-standard-hestiacp-setup"&gt;Step 1: The Standard HestiaCP Setup
+&lt;/h2&gt;&lt;p&gt;Before the fireworks begin, let’s do the basic setup correctly.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Create the Database:&lt;/strong&gt; In HestiaCP, go to &lt;strong&gt;DB&lt;/strong&gt; and add a new database (e.g., &lt;code&gt;helphub_db&lt;/code&gt;). Save your user and password.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add the Subdomain:&lt;/strong&gt; Go to &lt;strong&gt;Web&lt;/strong&gt;, add your subdomain (e.g., &lt;code&gt;support.example.com&lt;/code&gt;), and check &lt;strong&gt;Enable SSL (Let&amp;rsquo;s Encrypt)&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Laravel Special:&lt;/strong&gt; Under &lt;strong&gt;Advanced Options&lt;/strong&gt;, change your Backend Template (PHP-FPM) to &lt;strong&gt;PHP 8.2&lt;/strong&gt;. Then, check &lt;strong&gt;Custom document root&lt;/strong&gt; and type &lt;code&gt;public&lt;/code&gt;.
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;em&gt;Why? FreeScout is built on Laravel. The internet should only ever see the &lt;code&gt;public&lt;/code&gt; folder, not your core system configuration files.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Upload the Files:&lt;/strong&gt; Download the latest FreeScout release &lt;code&gt;.zip&lt;/code&gt; from GitHub. Use Hestia’s File Manager to upload it into &lt;code&gt;public_html&lt;/code&gt;, and extract it right there.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now you visit your URL&amp;hellip; and boom. &lt;strong&gt;500 Error.&lt;/strong&gt; Let’s fix it.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="boss-level-1-the-htaccess-saboteur"&gt;Boss Level 1: The &lt;code&gt;.htaccess&lt;/code&gt; Saboteur
+&lt;/h2&gt;&lt;p&gt;You open your Apache/Nginx error logs and spot this weird line:
+&lt;code&gt;.../public_html/.htaccess: &amp;lt;IfModule not allowed here&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="the-lesson"&gt;The Lesson:
+&lt;/h3&gt;&lt;p&gt;FreeScout ships with an &lt;code&gt;.htaccess&lt;/code&gt; file in its root directory meant for basic shared hosting users who can&amp;rsquo;t change their document root. Because you &lt;em&gt;already&lt;/em&gt; changed your document root to &lt;code&gt;public&lt;/code&gt; inside HestiaCP, this root file is not only useless, it’s actively breaking Apache security policies.&lt;/p&gt;
+&lt;h3 id="the-fix"&gt;The Fix:
+&lt;/h3&gt;&lt;p&gt;Go into your HestiaCP File Manager, find the &lt;code&gt;.htaccess&lt;/code&gt; file sitting directly in &lt;code&gt;public_html&lt;/code&gt;, and &lt;strong&gt;delete it&lt;/strong&gt; (or rename it to &lt;code&gt;old.htaccess&lt;/code&gt;).
+&lt;em&gt;(Note: Do NOT touch the &lt;code&gt;.htaccess&lt;/code&gt; file inside the &lt;code&gt;public/&lt;/code&gt; folder. That one is required for routing!)&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="boss-level-2-the-open_basedir-trap"&gt;Boss Level 2: The &lt;code&gt;open_basedir&lt;/code&gt; Trap
+&lt;/h2&gt;&lt;p&gt;You delete the file, refresh, and get another 500 error:
+&lt;code&gt;PHP Warning: require(): open_basedir restriction in effect.&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="the-lesson-1"&gt;The Lesson:
+&lt;/h3&gt;&lt;p&gt;By telling HestiaCP that your document root is the &lt;code&gt;public&lt;/code&gt; folder, Hestia’s security policy strictly locks PHP inside that folder. But Laravel needs to look one folder up to read its core &lt;code&gt;.env&lt;/code&gt; configuration file.&lt;/p&gt;
+&lt;h3 id="the-fix-1"&gt;The Fix:
+&lt;/h3&gt;&lt;p&gt;You need to lift the &lt;code&gt;open_basedir&lt;/code&gt; restriction for your PHP template. SSH into your server as &lt;code&gt;root&lt;/code&gt; and edit the master template:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nano /usr/local/hestia/data/templates/web/php-fpm/PHP-8_2.tpl
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Find the line starting with &lt;span class="sb"&gt;`&lt;/span&gt;php_admin_value&lt;span class="o"&gt;[&lt;/span&gt;open_basedir&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt; and comment it out by placing a semicolon at the beginning:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Plaintext
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="sb"&gt;```&lt;/span&gt;plain
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;;&lt;/span&gt;php_admin_value&lt;span class="o"&gt;[&lt;/span&gt;open_basedir&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; ...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Save (&lt;code&gt;Ctrl+O&lt;/code&gt;, &lt;code&gt;Enter&lt;/code&gt;, &lt;code&gt;Ctrl+X&lt;/code&gt;) and apply the update via terminal (replace &lt;code&gt;admin&lt;/code&gt; with your Hestia username):&lt;/p&gt;
+&lt;p&gt;Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plain" data-lang="plain"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;v-change-web-domain-backend-tpl admin support.example.com PHP-8_2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="boss-level-3-the-disabled-security-functions"&gt;Boss Level 3: The Disabled Security Functions
+&lt;/h2&gt;&lt;p&gt;You finally reach the beautiful FreeScout installation wizard! You enter your database info, create your admin user, log in, and click around. Suddenly&amp;hellip; more crashes. You check the application logs (&lt;code&gt;storage/logs/laravel.log&lt;/code&gt;) and see:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Error: Call to undefined function App\Misc\shell_exec()&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Call to undefined function Illuminate\Queue\pcntl_alarm()&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="the-lesson-2"&gt;The Lesson:
+&lt;/h3&gt;&lt;p&gt;HestiaCP is paranoid—and rightfully so. It disables powerful PHP functions like &lt;code&gt;shell_exec&lt;/code&gt; and the &lt;code&gt;pcntl_*&lt;/code&gt; process controls by default. But FreeScout is a complex background worker; it &lt;em&gt;needs&lt;/em&gt; these functions to manage email queues and background processes.&lt;/p&gt;
+&lt;p&gt;Because FreeScout runs via a web interface &lt;strong&gt;and&lt;/strong&gt; a background Cron Job, you must remove these restrictions from &lt;strong&gt;both&lt;/strong&gt; the FPM (Web) and CLI (Terminal) configurations.&lt;/p&gt;
+&lt;h3 id="the-fix-2"&gt;The Fix:
+&lt;/h3&gt;&lt;p&gt;Open the FPM configuration:&lt;/p&gt;
+&lt;p&gt;Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plain" data-lang="plain"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nano /etc/php/8.2/fpm/php.ini
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;And open the CLI configuration:&lt;/p&gt;
+&lt;p&gt;Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plain" data-lang="plain"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nano /etc/php/8.2/cli/php.ini
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;In both files, press &lt;code&gt;Ctrl+W&lt;/code&gt;, search for &lt;code&gt;disable_functions&lt;/code&gt;, and remove &lt;code&gt;shell_exec&lt;/code&gt;, &lt;code&gt;pcntl_alarm&lt;/code&gt;, &lt;code&gt;pcntl_signal&lt;/code&gt;, and &lt;code&gt;pcntl_async_signals&lt;/code&gt; from the list. Save them, then restart PHP:&lt;/p&gt;
+&lt;p&gt;Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plain" data-lang="plain"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;systemctl restart php8.2-fpm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="boss-level-4-the-poisoned-queue"&gt;Boss Level 4: The Poisoned Queue
+&lt;/h2&gt;&lt;p&gt;After enabling the PHP functions, you realize your helpdesk can &lt;em&gt;send&lt;/em&gt; emails, but it refuses to &lt;em&gt;fetch&lt;/em&gt; new ones. The logs reveal a giant wall of text ending in:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;App\Jobs\RestartQueueWorker has been attempted too many times or run too long. The job may have previously timed out.&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="the-lesson-3"&gt;The Lesson:
+&lt;/h3&gt;&lt;p&gt;While you were busy fixing the PHP functions earlier, the FreeScout background cron job was trying to run over and over again. Because it kept failing, Laravel eventually marked the background job as &amp;ldquo;poisoned&amp;rdquo; to keep it from crashing your CPU. Now that the server is healthy, the system is still refusing to run the old, stuck tasks.&lt;/p&gt;
+&lt;h3 id="the-fix-3"&gt;The Fix:
+&lt;/h3&gt;&lt;p&gt;You need to flush the toilet. Navigate to your FreeScout folder and run these artisan commands to reset the cache and clear the stuck queue.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;⚠️ Pro-Tip: Run these commands as your Hestia application user (e.g., &lt;code&gt;freescout&lt;/code&gt; or &lt;code&gt;admin&lt;/code&gt;), NOT as root, or you will break your folder permissions!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plain" data-lang="plain"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cd /home/your_user/web/[support.example.com/public_html](https://support.example.com/public_html)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;# Flush the broken state
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;php artisan cache:clear
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;php artisan queue:flush
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;php artisan queue:restart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="the-victory-lap-activating-the-cron-job"&gt;The Victory Lap: Activating the Cron Job
+&lt;/h2&gt;&lt;p&gt;Now that the system is entirely unblocked, clean, and reset, we need to activate the automated heart of FreeScout.&lt;/p&gt;
+&lt;p&gt;In your HestiaCP dashboard, navigate to the &lt;strong&gt;Cron&lt;/strong&gt; tab and click &lt;strong&gt;Add Cron Job&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Set the schedule to run &lt;strong&gt;every minute&lt;/strong&gt; (put an asterisk &lt;code&gt;*&lt;/code&gt; in the Minute, Hour, Day, Month, and Wday fields), and enter the official execution command:&lt;/p&gt;
+&lt;p&gt;Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plain" data-lang="plain"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;php /home/your_user/web/[support.example.com/public_html/artisan](https://support.example.com/public_html/artisan) schedule:run &amp;gt;&amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Click save, look back at your screen, and watch the emails start seamlessly pouring into your new, beautifully self-hosted helpdesk.&lt;/p&gt;
+&lt;h3 id="summary-checklist-for-a-happy-freescout"&gt;Summary Checklist for a Happy FreeScout
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; Document root set to &lt;code&gt;/public&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; Parent &lt;code&gt;.htaccess&lt;/code&gt; deleted&lt;/li&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; &lt;code&gt;open_basedir&lt;/code&gt; disabled in the template&lt;/li&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; &lt;code&gt;shell_exec&lt;/code&gt; and &lt;code&gt;pcntl_&lt;/code&gt; functions whitelisted in FPM &amp;amp; CLI&lt;/li&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; Queue flushed after fixing restrictions&lt;/li&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; &lt;code&gt;schedule:run&lt;/code&gt; cron job firing every 60 seconds&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy hosting! Your community now has a secure, private escape hatch for advanced troubleshooting.&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacks on Ronak Vanpariya</title><link>https://vanpariyar.in/tags/hacks/</link><description>Recent content in Hacks on Ronak Vanpariya</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 20 Aug 2021 18:18:05 +0530</lastBuildDate><atom:link href="https://vanpariyar.in/tags/hacks/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Clone Whole Wordpress Site With Database When You Only Have Ftp</title><link>https://vanpariyar.in/blog/2021-08-20-how-to-clone-whole-wordpress-site-with-database-when-you-only-have-ftp/</link><pubDate>Fri, 20 Aug 2021 18:18:05 +0530</pubDate><guid>https://vanpariyar.in/blog/2021-08-20-how-to-clone-whole-wordpress-site-with-database-when-you-only-have-ftp/</guid><description>&lt;img src="https://vanpariyar.in/" alt="Featured image of post How to Clone Whole Wordpress Site With Database When You Only Have Ftp" /&gt;&lt;h2 id="problem-thinking"&gt;Problem &amp;#x1f914;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;How to Clone Whole Wordpress Site With Database When You Only Have Ftp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I came across a good idea that can save your time so I thought it would be great to share.&lt;/p&gt;
+&lt;h2 id="what-i-had"&gt;What i had
+&lt;/h2&gt;&lt;p&gt;I had one website&amp;rsquo;s FTP only which is the WordPress website. and I was waiting to reply for 2 days.&lt;/p&gt;
+&lt;h2 id="output"&gt;Output
+&lt;/h2&gt;&lt;p&gt;I need to clone the whole website. in my local environment with the database installed.&lt;/p&gt;
+&lt;h2 id="research-book"&gt;Research &amp;#x1f4d6;
+&lt;/h2&gt;&lt;p&gt;After searching so many articles, found a simple tool call &lt;a class="link" href="https://www.adminer.org/" target="_blank" rel="noopener"
+ &gt;adminer&lt;/a&gt; i know many of us know and used this tool.&lt;/p&gt;
+&lt;h2 id="solutions-bulb"&gt;solutions &amp;#x1f4a1;
+&lt;/h2&gt;&lt;p&gt;have downloaded its PHP file. what I have done is, have uploaded that &lt;code&gt;adminer-4.1.2.php&lt;/code&gt; and renamed it to adminer.php to the document root.&lt;/p&gt;
+&lt;p&gt;then extract credentials from the &lt;code&gt;wp-config.php&lt;/code&gt; for the MYSQL.&lt;/p&gt;
+&lt;p&gt;simply hit the URL _ https://your-site/adminer.php&lt;/p&gt;
+&lt;p&gt;then entered credentials extracted from the &lt;code&gt;wp-config.php&lt;/code&gt; then exported the DB from its GUI.&lt;/p&gt;
+&lt;p&gt;files I have downloaded from the FTP and Database from the adminer. that&amp;rsquo;s all.&lt;/p&gt;
+&lt;p&gt;&amp;#x1f389; The client replied after 2 days found he was on vacation &amp;#x1f604;&lt;/p&gt;</description></item></channel></rss>
